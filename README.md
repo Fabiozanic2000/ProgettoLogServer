@@ -1,5 +1,7 @@
 # 2022T1
 
+## Heimdall: statistiche file di log http in modo semplificato tramite web app
+
 # GRUPPO
 
 - Alex Caraffi, 147283, Project Owner 
@@ -15,3 +17,7 @@
 - /database ← Dump del/dei database (se previsti)
 - /test ← Codice di test di unità (TDD, TL), descrizione test di integrazione e accettazione se non
 integrati nell’IDE
+
+# LINK 
+- https://tree.taiga.io/project/271413-team1_pds2022/timeline
+- https://nodejs.dev/
