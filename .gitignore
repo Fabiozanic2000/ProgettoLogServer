@@ -1,1 +1,3 @@
 code/frontend/node_modules
+.DS*
+#code/frontend/.DS_Store

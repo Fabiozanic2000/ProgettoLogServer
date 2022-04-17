@@ -29,7 +29,7 @@ integrati nell’IDE
 
 ### Script eseguibili
 
-Nella cartella di root si possono eseguire i seguenti script:
+Nella cartella /code/frontend si possono eseguire i seguenti script:
 
 #### `npm install`
 Installa tutti i moduli necessari per eseguire i file
