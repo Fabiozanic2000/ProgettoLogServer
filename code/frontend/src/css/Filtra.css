@@ -1,0 +1,18 @@
+.filtra
+{
+    width: 30%;
+}
+
+#bottoneFiltra
+{
+    background-color: gold;
+    height: 40px;
+    width: 15%;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+h2
+{
+    color: white;
+}
