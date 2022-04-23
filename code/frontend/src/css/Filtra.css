@@ -1,15 +1,21 @@
 .filtra
 {
-    width: 30%;
+    text-align: center;
+    width: 60%;
 }
 
 #bottoneFiltra
 {
     background-color: gold;
     height: 40px;
-    width: 15%;
+    width: 20%;
     border-radius: 10px;
     font-size: 15px;
+}
+
+#bottoneFiltra:hover
+{
+    background-color: red;
 }
 
 h2
