@@ -45,10 +45,7 @@ public class Main {
                 response = errore();
                 rCode = 404;
             } else if ("POST".equals(t.getRequestMethod())) {
-                //URI myUri = null;
                 try {
-                    //myUri = new URI("/login");
-
                     if (requestedUri.compareTo(new URI("/login")) == 0) {
                         response = "/login";
                         rCode = 200;
@@ -60,7 +57,7 @@ public class Main {
                         String email = "rickyforni2@gmail.com";
                         String password = "123456789";
                         String professione = "tecnico";
-                        if (db.signup(nome, cognome, email,password, professione))
+                        if (db.signup(nome, cognome, email, password, professione))
                             System.out.println("Utente inserito correttamente");
                         else
                             System.out.println("Utente già presente nel db");
@@ -73,8 +70,7 @@ public class Main {
                     } else if (requestedUri.compareTo(new URI("/home")) == 0) {
                         response = "/home";
                         rCode = 200;
-                    }
-                    else {
+                    } else {
                         System.out.println("URI non trovato");
                         rCode = 404;
                         response = errore();

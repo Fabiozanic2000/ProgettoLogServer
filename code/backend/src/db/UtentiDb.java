@@ -8,12 +8,14 @@ import static java.sql.DriverManager.getConnection;
 
 public class UtentiDb {
     private final String DBNAME;
-    public UtentiDb(String dbname){
+
+    public UtentiDb(String dbname) {
         this.DBNAME = dbname;
     }
-    public boolean signup(String nome, String cognome, String email,  String password, String professione) throws SQLException {
+
+    public boolean signup(String nome, String cognome, String email, String password, String professione) throws SQLException {
         Connection c = connect();
-        PreparedStatement psr = null;
+        PreparedStatement psr;
 
         String sql = "select count(*) as tot from user where email=?";
         psr = c.prepareStatement(sql);
@@ -21,11 +23,11 @@ public class UtentiDb {
         psr.execute();
         ResultSet rs = psr.getResultSet();
         int tot = -1;
-        while(rs.next()){
-            tot =  rs.getInt("tot");
+        while (rs.next()) {
+            tot = rs.getInt("tot");
             //System.out.print(tot);
         }
-        if (tot == 0){
+        if (tot == 0) {
             System.out.println("Sono vicino al try");
             try {
                 sql = "insert into user (nome, cognome, email, password, professione) VALUES (?, ?, ?, ?, ?)";
@@ -37,7 +39,7 @@ public class UtentiDb {
                 pstmt.setString(5, professione);
                 pstmt.executeUpdate();
                 return true;
-            } catch (SQLException e){
+            } catch (SQLException e) {
                 System.out.println(e.getMessage());
                 return false;
             }
@@ -50,8 +52,7 @@ public class UtentiDb {
         File file = new File(DBNAME);
         if (file.exists()) {
             System.out.println("Il database esiste");
-        }
-        else {
+        } else {
             try {
                 File f = new File("");
                 //System.out.println(f.getAbsolutePath() + File.separator + "database");
@@ -65,6 +66,7 @@ public class UtentiDb {
             }
         }
     }
+
     public Connection connect() {
         Connection c = null;
         try {
@@ -79,15 +81,16 @@ public class UtentiDb {
         }
         return c;
     }
+
     private void createTableUser(Connection c) {
         try {
             Statement stmt = c.createStatement();
             String sql = "CREATE TABLE IF NOT EXISTS user " +
-                    "(id INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                    "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "nome TEXT NOT NULL, " +
-                    "cognome TEXT NOT NULL,"+
+                    "cognome TEXT NOT NULL," +
                     "email TEXT NOT NULL, " +
-                    "password TEXT NOT NULL, "+
+                    "password TEXT NOT NULL, " +
                     "professione TEXT NOT NULL)";
 
             stmt.executeUpdate(sql);
