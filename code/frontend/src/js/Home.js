@@ -3,6 +3,9 @@ import Mappa from './Mappa';
 import NavbarLoggato from './NavbarLoggato';
 import '../css/tabella.css';
 import '../css/Home.css';
+import Log from './Log';
+import Spiegazione from './Spiegazione';
+
 const Home = () => {
     return ( 
         <div className="home">
@@ -19,6 +22,19 @@ const Home = () => {
                 </tr>
             </table>
             
+            <table>
+                <tr>
+                    <td class="tabellaLog">
+                        <Log />
+                    </td>
+                    <td class="tabellaLog">
+                        <Spiegazione />
+                    </td>
+                    <td>
+                        <Spiegazione />
+                    </td>
+                </tr>
+            </table>
             
         </div>
      );
