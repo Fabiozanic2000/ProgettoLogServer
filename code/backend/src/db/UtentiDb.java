@@ -1,7 +1,6 @@
 package db;
 
 import java.io.File;
-import java.sql.Connection;
 import java.sql.*;
 
 import static java.sql.DriverManager.getConnection;
@@ -13,20 +12,27 @@ public class UtentiDb {
         this.DBNAME = dbname;
     }
 
-    public boolean signup(String nome, String cognome, String email, String password, String professione) throws SQLException {
+    public boolean signup(String nome, String cognome, String email, String password, String professione)
+            throws SQLException {
         Connection c = connect();
         PreparedStatement psr;
-
-        String sql = "select count(*) as tot from user where email=?";
-        psr = c.prepareStatement(sql);
-        psr.setString(1, email);
-        psr.execute();
-        ResultSet rs = psr.getResultSet();
-        int tot = -1;
-        while (rs.next()) {
-            tot = rs.getInt("tot");
-            //System.out.print(tot);
+        int tot=0;
+        String sql = null;
+        try {
+            sql = "select count(*) as tot from user where email=?";
+            psr = c.prepareStatement(sql);
+            psr.setString(1, email);
+            psr.execute();
+            ResultSet rs = psr.getResultSet();
+            tot = -1;
+            while (rs.next()) {
+                tot = rs.getInt("tot");
+                // System.out.print(tot);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
         }
+
         if (tot == 0) {
             System.out.println("Sono vicino al try");
             try {
@@ -42,11 +48,18 @@ public class UtentiDb {
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
                 return false;
+            } finally {
+                try {
+                    c.close();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
             }
+
         }
+        c.close();
         return false;
     }
-
 
     public void checkCreateDb() {
         File file = new File(DBNAME);
@@ -55,10 +68,11 @@ public class UtentiDb {
         } else {
             try {
                 File f = new File("");
-                //System.out.println(f.getAbsolutePath() + File.separator + "database");
+                // System.out.println(f.getAbsolutePath() + File.separator + "database");
                 Class.forName("org.sqlite.JDBC");
-                Connection c = getConnection("jdbc:sqlite:" + f.getAbsolutePath() + File.separator + "database" + File.separator +
-                        DBNAME);
+                Connection c = getConnection(
+                        "jdbc:sqlite:" + f.getAbsolutePath() + File.separator + "database" + File.separator +
+                                DBNAME);
                 createTableUser(c);
             } catch (Exception e) {
                 System.err.println(e.getClass().getName() + ": " + e.getMessage());
@@ -74,9 +88,9 @@ public class UtentiDb {
             Class.forName("org.sqlite.JDBC");
             c = getConnection("jdbc:sqlite:" + f.getAbsolutePath() + File.separator + "database" + File.separator +
                     DBNAME);
-            //return c;
+            // return c;
         } catch (Exception e) {
-            //System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            // System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
         return c;
@@ -100,5 +114,32 @@ public class UtentiDb {
             System.exit(0);
         }
     }
-}
 
+    /**
+     * ritorna l'ID dell'utente se il login è andato a buon fine, sennò ritorna 0
+     */
+    public int login(String email, String password) throws SQLException {
+        Connection c = connect();
+        PreparedStatement pst = null;
+        int id = 0;
+        try {
+            String sql = "Select id from user where email=? and password=?;";
+            pst = c.prepareStatement(sql);
+            pst.setString(1, email);
+            pst.setString(2, password);
+            // pst.execute();
+            ResultSet rs = pst.executeQuery();
+            id = rs.getInt(1);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                c.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
+        return id;
+
+    }
+}
