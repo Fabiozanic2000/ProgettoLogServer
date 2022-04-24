@@ -5,6 +5,7 @@ import '../css/tabella.css';
 import '../css/Home.css';
 import Log from './Log';
 import Spiegazione from './Spiegazione';
+import Grafici from './Grafici';
 
 const Home = () => {
     return ( 
@@ -31,7 +32,7 @@ const Home = () => {
                         <Spiegazione />
                     </td>
                     <td>
-                        <Spiegazione />
+                        <Grafici />
                     </td>
                 </tr>
             </table>
