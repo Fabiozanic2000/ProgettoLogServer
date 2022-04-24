@@ -16,7 +16,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         UtentiDb db = new UtentiDb("utentidb");
         db.checkCreateDb();
-        //Connection c = db.connect();
+
 
         HttpServer server = HttpServer.create(new InetSocketAddress(9000), 0); //crea il server in ascolto sull porta 9000
         System.out.println("Server listening on port 9000");
@@ -49,24 +49,26 @@ public class Main {
                 UtentiDb db = new UtentiDb("utentidb");
                 try {
                     if (requestedUri.compareTo(new URI("/login")) == 0) {
+                        /*Login l = new Login();
+                        int id = l.login(db, t, "rickyforni2@gmail.com", "12345678910");*/
                         System.out.println("Ciao mamma sono nel login");
                         String email = "rickyforni2@gmail.com"; //cappio-autocombustione
-                        String password = "123456789";
+                        String password = "12345678910";
                         int id;
                         id = db.login(email, password);
-                        if(id != 0){
+                        if (db.login(email, password) != 0) {
                             System.out.println("CIAO MAMMA SONO LOGGATO id numero " + id);
-                            t.getResponseHeaders().set("Set-Cookie", "id="+id + "; HttpOnly; Expires=20");
-                            //TODO CONTROLLA BENE SE EXPIRA
+                            t.getResponseHeaders().set("Set-Cookie", "id=" + id + "; HttpOnly; Expires=900");
+
                             response = "/login";
                             rCode = 200;
-                        } else{
+                        } else {
                             System.out.println("PUOI BESTEMMIARE");
-                            response = errore();
-                            rCode = 401;
+                            response = "Errore nel login";
+                            rCode = 403;
                         }
 
-                        
+
                     } else if (requestedUri.compareTo(new URI("/signup")) == 0) {
                         System.out.println("Mamma");
                         String nome = "Riccardo";
@@ -107,14 +109,11 @@ public class Main {
         }
 
         private String errore() {
-            switch (rCode){
-                case 401:
-                    return "401 Login andato male";
-                case 404:
-                    return "404 MALE MALE";
-                default:
-                    return "";
-            }
+            return switch (rCode) {
+                case 401 -> "401 Login andato male";
+                case 404 -> "404 MALE MALE";
+                default -> "";
+            };
         }
     }
 }

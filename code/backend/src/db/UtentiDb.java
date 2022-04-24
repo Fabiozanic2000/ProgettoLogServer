@@ -16,7 +16,7 @@ public class UtentiDb {
             throws SQLException {
         Connection c = connect();
         PreparedStatement psr;
-        int tot=0;
+        int tot = 0;
         String sql = null;
         try {
             sql = "select count(*) as tot from user where email=?";
@@ -103,7 +103,7 @@ public class UtentiDb {
                     "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "nome TEXT NOT NULL, " +
                     "cognome TEXT NOT NULL," +
-                    "email TEXT NOT NULL, " +
+                    "email TEXT NOT NULL UNIQUE, " +
                     "password TEXT NOT NULL, " +
                     "professione TEXT NOT NULL)";
 
