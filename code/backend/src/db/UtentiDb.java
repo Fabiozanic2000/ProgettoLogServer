@@ -67,11 +67,20 @@ public class UtentiDb {
             System.out.println("Il database esiste");
         } else {
             try {
-                File f = new File("");
-                // System.out.println(f.getAbsolutePath() + File.separator + "database");
+                File f = new File(""); //serve per ottenere il percorso assoluto della cartella
+                String percorso = f.getAbsolutePath();
+                if (percorso.contains("/code/backend"))
+                {
+                    percorso = percorso.replace("/code/backend", "/");
+                }
+                else if (percorso.contains("/code"))
+                {
+                    percorso = percorso.replace("/code", "/");
+                }
+
                 Class.forName("org.sqlite.JDBC");
                 Connection c = getConnection(
-                        "jdbc:sqlite:" + f.getAbsolutePath() + File.separator + "database" + File.separator +
+                        "jdbc:sqlite:" + percorso + File.separator + "database" + File.separator +
                                 DBNAME);
                 createTableUser(c);
             } catch (Exception e) {
