@@ -1,0 +1,24 @@
+.navbar
+{
+    background-color: black;
+    opacity: 0.8;
+    height: 30px;
+}
+
+#link
+{
+    position: relative;
+    top: 15px;
+    background-color: gold;
+    margin: 80%;
+    padding: 7px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+
+#link:hover
+{
+    background-color: red;
+}
