@@ -49,40 +49,33 @@ public class Main {
                 UtentiDb db = new UtentiDb("utentidb");
                 try {
                     if (requestedUri.compareTo(new URI("/login")) == 0) {
-                        /*Login l = new Login();
-                        int id = l.login(db, t, "rickyforni2@gmail.com", "12345678910");*/
-                        System.out.println("Ciao mamma sono nel login");
-                        String email = "rickyforni2@gmail.com"; //cappio-autocombustione
-                        String password = "12345678910";
-                        int id;
-                        id = db.login(email, password);
-                        if (db.login(email, password) != 0) {
-                            System.out.println("CIAO MAMMA SONO LOGGATO id numero " + id);
-                            t.getResponseHeaders().set("Set-Cookie", "id=" + id + "; HttpOnly; Expires=900");
+                        Login l = new Login();
+                        int id = l.login(db, t, "rickyforni2@gmail.com", "123456789");
+                        if (id != 0){
 
                             response = "/login";
                             rCode = 200;
-                        } else {
-                            System.out.println("PUOI BESTEMMIARE");
+                        }
+                        else {
                             response = "Errore nel login";
                             rCode = 403;
                         }
-
-
                     } else if (requestedUri.compareTo(new URI("/signup")) == 0) {
+                        Signup s = new Signup();
                         System.out.println("Mamma");
                         String nome = "Riccardo";
                         String cognome = "Forni";
-                        String email = "rickyforni2@gmail.com";
+                        String email = "rickyforni@gmail.com";
                         String password = "123456789";
                         String professione = "tecnico";
-                        if (db.signup(nome, cognome, email, password, professione))
-                            System.out.println("Utente inserito correttamente");
-                        else
-                            System.out.println("Utente già presente nel db");
-
-                        response = "/signup";
-                        rCode = 200;
+                        if (s.signup(db, "Riccardo", "Forni", "rickyforni@gmail.com", "123456789", "tecnico")) {
+                            response = "/signup";
+                            rCode = 200;
+                        }
+                        else{
+                            response = "Errore nella signup";
+                            rCode = 404;
+                        }
                     } else if (requestedUri.compareTo(new URI("/verifica")) == 0) {
                         response = "/verifica";
                         rCode = 200;
