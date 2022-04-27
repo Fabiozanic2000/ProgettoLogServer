@@ -1,8 +1,8 @@
-//import { sha3_512 } from 'js-sha3';
+import { sha3_512 } from 'js-sha3';
 import { useRef } from 'react';
 import '../css/Form.css';
 import '../css/Sfondo.css';
-//import axios from 'axios';
+import axios from 'axios';
 //axios.defaults.withCredentials = true;
 
 const Login = () => {
@@ -36,13 +36,39 @@ const Login = () => {
         }
     }
     */
+    const handleLoginForm = async (e) =>
+    {
+        e.preventDefault(); //evita di ricaricare la pagina
+        const url = "http://localhost:9000/login"; //url al server java
+
+        const email = emailInput.current.value; //prendo il valore dell'input text
+        let password = passwordInput.current.value;
+        password = sha3_512(password); //cifro la password
+        const corpo = {"email": email, "password": "123456789"}; //creo l'oggetto json da inviare al server
+
+        //INVIO I DATI
+        const risposta = await fetch(url,
+        {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+                //'Access-Control-Allow-Origin': '*'
+            },
+            mode: 'no-cors',
+            //credentials: 'omit',
+            method: "POST",
+            body: JSON.stringify(corpo)
+            //body: corpo
+        });
+        alert("sono rientrato");
+    }
 
     return (
         <div className="divLogin">
             <h1>Login</h1>
 
-            {/*<form onSubmit = {handleLoginForm}>*/}
-            <form>
+            <form onSubmit = {handleLoginForm}>
+            { /* <form> */ }
                 <input className='testo' type='text' ref={emailInput} id='email' name='email' placeholder='Email' required /> <br /> <br />
                 <input className='testo' type='password' ref={passwordInput} id='password' name='password' placeholder='Password' required /> <br /> <br />
                 <button id='bottone' type='submit'> Invia</button>

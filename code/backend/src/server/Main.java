@@ -50,7 +50,7 @@ public class Main {
                 try {
                     if (requestedUri.compareTo(new URI("/login")) == 0) {
                         Login l = new Login();
-                        int id = l.login(db, t, "rickyforni2@gmail.com", "123456789");
+                        int id = l.login(db, t);
                         if (id != 0){
 
                             response = "/login";
@@ -94,6 +94,13 @@ public class Main {
                     throw new RuntimeException(e);
                 }
             }
+
+
+            // serve per far comunicare client e server
+            t.getResponseHeaders().add("Access-Control-Allow-Origin", "*");
+            t.getResponseHeaders().add("Access-Control-Allow-Headers","origin, content-type, accept, authorization");
+            t.getResponseHeaders().add("Access-Control-Allow-Credentials", "true");
+            t.getResponseHeaders().add("Access-Control-Allow-Methods", "POST");
 
             t.sendResponseHeaders(rCode, response.length());
             OutputStream os = t.getResponseBody(); //chiude la comunicazione

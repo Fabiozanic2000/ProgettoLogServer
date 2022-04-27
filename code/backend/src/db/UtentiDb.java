@@ -61,50 +61,52 @@ public class UtentiDb {
         return false;
     }
 
+    /**
+     * Controlla di aver creato il Database e la tabella degli utenti
+     */
     public void checkCreateDb() {
         File file = new File(DBNAME);
         if (file.exists()) {
             System.out.println("Il database esiste");
         } else {
             try {
-                File f = new File(""); //serve per ottenere il percorso assoluto della cartella
-                String percorso = f.getAbsolutePath();
-                if (percorso.contains("/code/backend"))
-                {
-                    percorso = percorso.replace("/code/backend", "/");
-                }
-                else if (percorso.contains("/code"))
-                {
-                    percorso = percorso.replace("/code", "/");
-                }
-
+                // ottengo il percorso per il database
+                String percorso = this.getPercorso();
                 Class.forName("org.sqlite.JDBC");
                 Connection c = getConnection(
                         "jdbc:sqlite:" + percorso + File.separator + "database" + File.separator +
                                 DBNAME);
+                // se non esiste, creo la tabella degli utenti
                 createTableUser(c);
-            } catch (Exception e) {
+            } catch (Exception e) { // eventuali errori
                 System.err.println(e.getClass().getName() + ": " + e.getMessage());
                 System.exit(0);
             }
         }
     }
 
+    /**
+     * Si connette al Db
+     * @return Connection, la connessione al Db
+     */
     public Connection connect() {
         Connection c = null;
         try {
-            File f = new File("");
+            // ottiene il percorso al db
+            String percorso = this.getPercorso();
             Class.forName("org.sqlite.JDBC");
-            c = getConnection("jdbc:sqlite:" + f.getAbsolutePath() + File.separator + "database" + File.separator +
-                    DBNAME);
-            // return c;
+            c = getConnection("jdbc:sqlite:" + percorso + File.separator + "database" + File.separator + DBNAME);
         } catch (Exception e) {
-            // System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            // eventuali errori
             System.exit(0);
         }
         return c;
     }
 
+    /**
+     * Crea la tabella utenti del db
+     * @param c
+     */
     private void createTableUser(Connection c) {
         try {
             Statement stmt = c.createStatement();
@@ -125,30 +127,29 @@ public class UtentiDb {
     }
 
     /**
+     * Serve per ottenere il percorso assoluto della root del progetto
+     * @return
+     */
+    public String getPercorso()
+    {
+        File f = new File("");
+        String percorso = f.getAbsolutePath();
+        if (percorso.contains("/code/backend"))
+        {
+            percorso = percorso.replace("/code/backend", "/");
+        }
+        else if (percorso.contains("/code"))
+        {
+            percorso = percorso.replace("/code", "/");
+        }
+        return percorso;
+    }
+
+    /**
      * ritorna l'ID dell'utente se il login è andato a buon fine, sennò ritorna 0
      */
     public int login(String email, String password) throws SQLException {
-        Connection c = connect();
-        PreparedStatement pst = null;
-        int id = 0;
-        try {
-            String sql = "Select id from user where email=? and password=?;";
-            pst = c.prepareStatement(sql);
-            pst.setString(1, email);
-            pst.setString(2, password);
-            // pst.execute();
-            ResultSet rs = pst.executeQuery();
-            id = rs.getInt(1);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        } finally {
-            try {
-                c.close();
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-            }
-        }
-        return id;
-
+        DbLogin login = new DbLogin();
+        return login.login(email, password, this);
     }
 }

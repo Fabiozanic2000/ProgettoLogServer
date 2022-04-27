@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
     <option name="MAIN_CLASS_NAME" value="server.Main" />
-    <module name="2022t1" />
+    <module name="server" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>
