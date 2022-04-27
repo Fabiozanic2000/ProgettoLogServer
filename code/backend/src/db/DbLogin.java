@@ -6,22 +6,31 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DbLogin {
+    /**
+     * Classe che esegue la query del login sul db
+     * @param email
+     * @param password
+     * @param db
+     * @return id
+     */
     public int login(String email, String password, UtentiDb db)
     {
-        Connection c = db.connect();
-        PreparedStatement pst = null;
-        System.out.println("nel db: "+email+" "+password);
-        int id = 0;
+        Connection c = db.connect(); // si connette al db
+        PreparedStatement pst = null; // prepara la query
+        //System.out.println("nel db: "+email+" "+password);
+        int id = -1;
         try {
+            //preparo la query
             String sql = "Select id from user where email=? and password=?;";
+
             pst = c.prepareStatement(sql);
-            pst.setString(1, "'"+email+"'");
-            pst.setString(2, "'"+password+"'");
-            pst = c.prepareStatement(sql);
-            // pst.execute();
-            ResultSet rs = pst.executeQuery();
-            id = rs.getInt(1);
-            System.out.println(id);
+            pst.setString(1, email);
+            pst.setString(2, password);
+            pst.execute(); //eseguo la query
+
+            ResultSet rs = pst.executeQuery(); //prendo il risultato
+            id = rs.getInt("id");
+
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {

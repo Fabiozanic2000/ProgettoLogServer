@@ -44,7 +44,7 @@ const Login = () => {
         const email = emailInput.current.value; //prendo il valore dell'input text
         let password = passwordInput.current.value;
         password = sha3_512(password); //cifro la password
-        const corpo = {"email": email, "password": "123456789"}; //creo l'oggetto json da inviare al server
+        const corpo = {"email": email, "password": password}; //creo l'oggetto json da inviare al server
 
         //INVIO I DATI
         const risposta = await fetch(url,
@@ -52,13 +52,10 @@ const Login = () => {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
-                //'Access-Control-Allow-Origin': '*'
             },
             mode: 'no-cors',
-            //credentials: 'omit',
             method: "POST",
             body: JSON.stringify(corpo)
-            //body: corpo
         });
         alert("sono rientrato");
     }

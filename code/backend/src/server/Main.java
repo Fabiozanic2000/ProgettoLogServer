@@ -61,6 +61,18 @@ public class Main {
                             rCode = 403;
                         }
                     } else if (requestedUri.compareTo(new URI("/signup")) == 0) {
+                        Signup signup = new Signup();
+                        response = signup.signup(db, t);
+                        if (response.equals("inserito"))
+                        {
+                            rCode = 200;
+                        }
+                        else
+                        {
+                            rCode = 404;
+                        }
+
+                        /*
                         Signup s = new Signup();
                         System.out.println("Mamma");
                         String nome = "Riccardo";
@@ -76,6 +88,8 @@ public class Main {
                             response = "Errore nella signup";
                             rCode = 404;
                         }
+
+                         */
                     } else if (requestedUri.compareTo(new URI("/verifica")) == 0) {
                         response = "/verifica";
                         rCode = 200;

@@ -50,18 +50,19 @@ public class Login {
 
 
         System.out.println(email+ " "+ password);
-        
+
 
         int id;
         id = db.login(email, password);
 
-        if (id != 0) {
+        if (id != -1) {
             System.out.println("CIAO MAMMA SONO LOGGATO id numero " + id);
             t.getResponseHeaders().set("Set-Cookie", "id=" + id + "; HttpOnly; Expires=900");
 
         } else {
             System.out.println("PUOI BESTEMMIARE");
         }
+        System.out.println("id: "+id);
         return id;
     }
 }

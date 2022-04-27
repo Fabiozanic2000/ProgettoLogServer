@@ -12,8 +12,10 @@ public class UtentiDb {
         this.DBNAME = dbname;
     }
 
-    public boolean signup(String nome, String cognome, String email, String password, String professione)
-            throws SQLException {
+    public boolean signup(String nome, String cognome, String email, String password, String professione) throws SQLException {
+        DbSignup signup = new DbSignup();
+        return signup.signup(nome, cognome, email, password, professione, this);
+        /*
         Connection c = connect();
         PreparedStatement psr;
         int tot = 0;
@@ -59,6 +61,8 @@ public class UtentiDb {
         }
         c.close();
         return false;
+
+         */
     }
 
     /**
