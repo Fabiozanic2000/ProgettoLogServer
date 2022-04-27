@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import '../css/Form.css';
 import '../css/Sfondo.css';
 import axios from 'axios';
-//axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = true;
 
 const Login = () => {
     //servono per inviare i dati nel form
@@ -47,7 +47,8 @@ const Login = () => {
         const corpo = {"email": email, "password": password}; //creo l'oggetto json da inviare al server
 
         //INVIO I DATI
-        const risposta = await fetch(url,
+        
+        const invio = await fetch(url,
         {
             headers: {
                 'Accept': 'application/json',
@@ -57,7 +58,12 @@ const Login = () => {
             method: "POST",
             body: JSON.stringify(corpo)
         });
-        alert("sono rientrato");
+        const risposta = await invio.text();
+        alert("invio: "+invio);
+        alert("invio.body: "+invio.body);
+        alert("risposta: "+risposta)
+        alert("strigify: "+JSON.stringify(risposta));
+        alert("risposta.body: "+risposta.body);
     }
 
     return (

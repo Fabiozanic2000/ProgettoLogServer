@@ -21,8 +21,10 @@ public class Main {
         HttpServer server = HttpServer.create(new InetSocketAddress(9000), 0); //crea il server in ascolto sull porta 9000
         System.out.println("Server listening on port 9000");
 
-        server.createContext("/login", new RispostaPost()); //metodo per eseguire login con cookie se esiste utente nel db
-        server.createContext("/signup", new RispostaPost()); //registrazione utente
+        //UtentiDb db = new UtentiDb("utentidb");
+
+        server.createContext("/login", new Login(db)); //metodo per eseguire login con cookie se esiste utente nel db
+        server.createContext("/signup", new Signup(db)); //registrazione utente
         server.createContext("/verifica", new RispostaPost()); //logged = true
         server.createContext("/home", new RispostaPost()); //Pagina di benvenuto
         server.setExecutor(null); //crea un esecutore di default
@@ -48,49 +50,7 @@ public class Main {
             } else if ("POST".equals(t.getRequestMethod())) {
                 UtentiDb db = new UtentiDb("utentidb");
                 try {
-                    if (requestedUri.compareTo(new URI("/login")) == 0) {
-                        Login l = new Login();
-                        int id = l.login(db, t);
-                        if (id != 0){
-
-                            response = "/login";
-                            rCode = 200;
-                        }
-                        else {
-                            response = "Errore nel login";
-                            rCode = 403;
-                        }
-                    } else if (requestedUri.compareTo(new URI("/signup")) == 0) {
-                        Signup signup = new Signup();
-                        response = signup.signup(db, t);
-                        if (response.equals("inserito"))
-                        {
-                            rCode = 200;
-                        }
-                        else
-                        {
-                            rCode = 404;
-                        }
-
-                        /*
-                        Signup s = new Signup();
-                        System.out.println("Mamma");
-                        String nome = "Riccardo";
-                        String cognome = "Forni";
-                        String email = "rickyforni@gmail.com";
-                        String password = "123456789";
-                        String professione = "tecnico";
-                        if (s.signup(db, "Riccardo", "Forni", "rickyforni@gmail.com", "123456789", "tecnico")) {
-                            response = "/signup";
-                            rCode = 200;
-                        }
-                        else{
-                            response = "Errore nella signup";
-                            rCode = 404;
-                        }
-
-                         */
-                    } else if (requestedUri.compareTo(new URI("/verifica")) == 0) {
+                    if (requestedUri.compareTo(new URI("/verifica")) == 0) {
                         response = "/verifica";
                         rCode = 200;
                     } else if (requestedUri.compareTo(new URI("/home")) == 0) {
@@ -104,8 +64,6 @@ public class Main {
                 } catch (URISyntaxException e) {
                     e.printStackTrace();
                     System.exit(1);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
                 }
             }
 
