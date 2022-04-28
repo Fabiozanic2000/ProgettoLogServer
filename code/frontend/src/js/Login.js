@@ -46,24 +46,31 @@ const Login = () => {
         password = sha3_512(password); //cifro la password
         const corpo = {"email": email, "password": password}; //creo l'oggetto json da inviare al server
 
-        //INVIO I DATI
-        
-        const invio = await fetch(url,
+        //INVIO I DATI 
+        const invio = await fetch(url, //invio i dati
         {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            mode: 'no-cors',
+            mode: 'cors',
             method: "POST",
             body: JSON.stringify(corpo)
         });
-        const risposta = await invio.text();
-        alert("invio: "+invio);
-        alert("invio.body: "+invio.body);
-        alert("risposta: "+risposta)
-        alert("strigify: "+JSON.stringify(risposta));
-        alert("risposta.body: "+risposta.body);
+
+        //ottengo l'oggetto json dal server
+        const risposta = await invio.json();
+
+        if (risposta.id)
+        {
+            alert("sei loggato");
+        }
+        else
+        {
+            alert(risposta.errore);
+        }
+        
+        
     }
 
     return (

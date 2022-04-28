@@ -17,7 +17,6 @@ public class DbLogin {
     {
         Connection c = db.connect(); // si connette al db
         PreparedStatement pst = null; // prepara la query
-        //System.out.println("nel db: "+email+" "+password);
         int id = -1;
         try {
             //preparo la query
@@ -35,7 +34,7 @@ public class DbLogin {
             ex.printStackTrace();
         } finally {
             try {
-                c.close();
+                c.close(); //chiudo la connessione al db
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }

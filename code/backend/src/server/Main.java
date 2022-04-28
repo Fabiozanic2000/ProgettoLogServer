@@ -10,6 +10,7 @@ import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 
 public class Main {
@@ -27,10 +28,23 @@ public class Main {
         server.createContext("/signup", new Signup(db)); //registrazione utente
         server.createContext("/verifica", new RispostaPost()); //logged = true
         server.createContext("/home", new RispostaPost()); //Pagina di benvenuto
+        server.createContext("/nero", new Pippo());
         server.setExecutor(null); //crea un esecutore di default
         server.start(); //fa partire il server
     }
 
+    static class Pippo  implements HttpHandler {
+        @Override
+        public void handle(HttpExchange t) throws IOException
+        {
+            String response = "ciao";
+            t.sendResponseHeaders(200, response.length());
+            OutputStream os = t.getResponseBody(); //chiude la comunicazione
+            //os.write(response.getBytes());
+            os.write(response.getBytes(StandardCharsets.UTF_8));
+            os.close();
+        }
+    }
 
     static class RispostaPost implements HttpHandler {
         int rCode = 0;
