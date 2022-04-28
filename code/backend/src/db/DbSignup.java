@@ -28,7 +28,6 @@ public class DbSignup {
         }
 
         if (tot == 0) {
-            System.out.println("Sono vicino al try");
             try {
                 sql = "insert into user (nome, cognome, email, password, professione) VALUES (?, ?, ?, ?, ?)";
                 PreparedStatement pstmt = c.prepareStatement(sql);

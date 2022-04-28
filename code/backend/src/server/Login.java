@@ -68,7 +68,7 @@ public class Login implements HttpHandler {
 
                 if (id != -1) { // se il login è andato a buon fine setto il cookie e restituisco l'id
                     t.getResponseHeaders().set("Set-Cookie", "id=" + id + "; HttpOnly; Expires=900");
-                    response = "{\"id\": \""+id+"\"}";
+                    response = "{\"id\": \"pippo\"}";
                     rCode = 200;
 
                 } else {

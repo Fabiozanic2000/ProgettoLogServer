@@ -14,64 +14,6 @@ const Signup = () => {
     const password2Input = useRef();
     const professioneInput = useRef();
 
-    /*
-
-    const handleLoginForm = async (e) =>
-    {
-        e.preventDefault(); //evita di ricaricare la pagina
-        const url = "http://localhost:80/signup";
-
-        const email = emailInput.current.value;
-        const nome = nomeInput.current.value;
-        const cognome = cognomeInput.current.value;
-        const password2 = password2Input.current.value;
-        let password = passwordInput.current.value;
-        const professione = professioneInput.current.value;
-
-        
-
-        if (password !== password2)
-        {
-            alert("le due password devono essere uguali");
-        }
-
-        password = sha3_512(password); //cifro la password
-
-        const corpo = {
-            nome: nome,
-            cognome: cognome,
-            email: email, 
-            password: password, 
-            withCredentials: true
-        }; //creo l'oggetto json da inviare al server
-
-        const risposta = await axios.post(url, corpo);
-        const oggetto = JSON.parse(risposta.data);
-
-        //alert(oggetto["messaggio"].search("utente_email_key"));
-        //alert(oggetto["messaggio"].search("negro"));
-        if (!oggetto["isTuttoOk"])
-        {
-            if (oggetto["messaggio"].search("utente_email_key") !== -1)
-            {
-                alert("questa email è già usata");
-            }
-            else
-            {
-                alert(oggetto["messaggio"]);
-            }
-        }
-        else
-        {
-            alert(oggetto["messaggio"]);
-            const link = window.location.href.replace('/signup', ''); //rimando alla pagina principale di login
-            window.location.replace(link);
-        }
-
-
-    }
-    */
-
     const handleLoginForm = async (e) =>
     {
         e.preventDefault(); //evita di ricaricare la pagina
@@ -104,17 +46,30 @@ const Signup = () => {
 
 
         //INVIO I DATI
-        const risposta = await fetch(url,
+        const invio = await fetch(url, //invio i dati
         {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            mode: 'no-cors',
+            mode: 'cors',
             method: "POST",
             body: JSON.stringify(corpo)
         });
-        alert("sono rientrato");
+
+
+        //ottengo l'oggetto json dal server
+        const risposta = await invio.json();
+
+        //guardo cosa è successo
+        if (risposta.id)
+        {
+            alert("Utente inserito correttamente");
+        }
+        else
+        {
+            alert(risposta.errore);
+        }
     }
 
     return ( 

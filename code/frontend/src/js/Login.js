@@ -10,32 +10,6 @@ const Login = () => {
     const emailInput = useRef();
     const passwordInput = useRef();
 
-    /*
-    const handleLoginForm = async (e) =>
-    {
-        e.preventDefault(); //evita di ricaricare la pagina
-        const url = "http://localhost:80/login";
-        const email = emailInput.current.value;
-        let password = passwordInput.current.value;
-        password = sha3_512(password); //cifro la password
-        const corpo = {email: email, password: password, withCredentials: true}; //creo l'oggetto json da inviare al server
-        
-        //INVIO I DATI
-        const risposta = await axios.post(url, corpo);
-        const oggetto = JSON.parse(risposta.data);
-        if (!oggetto["isTuttoOk"]) //se c'è un errore lo comunico, altrimenti procedo
-        {
-            alert(oggetto["token"]);
-        }
-        else //se avviene con successo il login
-        {
-            alert("autenticazione avvenuta");
-            const link = window.location.href + 'home'; //rimando alla pagina principale di login
-            window.location.replace(link);
-            //axios.post("http://localhost:80/ciaoo", {email: email, password: password, withCredentials: true});
-        }
-    }
-    */
     const handleLoginForm = async (e) =>
     {
         e.preventDefault(); //evita di ricaricare la pagina
@@ -61,6 +35,7 @@ const Login = () => {
         //ottengo l'oggetto json dal server
         const risposta = await invio.json();
 
+        //guardo cosa è successo
         if (risposta.id)
         {
             alert("sei loggato");

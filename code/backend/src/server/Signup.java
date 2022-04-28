@@ -42,7 +42,6 @@ public class Signup implements HttpHandler {
     @Override
     public void handle(HttpExchange t) throws IOException {
         URI requestedUri = t.getRequestURI(); //prende l'uri contattato
-
         try
         {
             if ("POST".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/signup"))==0) //se sono con il post in /signup
@@ -65,24 +64,27 @@ public class Signup implements HttpHandler {
                 password = oggettoJson.getString("password");
                 professione = oggettoJson.getString("professione");
 
-
                 if (db.signup(nome, cognome, email, password, professione)) // eseguo la query
                 {
                     //return "inserito";
                     rCode = 200;
-                    response = "inserito";
+                    response = "{\"id\": \"registrato\"}";
                 }
                 else
                 {
                     //return "errore";
-                    rCode = 404;
-                    response = "errore";
+                    rCode = 200;
+                    response = "{\"errore\": \"Mail gia' in uso\"}";
                 }
+            }
+            else if ("OPTIONS".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/signup"))==0)
+            {
+                rCode = 200;
             }
             else
             {
                 rCode = 404;
-                response = "pagina non trovata";
+                response = "{\"errore\": \"Pagina non trovata\"}";
             }
 
 
@@ -100,22 +102,17 @@ public class Signup implements HttpHandler {
 
 
         //invio la risposta al client (gli header servono per le politiche di cors)
-        t.getResponseHeaders().add("Access-Control-Allow-Origin", "*");
+        String origine = t.getRequestHeaders().get("Origin").toString(); // l'origine serve per l'header sotto
+        origine = origine.substring(1, origine.length()-1);
+        t.getResponseHeaders().add("Access-Control-Allow-Origin", origine);
         t.getResponseHeaders().add("Access-Control-Allow-Headers","origin, content-type, accept, authorization");
         t.getResponseHeaders().add("Access-Control-Allow-Credentials", "true");
-        t.getResponseHeaders().add("Access-Control-Allow-Methods", "POST");
-        t.getResponseHeaders().add("Content-Type", "application/text"); //dico che è un json
+        t.getResponseHeaders().add("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
+        t.getResponseHeaders().add("Content-Type", "application/json"); //dico che la risposta sarà un json un json
 
         t.sendResponseHeaders(rCode, response.length());
         OutputStream os = t.getResponseBody(); //chiude la comunicazione
-        System.out.println("response: "+response);
-        System.out.println("response.getBytes(): "+response.getBytes().toString());
-        //os.write(response.getBytes());
         os.write(response.getBytes(StandardCharsets.UTF_8));
         os.close();
-
-        System.out.println("sciaooo");
     }
-
-
 }
