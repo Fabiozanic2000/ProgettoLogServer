@@ -1,7 +1,7 @@
 # 2022T1
 
 ## Heimdall: statistiche file di log http in modo semplificato tramite web app
-
+### Web app che permette di visualizzare tramite statistiche e grafici il contenuto di file di log generati da Apache web server. 
 # GRUPPO
 
 - Alex Caraffi, 147283, Project Owner 
