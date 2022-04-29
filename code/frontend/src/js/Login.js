@@ -18,31 +18,21 @@ const Login = () => {
         const email = emailInput.current.value; //prendo il valore dell'input text
         let password = passwordInput.current.value;
         password = sha3_512(password); //cifro la password
-        const corpo = {"email": email, "password": password}; //creo l'oggetto json da inviare al server
 
-        //INVIO I DATI 
-        const invio = await fetch(url, //invio i dati
-        {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            mode: 'cors',
-            method: "POST",
-            body: JSON.stringify(corpo)
-        });
-
-        //ottengo l'oggetto json dal server
-        const risposta = await invio.json();
+        const corpo = {email: email, password: password, withCredentials: true}; //creo l'oggetto json da inviare al server
+        
+        //INVIO I DATI
+        const risposta = await axios.post(url, corpo);
 
         //guardo cosa è successo
-        if (risposta.id)
+        if (risposta.data.id)
         {
-            alert("sei loggato");
+            alert("Autenticazione avvenuta con successo");
+            window.location.href = window.location.href + "home";
         }
         else
         {
-            alert(risposta.errore);
+            alert(risposta.data.errore);
         }
         
         

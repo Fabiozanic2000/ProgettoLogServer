@@ -2,8 +2,8 @@ import { sha3_512 } from 'js-sha3';
 import { useRef } from 'react';
 import '../css/Form.css';
 import '../css/Sfondo.css';
-//import axios from 'axios';
-//axios.defaults.withCredentials = true;
+import axios from 'axios';
+axios.defaults.withCredentials = true;
 
 const Signup = () => {
 
@@ -37,38 +37,25 @@ const Signup = () => {
         password = sha3_512(password); //cifro la password
 
         const corpo = {
-            "nome": nome,
-            "cognome": cognome,
-            "email": email, 
-            "password": password,
-            "professione": professione
+            nome: nome,
+            cognome: cognome,
+            email: email, 
+            password: password,
+            professione: professione,
+            withCredentials: true
         }; //creo l'oggetto json da inviare al server
 
-
         //INVIO I DATI
-        const invio = await fetch(url, //invio i dati
-        {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            mode: 'cors',
-            method: "POST",
-            body: JSON.stringify(corpo)
-        });
-
-
-        //ottengo l'oggetto json dal server
-        const risposta = await invio.json();
+        const risposta = await axios.post(url, corpo);
 
         //guardo cosa è successo
-        if (risposta.id)
+        if (risposta.data.id)
         {
             alert("Utente inserito correttamente");
         }
         else
         {
-            alert(risposta.errore);
+            alert(risposta.data.errore);
         }
     }
 

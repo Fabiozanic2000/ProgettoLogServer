@@ -6,35 +6,52 @@ import '../css/Home.css';
 import Log from './Log';
 import Spiegazione from './Spiegazione';
 import Grafici from './Grafici';
+import {useEffect} from 'react';
+import axios from 'axios';
+axios.defaults.withCredentials = true;
 
 const Home = () => {
+    useEffect(async () => {
+        const url = "http://localhost:9000/verifica"; //url al server java
+
+        const risposta = await axios.post(url);
+        if (!risposta.data.id)
+        {
+            window.location.href = window.location.href.replace("/home", "/");
+        }
+    });
+
     return ( 
         <div className="home">
             <NavbarLoggato />
             <h1>Benvenuto, Alex</h1>
             <table>
-                <tr>
-                    <td id='cellaFIltra'>
-                        <Filtra />
-                    </td>
-                    <td>
-                        <Mappa />
-                    </td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td id='cellaFIltra'>
+                            <Filtra />
+                        </td>
+                        <td>
+                            <Mappa />
+                        </td>
+                    </tr>
+                </tbody>
             </table>
             
             <table>
-                <tr>
-                    <td class="tabellaLog">
-                        <Log />
-                    </td>
-                    <td class="tabellaLog">
-                        <Spiegazione />
-                    </td>
-                    <td>
-                        <Grafici />
-                    </td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td className="tabellaLog">
+                            <Log />
+                        </td>
+                        <td className="tabellaLog">
+                            <Spiegazione />
+                        </td>
+                        <td>
+                            <Grafici />
+                        </td>
+                    </tr>
+                </tbody>
             </table>
             
         </div>

@@ -73,7 +73,7 @@ public class Login implements HttpHandler {
 
                 } else {
                     response = "{\"errore\": \"Email o password errati\"}";
-                    rCode = 403;
+                    rCode = 200;
                 }
             }
             else if ("OPTIONS".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/login"))==0) // per il preflight

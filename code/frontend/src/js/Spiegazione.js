@@ -1,7 +1,7 @@
 const Spiegazione = () => {
     return ( 
         <div className="log">
-            <p class="errore">
+            <p className="errore">
                 Questo pacchetto viene dalla Russia. In questo riquadro ci andranno
                 tutte le informazioni prese dal file di log relativo al pacchetto cliccato.
                 Quando se ne clicca un altro, il riquadro viene automaticamente cambiato e 

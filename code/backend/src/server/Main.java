@@ -26,8 +26,9 @@ public class Main {
 
         server.createContext("/login", new Login(db)); //metodo per eseguire login con cookie se esiste utente nel db
         server.createContext("/signup", new Signup(db)); //registrazione utente
-        server.createContext("/verifica", new RispostaPost()); //logged = true
+        server.createContext("/verifica", new Verifica()); //logged = true
         server.createContext("/home", new RispostaPost()); //Pagina di benvenuto
+        server.createContext("/logout", new Logout()); //Pagina di benvenuto
         server.createContext("/nero", new Pippo());
         server.setExecutor(null); //crea un esecutore di default
         server.start(); //fa partire il server
@@ -37,6 +38,9 @@ public class Main {
         @Override
         public void handle(HttpExchange t) throws IOException
         {
+
+            t.getResponseHeaders().set("Set-Cookie", "id=nero; HttpOnly; Expires=900");
+
             String response = "ciao";
             t.sendResponseHeaders(200, response.length());
             OutputStream os = t.getResponseBody(); //chiude la comunicazione

@@ -79,14 +79,16 @@ const Grafici = () => {
     return ( 
         <div className="grafici">
             <table id="tabellaGrafici">
-                <tr>
-                    <td class="cellaGrafici">
-                        <Pie data={datiGraficoComunicazioni} class="torta" options = {labels}/>; {/* grafico delle comunicazioni */}
-                    </td>
-                    <td class="cellaGrafici">
-                        <Pie data={datiGraficoPosti} class="torta" options = {labels}/>; {/* grafico delle comunicazioni */}
-                    </td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td className="cellaGrafici">
+                            <Pie data={datiGraficoComunicazioni} className="torta" options = {labels}/>; {/* grafico delle comunicazioni */}
+                        </td>
+                        <td className="cellaGrafici">
+                            <Pie data={datiGraficoPosti} className="torta" options = {labels}/>; {/* grafico delle comunicazioni */}
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     );
