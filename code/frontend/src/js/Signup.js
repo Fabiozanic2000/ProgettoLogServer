@@ -52,6 +52,21 @@ const Signup = () => {
         if (risposta.data.id)
         {
             alert("Utente inserito correttamente");
+
+            //faccio il login
+            const corpo2 = {email: email, password: password, withCredentials: true};
+            const url2 = "http://localhost:9000/login";
+            const risposta2 = await axios.post(url2, corpo2);
+            //guardo se è tutto ok
+            if (risposta.data.id)
+            {
+                const home = window.location.href.replace("/signup", "/");
+                window.location.href = home + "home";
+            }
+            else
+            {
+                alert(risposta.data.errore);
+            }
         }
         else
         {

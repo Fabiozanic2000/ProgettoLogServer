@@ -15,54 +15,6 @@ public class UtentiDb {
     public boolean signup(String nome, String cognome, String email, String password, String professione) throws SQLException {
         DbSignup signup = new DbSignup();
         return signup.signup(nome, cognome, email, password, professione, this);
-        /*
-        Connection c = connect();
-        PreparedStatement psr;
-        int tot = 0;
-        String sql = null;
-        try {
-            sql = "select count(*) as tot from user where email=?";
-            psr = c.prepareStatement(sql);
-            psr.setString(1, email);
-            psr.execute();
-            ResultSet rs = psr.getResultSet();
-            tot = -1;
-            while (rs.next()) {
-                tot = rs.getInt("tot");
-                // System.out.print(tot);
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-
-        if (tot == 0) {
-            System.out.println("Sono vicino al try");
-            try {
-                sql = "insert into user (nome, cognome, email, password, professione) VALUES (?, ?, ?, ?, ?)";
-                PreparedStatement pstmt = c.prepareStatement(sql);
-                pstmt.setString(1, nome);
-                pstmt.setString(2, cognome);
-                pstmt.setString(3, email);
-                pstmt.setString(4, password);
-                pstmt.setString(5, professione);
-                pstmt.executeUpdate();
-                return true;
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-                return false;
-            } finally {
-                try {
-                    c.close();
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                }
-            }
-
-        }
-        c.close();
-        return false;
-
-         */
     }
 
     /**
@@ -155,5 +107,10 @@ public class UtentiDb {
     public int login(String email, String password) throws SQLException {
         DbLogin login = new DbLogin();
         return login.login(email, password, this);
+    }
+
+    public String verifica (String id) throws SQLException {
+        DbVerifica verifica = new DbVerifica();
+        return verifica.verifica(this, id);
     }
 }
