@@ -8,23 +8,29 @@ import Spiegazione from './Spiegazione';
 import Grafici from './Grafici';
 import {useEffect} from 'react';
 import axios from 'axios';
+import {useState} from 'react';
 axios.defaults.withCredentials = true;
 
 const Home = () => {
+    const [nome, setNome] = useState('');
     useEffect(async () => {
         const url = "http://localhost:9000/verifica"; //url al server java
 
         const risposta = await axios.post(url);
-        if (!risposta.data.id)
+        if (!risposta.data.nome)
         {
             window.location.href = window.location.href.replace("/home", "/");
+        }
+        else
+        {
+            setNome(risposta.data.nome);
         }
     });
 
     return ( 
         <div className="home">
             <NavbarLoggato />
-            <h1>Benvenuto, Alex</h1>
+            <h1>Benvenuto, {nome}</h1>
             <table>
                 <tbody>
                     <tr>

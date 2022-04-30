@@ -26,7 +26,7 @@ public class Main {
 
         server.createContext("/login", new Login(db)); //metodo per eseguire login con cookie se esiste utente nel db
         server.createContext("/signup", new Signup(db)); //registrazione utente
-        server.createContext("/verifica", new Verifica()); //logged = true
+        server.createContext("/verifica", new Verifica(db)); //logged = true
         server.createContext("/home", new RispostaPost()); //Pagina di benvenuto
         server.createContext("/logout", new Logout()); //Pagina di benvenuto
         server.createContext("/nero", new Pippo());

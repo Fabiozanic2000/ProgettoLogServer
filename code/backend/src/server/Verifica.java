@@ -7,10 +7,20 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 
+import db.UtentiDb;
+
 public class Verifica implements HttpHandler {
 
-    private int rCode = 0;
-    private String response = "";
+    private int rCode;
+    private String response;
+    private UtentiDb db;
+
+    public Verifica (UtentiDb db)
+    {
+        this.db = db;
+        response = "";
+        rCode = 0;
+    }
 
     @Override
     public void handle(HttpExchange t) throws IOException {
@@ -34,7 +44,8 @@ public class Verifica implements HttpHandler {
                     }
                     else
                     {
-                        response = "{\"id\": \"loggato\"}";
+                        String nome = db.verifica(id);
+                        response = "{\"nome\": \""+nome+"\"}";
                     }
                 }
 
