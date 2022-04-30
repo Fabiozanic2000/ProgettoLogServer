@@ -1,0 +1,8 @@
+.idea
+.DS*
+code/.DS*
+code/frontend/node_modules/
+code/backend/out/
+code/backend/.idea
+code/backend/Unnamed.run.xml
+code/backend/server.iml
