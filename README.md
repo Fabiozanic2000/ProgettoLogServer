@@ -37,3 +37,11 @@ Installa tutti i moduli necessari per eseguire i file
 #### `npm start`
 Esegue l'applicazione React. Apri [http://localhost:3000](http://localhost:3000) nel browser.
 Se non funziona, lanciarlo da amministratore
+
+## Backend
+
+### Per eseguire questo servizio è necessario avere una versione di JDK 15 o superiore
+
+Aprire la root del progetto da terminale e lanciare il seguente comando:
+
+#### `java -jar 2022t1.jar`
