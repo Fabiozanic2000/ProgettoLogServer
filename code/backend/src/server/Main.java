@@ -20,7 +20,8 @@ public class Main {
 
 
         HttpServer server = HttpServer.create(new InetSocketAddress(9000), 0); //crea il server in ascolto sull porta 9000
-        System.out.println("Server listening on port 9000");
+        System.out
+                .println("Server listening on port 9000");
 
         //UtentiDb db = new UtentiDb("utentidb");
 
@@ -36,16 +37,16 @@ public class Main {
 
     static class Pippo  implements HttpHandler {
         @Override
-        public void handle(HttpExchange t) throws IOException
-        {
-
-            t.getResponseHeaders().set("Set-Cookie", "id=nero; HttpOnly; Expires=900");
+        public void handle(HttpExchange t) throws IOException {
+            t.getResponseHeaders()
+                    .set("Set-Cookie", "id=nero; HttpOnly; Expires=900");
 
             String response = "ciao";
             t.sendResponseHeaders(200, response.length());
             OutputStream os = t.getResponseBody(); //chiude la comunicazione
             //os.write(response.getBytes());
-            os.write(response.getBytes(StandardCharsets.UTF_8));
+            os.write(response
+                    .getBytes(StandardCharsets.UTF_8));
             os.close();
         }
     }
@@ -55,14 +56,17 @@ public class Main {
 
         @Override
         public void handle(HttpExchange t) throws IOException {
-            System.out.println("Sono nella classe RispostaPost");
+            System.out
+                    .println("Sono nella classe RispostaPost");
             URI requestedUri = t.getRequestURI(); //prende l'uri passato
-            System.out.println(requestedUri);
+            System.out
+                    .println(requestedUri);
             //String metodo = t.getRequestMethod(); //ottengo il metodo se è post o get
             String response = "";
             rCode = 0;
             if ("GET".equals(t.getRequestMethod())) {
-                System.out.println("Invocato metodo get, ERRORE");
+                System.out
+                        .println("Invocato metodo get, ERRORE");
                 rCode = 404;
                 response = errore();
             } else if ("POST".equals(t.getRequestMethod())) {
@@ -75,7 +79,8 @@ public class Main {
                         response = "/home";
                         rCode = 200;
                     } else {
-                        System.out.println("URI non trovato");
+                        System.out
+                                .println("URI non trovato");
                         rCode = 404;
                         response = errore();
                     }
@@ -87,10 +92,14 @@ public class Main {
 
 
             // serve per far comunicare client e server
-            t.getResponseHeaders().add("Access-Control-Allow-Origin", "*");
-            t.getResponseHeaders().add("Access-Control-Allow-Headers","origin, content-type, accept, authorization");
-            t.getResponseHeaders().add("Access-Control-Allow-Credentials", "true");
-            t.getResponseHeaders().add("Access-Control-Allow-Methods", "POST");
+            t.getResponseHeaders()
+                    .add("Access-Control-Allow-Origin", "*");
+            t.getResponseHeaders()
+                    .add("Access-Control-Allow-Headers","origin, content-type, accept, authorization");
+            t.getResponseHeaders()
+                    .add("Access-Control-Allow-Credentials", "true");
+            t.getResponseHeaders()
+                    .add("Access-Control-Allow-Methods", "POST");
 
             t.sendResponseHeaders(rCode, response.length());
             OutputStream os = t.getResponseBody(); //chiude la comunicazione
