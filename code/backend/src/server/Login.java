@@ -29,7 +29,7 @@ public class Login implements HttpHandler {
     public Login (UtentiDb db)
     {
         this.db = db;
-        email = "";
+        email = "abaco";
         password = "";
         response = "";
         rCode = 0;
