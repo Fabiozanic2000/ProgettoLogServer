@@ -1,3 +1,8 @@
 out/
 code/frontend/node_modules
 .DS*
+code/.DS*
+code/backend/out/
+code/backend/.idea
+code/backend/Unnamed.run.xml
+code/backend/server.iml
