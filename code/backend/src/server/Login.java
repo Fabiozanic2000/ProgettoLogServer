@@ -42,8 +42,10 @@ public class Login implements HttpHandler {
         String response = "";
         int rCode = 0;
         URI requestedUri = t.getRequestURI(); //prende l'uri contattato
-        try {
-            if ("POST".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/login"))==0) { //se sono con il post in /login
+        try
+        {
+            if ("POST".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/login"))==0) //se sono con il post in /login
+            {
                 //leggo il body (un oggetto json)
                 InputStream input = t.getRequestBody();
                 StringBuilder stringBuilder = new StringBuilder();
@@ -60,7 +62,8 @@ public class Login implements HttpHandler {
                 password = oggettoJson.getString("password");
 
                 //calcolo l'eventuale id della persona loggata
-                int id = db.login(email, password);
+                int id;
+                id = db.login(email, password);
 
                 if (id != -1) { // se il login è andato a buon fine setto il cookie e restituisco l'id
                     t.getResponseHeaders()
@@ -93,9 +96,7 @@ public class Login implements HttpHandler {
         }
 
         //invio la risposta al client (gli header servono per le politiche di cors)
-        String origine = t.getRequestHeaders()
-                .get("Origin")
-                .toString(); // l'origine serve per l'header sotto
+        String origine = t.getRequestHeaders().get("Origin").toString(); // l'origine serve per l'header sotto
         origine = origine.substring(1, origine.length()-1);
         t.getResponseHeaders()
                 .add("Access-Control-Allow-Origin", origine);
