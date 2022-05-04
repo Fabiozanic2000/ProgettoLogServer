@@ -11,7 +11,7 @@ import db.UtentiDb;
 
 public class Verifica implements HttpHandler {
 
-    private int rCode;
+    private Integer rCode;
     private String response;
     private UtentiDb db;
 
@@ -25,25 +25,20 @@ public class Verifica implements HttpHandler {
     @Override
     public void handle(HttpExchange t) throws IOException {
         URI requestedUri = t.getRequestURI(); //prende l'uri contattato
-        try
-        {
-            if ("POST".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/verifica"))==0) //se sono con il post in /verifica
-            {
-                String cookie = t.getRequestHeaders().getFirst("Cookie"); //prendo il cookie in formato chiave=valore
-                if (cookie == null)
-                {
+        try {
+            if ("POST".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/verifica"))==0) { //se sono con il post in /verifica
+                String cookie = t.getRequestHeaders()
+                        .getFirst("Cookie"); //prendo il cookie in formato chiave=valore
+                if (cookie == null) {
                     response = "";
                 }
-                else
-                {
+                else {
                     String id = cookie.substring(3, cookie.length()); //estraggo l'id del cookie
 
-                    if (id.equals("-1"))
-                    {
+                    if (id.equals("-1")) {
                         response = "";
                     }
-                    else
-                    {
+                    else {
                         String nome = db.verifica(id);
                         response = "{\"nome\": \""+nome+"\"}";
                     }
@@ -54,12 +49,10 @@ public class Verifica implements HttpHandler {
                 rCode = 200;
 
             }
-            else if ("OPTIONS".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/verifica"))==0) //se è il preflight
-            {
+            else if ("OPTIONS".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/verifica"))==0) { //se è il preflight
                 rCode = 200;
             }
-            else
-            {
+            else {
                 rCode = 404;
                 response = "{\"errore\": \"Pagina non trovata\"}";
             }
@@ -68,19 +61,25 @@ public class Verifica implements HttpHandler {
             e.printStackTrace();
             System.exit(1);
         }
-        catch (Exception e) //errore nella lettura del body della request
-        {
+        catch (Exception e) { //errore nella lettura del body della request
             e.printStackTrace();
         }
 
         //invio la risposta al client (gli header servono per le politiche di cors)
-        String origine = t.getRequestHeaders().get("Origin").toString(); // l'origine serve per l'header sotto
+        String origine = t.getRequestHeaders()
+                .get("Origin")
+                .toString(); // l'origine serve per l'header sotto
         origine = origine.substring(1, origine.length()-1);
-        t.getResponseHeaders().add("Access-Control-Allow-Origin", origine);
-        t.getResponseHeaders().add("Access-Control-Allow-Headers","origin, content-type, accept, authorization");
-        t.getResponseHeaders().add("Access-Control-Allow-Credentials", "true");
-        t.getResponseHeaders().add("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
-        t.getResponseHeaders().add("Content-Type", "application/json"); //dico che la risposta sarà un json un json
+        t.getResponseHeaders()
+                .add("Access-Control-Allow-Origin", origine);
+        t.getResponseHeaders()
+                .add("Access-Control-Allow-Headers","origin, content-type, accept, authorization");
+        t.getResponseHeaders()
+                .add("Access-Control-Allow-Credentials", "true");
+        t.getResponseHeaders()
+                .add("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
+        t.getResponseHeaders()
+                .add("Content-Type", "application/json"); //dico che la risposta sarà un json un json
 
         t.sendResponseHeaders(rCode, response.length());
         OutputStream os = t.getResponseBody(); //chiude la comunicazione

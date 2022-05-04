@@ -36,9 +36,7 @@ public class Main {
 
     static class Pippo  implements HttpHandler {
         @Override
-        public void handle(HttpExchange t) throws IOException
-        {
-
+        public void handle(HttpExchange t) throws IOException {
             t.getResponseHeaders().set("Set-Cookie", "id=nero; HttpOnly; Expires=900");
 
             String response = "ciao";
@@ -51,18 +49,21 @@ public class Main {
     }
 
     static class RispostaPost implements HttpHandler {
-        int rCode = 0;
+        Integer rCode = 0;
 
         @Override
         public void handle(HttpExchange t) throws IOException {
-            System.out.println("Sono nella classe RispostaPost");
+            System.out
+                    .println("Sono nella classe RispostaPost");
             URI requestedUri = t.getRequestURI(); //prende l'uri passato
-            System.out.println(requestedUri);
+            System.out
+                    .println(requestedUri);
             //String metodo = t.getRequestMethod(); //ottengo il metodo se è post o get
             String response = "";
             rCode = 0;
             if ("GET".equals(t.getRequestMethod())) {
-                System.out.println("Invocato metodo get, ERRORE");
+                System.out
+                        .println("Invocato metodo get, ERRORE");
                 rCode = 404;
                 response = errore();
             } else if ("POST".equals(t.getRequestMethod())) {
@@ -75,7 +76,8 @@ public class Main {
                         response = "/home";
                         rCode = 200;
                     } else {
-                        System.out.println("URI non trovato");
+                        System.out
+                                .println("URI non trovato");
                         rCode = 404;
                         response = errore();
                     }
