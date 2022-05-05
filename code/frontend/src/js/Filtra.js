@@ -28,6 +28,3 @@ const Filtra = () => {
 }
  
 export default Filtra;
-<div className="filtra">
-
-</div>
