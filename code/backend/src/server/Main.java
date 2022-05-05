@@ -52,7 +52,7 @@ public class Main {
     }
 
     static class RispostaPost implements HttpHandler {
-        int rCode = 0;
+        Integer rCode = 0;
 
         @Override
         public void handle(HttpExchange t) throws IOException {

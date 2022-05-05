@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 public class Signup implements HttpHandler {
     private UtentiDb db;
-    private int rCode;
+    private Integer rCode;
     private String response;
 
     private String nome;
@@ -43,7 +43,7 @@ public class Signup implements HttpHandler {
     public void handle(HttpExchange t) throws IOException {
         URI requestedUri = t.getRequestURI(); //prende l'uri contattato
         try {
-            if ("POST".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/signup"))==0) {//se sono con il post in /signup
+            if ("POST".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/signup"))==0) { //se sono con il post in /signup
                 //leggo il body (un oggetto json)
                 InputStream input = t.getRequestBody();
                 StringBuilder stringBuilder = new StringBuilder();
