@@ -71,18 +71,18 @@ public class Dblog {
             Statement stmt = c.createStatement();
             String sql = "CREATE TABLE IF NOT EXISTS logfile " +
                     "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    "request TEXT NOT NULL, " +
-                    "auth TEXT NOT NULL," +
-                    "ident TEXT NOT NULL," +
-                    "httpmethod TEXT NOT NULL," +
-                    "time TEXT NOT NULL," +
-                    "response INT NOT NULL," +
-                    "bytes INT NOT NULL, " +
-                    "clientip TEXT NOT NULL," +
-                    "rawrequest TEXT NOT NULL," +
-                    "data TEXT NOT NULL, " +
-                    "timestamp TEXT NOT NULL, " +
-                    "paese TEXT NOT NULL)";
+                    "request TEXT , " +
+                    "auth TEXT," +
+                    "ident TEXT," +
+                    "httpmethod TEXT," +
+                    "time TEXT," +
+                    "response INT," +
+                    "bytes INT, " +
+                    "clientip TEXT," +
+                    "rawrequest TEXT ," +
+                    "data TEXT, " +
+                    "timestamp TEXT , " +
+                    "paese TEXT)";
 
             stmt.executeUpdate(sql);
             stmt.close();
