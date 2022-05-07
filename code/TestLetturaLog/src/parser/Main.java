@@ -24,7 +24,7 @@ public class Main {
 
         //Classe per geolocalizzare indirizzo ip
         GeoIp ipp = new GeoIp();
-
+        Azzera azzera = new Azzera();
         Dblog db = new Dblog("dblog");
         db.checkCreateDb();
 
@@ -58,7 +58,7 @@ public class Main {
                 //System.out.print(capture.toString() + "  ");
 
                 //prendo l'ip della riga
-                String clientip = capture.get("clientip").toString();
+                /*String clientip = capture.get("clientip").toString();
                 String request = capture.get("request").toString();
                 String auth = capture.get("auth").toString();
                 String ident = capture.get("ident").toString();
@@ -67,7 +67,7 @@ public class Main {
                 int response = Integer.parseInt(capture.get("response").toString());
                 int bytes = Integer.parseInt(capture.get("bytes").toString());
                 String timestamp = capture.get("timestamp").toString();
-                String paese = ipp.getCountry(clientip);
+                String paese = ipp.getCountry(clientip);*/
                 String data = capture.get("MONTHDAY").toString() + "." + capture.get("MONTH").toString() + "." + capture.get("YEAR").toString();
 
 
@@ -77,13 +77,23 @@ public class Main {
                 else
                     rawrequest = capture.get("rawrequest").toString();
 
-                db.insert(request, auth, ident, httpmethod, time, response, bytes, clientip, rawrequest, data, timestamp, paese);
+                /*db.insert(capture.get("request").toString(), capture.get("auth").toString(), capture.get("ident").toString(),
+                        capture.get("verb").toString(), capture.get("TIME").toString(), Integer.parseInt(capture.get("response").toString()),
+                        Integer.parseInt(capture.get("bytes").toString()), capture.get("clientip").toString(), rawrequest, data,
+                        capture.get("timestamp").toString(), ipp.getCountry(capture.get("clientip").toString()));
+                */
+                //Chiamo la classe per azzerare il file così controllo se l'ho già letto
 
-                //System.out.println(data);
+
             }
         }
         System.out.println("Ho eseguito l'inserimento dei dati nel db ");
+        for (File file : filesList){
+
+            azzera.azzera(file);
+        }
     }
+
 
 
     //System.out.println(ipp.getCountry((String) capture.get("clientip")));*/
