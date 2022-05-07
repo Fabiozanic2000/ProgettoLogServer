@@ -45,9 +45,9 @@ public class Main {
 
 
             //stampa informazioni sul file
-            System.out.println("File name: " + file.getName());
-            System.out.println("File path: " + file.getAbsolutePath());
-            System.out.println("Size :" + file.getTotalSpace());
+            //System.out.println("File name: " + file.getName());
+            //System.out.println("File path: " + file.getAbsolutePath());
+            //System.out.println("Size :" + file.getTotalSpace());
 
             //scanner del file
             sc = new Scanner(file);
@@ -60,7 +60,7 @@ public class Main {
                 //fa il match della stringa in input con il pattern da matchare
                 Match gm = grok.match(input);
                 Map<String, Object> capture = gm.capture();
-                System.out.print(capture.toString() + "  ");
+                //System.out.print(capture.toString() + "  ");
 
                 //prendo l'ip della riga
                 /*String clientip = capture.get("clientip").toString();

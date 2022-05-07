@@ -116,10 +116,10 @@ public class Dblog {
         return login.login(email, password, this);
     }
     */
-    public boolean insert(String request, String auth, String ident, String httpmethod, String time, int response,
+    /*public boolean insert(String request, String auth, String ident, String httpmethod, String time, int response,
                           int bytes, String clientip, String rawrequest, String data, String timestamp, String paese) throws SQLException {
         DbInsert dbInsert = new DbInsert();
         return dbInsert.insert(request, auth, ident, httpmethod, time, response, bytes, clientip, rawrequest, data, timestamp, paese, this);
-    }
+    }*/
 }
 
