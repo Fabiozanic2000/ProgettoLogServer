@@ -23,7 +23,7 @@ public class Main {
         final Grok grok = grokCompiler.compile("%{IPORHOST:clientip} %{USER:ident} %{USER:auth} \\[%{HTTPDATE:timestamp}\\] \"(?:%{WORD:verb} %{NOTSPACE:request}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})\" %{NUMBER:response} (?:%{NUMBER:bytes}|-)");
 
         //Classe per geolocalizzare indirizzo ip
-        GeoIp ipp = new GeoIp();
+        GeoIp geoip = new GeoIp();
         Azzera azzera = new Azzera();
         Dblog db = new Dblog("dblog");
         db.checkCreateDb();
@@ -36,8 +36,13 @@ public class Main {
         Scanner sc;
 
         for (File file : filesList) { //leggo ogni file una riga alla volta
-            if (file.getName().equals("gnetshop.err")) //evito il file degli errori perchè non lo sappiamo ancora parsare
+            if (file.getName().contains(".err")) {
+                ErrorLogParser elp = new ErrorLogParser();
+                elp.parse(file, geoip);
+
                 continue;
+            }
+
 
             //stampa informazioni sul file
             System.out.println("File name: " + file.getName());
@@ -55,7 +60,7 @@ public class Main {
                 //fa il match della stringa in input con il pattern da matchare
                 Match gm = grok.match(input);
                 Map<String, Object> capture = gm.capture();
-                //System.out.print(capture.toString() + "  ");
+                System.out.print(capture.toString() + "  ");
 
                 //prendo l'ip della riga
                 /*String clientip = capture.get("clientip").toString();
@@ -68,7 +73,7 @@ public class Main {
                 int bytes = Integer.parseInt(capture.get("bytes").toString());
                 String timestamp = capture.get("timestamp").toString();
                 String paese = ipp.getCountry(clientip);*/
-                String data = capture.get("MONTHDAY").toString() + "." + capture.get("MONTH").toString() + "." + capture.get("YEAR").toString();
+                //String data = capture.get("MONTHDAY").toString() + "." + capture.get("MONTH").toString() + "." + capture.get("YEAR").toString();
 
 
                 String rawrequest;
@@ -80,7 +85,7 @@ public class Main {
                 /*db.insert(capture.get("request").toString(), capture.get("auth").toString(), capture.get("ident").toString(),
                         capture.get("verb").toString(), capture.get("TIME").toString(), Integer.parseInt(capture.get("response").toString()),
                         Integer.parseInt(capture.get("bytes").toString()), capture.get("clientip").toString(), rawrequest, data,
-                        capture.get("timestamp").toString(), ipp.getCountry(capture.get("clientip").toString()));
+                        capture.get("timestamp").toString(), geoip.getCountry(capture.get("clientip").toString()));
                 */
                 //Chiamo la classe per azzerare il file così controllo se l'ho già letto
 
@@ -88,12 +93,11 @@ public class Main {
             }
         }
         System.out.println("Ho eseguito l'inserimento dei dati nel db ");
-        for (File file : filesList){
-
+        /*for (File file : filesList){
+            //Chiamo il metodo per azzerare i file che viene passato come parametro
             azzera.azzera(file);
-        }
+        }*/
     }
-
 
 
     //System.out.println(ipp.getCountry((String) capture.get("clientip")));*/
