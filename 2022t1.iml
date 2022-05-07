@@ -9,5 +9,7 @@
     <orderEntry type="jdk" jdkName="18" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="io.krakens.java.grok1" level="project" />
+    <orderEntry type="library" name="maxmind.geoip21" level="project" />
   </component>
 </module>

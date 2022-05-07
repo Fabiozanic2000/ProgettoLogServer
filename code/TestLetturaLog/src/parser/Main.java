@@ -9,6 +9,7 @@ import io.krakens.grok.api.Match;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.sql.SQLOutput;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -29,7 +30,9 @@ public class Main {
         db.checkCreateDb();
 
         //leggo tutti i file della cartella
-        File directoryPath = new File(".\\log_file");
+        File directoryPath = new File("." + File.separator + "code" + File.separator + "TestLetturaLog" + File.separator + "log_file");
+        System.out.println(directoryPath.getAbsolutePath());
+
         //li metto in un array e li leggo uno per uno
         File[] filesList = directoryPath.listFiles();
         System.out.println("List of files and directories in the specified directory:");
@@ -73,7 +76,7 @@ public class Main {
                 int bytes = Integer.parseInt(capture.get("bytes").toString());
                 String timestamp = capture.get("timestamp").toString();
                 String paese = ipp.getCountry(clientip);*/
-                //String data = capture.get("MONTHDAY").toString() + "." + capture.get("MONTH").toString() + "." + capture.get("YEAR").toString();
+                String data = capture.get("MONTHDAY").toString() + "." + capture.get("MONTH").toString() + "." + capture.get("YEAR").toString();
 
 
                 String rawrequest;
@@ -82,11 +85,11 @@ public class Main {
                 else
                     rawrequest = capture.get("rawrequest").toString();
 
-                /*db.insert(capture.get("request").toString(), capture.get("auth").toString(), capture.get("ident").toString(),
+                db.insert(capture.get("request").toString(), capture.get("auth").toString(), capture.get("ident").toString(),
                         capture.get("verb").toString(), capture.get("TIME").toString(), Integer.parseInt(capture.get("response").toString()),
                         Integer.parseInt(capture.get("bytes").toString()), capture.get("clientip").toString(), rawrequest, data,
                         capture.get("timestamp").toString(), geoip.getCountry(capture.get("clientip").toString()));
-                */
+
                 //Chiamo la classe per azzerare il file così controllo se l'ho già letto
 
 

@@ -17,7 +17,7 @@ public class GeoIp {
         if (ip.equals("127.0.0.1")) //guardo che non sia in locale
             return "localhost";
 
-        File database = new File("GeoLite2-City.mmdb"); //legge il database per capire da dove vengono gli ip
+        File database = new File("." + File.separator + "code" + File.separator + "TestLetturaLog" + File.separator + "GeoLite2-City.mmdb"); //legge il database per capire da dove vengono gli ip
 
         DatabaseReader reader = new DatabaseReader.Builder(database).build(); //lettore del db (forse)
 
