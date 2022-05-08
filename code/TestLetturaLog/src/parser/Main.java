@@ -17,6 +17,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, GeoIp2Exception, SQLException {
         // creo il parser dei file di log
+        long startTime = System.nanoTime();
         GrokCompiler grokCompiler = GrokCompiler.newInstance();
         grokCompiler.registerDefaultPatterns();
 
@@ -100,6 +101,9 @@ public class Main {
             //Chiamo il metodo per azzerare i file che viene passato come parametro
             azzera.azzera(file);
         }*/
+        long stopTime = System.nanoTime();
+        System.out.print("Tempo in nanosecondi");
+        System.out.println(stopTime-startTime);
     }
 
 
