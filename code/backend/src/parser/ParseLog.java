@@ -38,7 +38,7 @@ public class ParseLog extends TimerTask {
         File[] filesList = directoryPath.listFiles();
         System.out.println("List of files and directories in the specified directory:");
         Scanner sc;
-
+        System.out.println("Inizio a parsare i file di log");
         for (File file : filesList) { //leggo ogni file una riga alla volta
             if (file.getName().contains(".err")) {
                 ErrorLogParser elp = new ErrorLogParser();
