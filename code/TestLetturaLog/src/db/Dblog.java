@@ -22,11 +22,13 @@ public class Dblog {
         } else {
             try {
                 //ottengo il percorso per il database
-                //String percorso = this.getPercorso();
+                String percorso = this.getPercorso();
                 Class.forName("org.sqlite.JDBC");
-                Connection c = getConnection(
-                        "jdbc:sqlite:" + DBNAME);
+                //Connection c = getConnection("jdbc:sqlite:" + DBNAME);
                 //Connection c = getConnection("jdbc:sqlite:"+File.separator+DBNAME);
+                Connection c = getConnection(
+                        "jdbc:sqlite:" + percorso + File.separator + "database" + File.separator +
+                                DBNAME);
                 // se non esiste, creo la tabella degli utenti
                 createTableUser(c);
             } catch (Exception e) { // eventuali errori
@@ -45,10 +47,10 @@ public class Dblog {
         Connection c = null;
         try {
             // ottiene il percorso al db
-            //String percorso = this.getPercorso();
+            String percorso = this.getPercorso();
             Class.forName("org.sqlite.JDBC");
-            //c = getConnection("jdbc:sqlite:" + percorso + File.separator + "database" + File.separator + DBNAME);
-            c = getConnection("jdbc:sqlite:" + DBNAME);
+            c = getConnection("jdbc:sqlite:" + percorso + File.separator + "database" + File.separator + DBNAME);
+           // c = getConnection("jdbc:sqlite:" + DBNAME);
         } catch (Exception e) {
             // eventuali errori
             System.exit(0);
