@@ -12,6 +12,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
+import java.util.Timer;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -33,6 +34,8 @@ public class Main {
         server.createContext("/nero", new Pippo());
         server.setExecutor(null); //crea un esecutore di default
         server.start(); //fa partire il server
+        new Timer().scheduleAtFixedRate(new StampaTask(), 0, 100000); //100000 millis => 1.67 minuti
+        Thread.sleep(100000); //stesso commento di sopra
     }
 
     static class Pippo  implements HttpHandler {
