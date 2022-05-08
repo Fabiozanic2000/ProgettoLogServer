@@ -40,6 +40,10 @@ public class ParseLog extends TimerTask {
         Scanner sc;
         System.out.println("Inizio a parsare i file di log");
         for (File file : filesList) { //leggo ogni file una riga alla volta
+
+            if (!file.exists())
+                continue;
+
             if (file.getName().contains(".err")) {
                 ErrorLogParser elp = new ErrorLogParser();
                 try {
@@ -54,6 +58,7 @@ public class ParseLog extends TimerTask {
 
                 continue;
             }
+            //if (file.)
 
             //stampa informazioni sul file
             //System.out.println("File name: " + file.getName());
@@ -104,10 +109,16 @@ public class ParseLog extends TimerTask {
             }
         }
         System.out.println("Ho eseguito l'inserimento dei dati nel db ");
-        /*for (File file : filesList){
+        System.out.println("Inizio ad azzerare i file ");
+        for (File file : filesList){
             //Chiamo il metodo per azzerare i file che viene passato come parametro
-            azzera.azzera(file);
-        }*/
+            try {
+                azzera.azzera(file);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        System.out.println("Ho finito di azzeerare i file ");
     }
 }
 
