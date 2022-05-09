@@ -19,7 +19,7 @@ const Home = () => {
         const risposta = await axios.post(url);
         if (!risposta.data.nome)
         {
-            window.location.href = window.location.href.replace("/home", "/");
+            //window.location.href = window.location.href.replace("/home", "/");
         }
         else
         {
