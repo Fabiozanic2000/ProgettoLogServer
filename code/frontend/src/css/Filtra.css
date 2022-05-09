@@ -1,11 +1,10 @@
-.filtra
-{
+.filtra {
     text-align: center;
-    width: 60%;
+    width: 40%;
+    margin:auto;
 }
 
-#bottoneFiltra
-{
+#bottoneFiltra {
     background-color: gold;
     height: 40px;
     width: 20%;
@@ -13,12 +12,14 @@
     font-size: 15px;
 }
 
-#bottoneFiltra:hover
-{
+#bottoneFiltra:hover {
     background-color: red;
 }
 
-h2
-{
+h2 {
     color: white;
+}
+
+.tabellaLog {
+    width: 25%;
 }
