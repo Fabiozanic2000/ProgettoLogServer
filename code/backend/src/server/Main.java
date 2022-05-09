@@ -11,7 +11,6 @@ import java.net.InetSocketAddress;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
-import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -30,12 +29,12 @@ public class Main {
         server.createContext("/verifica", new Verifica(db)); //logged = true
         server.createContext("/home", new RispostaPost()); //Pagina di benvenuto
         server.createContext("/logout", new Logout()); //Pagina di benvenuto
-        server.createContext("/nero", new Pippo());
+        server.createContext("/nero", new Prova());
         server.setExecutor(null); //crea un esecutore di default
         server.start(); //fa partire il server
     }
 
-    static class Pippo  implements HttpHandler {
+    static class Prova  implements HttpHandler {
         @Override
         public void handle(HttpExchange t) throws IOException {
             t.getResponseHeaders()

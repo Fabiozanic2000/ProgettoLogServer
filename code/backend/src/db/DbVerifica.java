@@ -28,7 +28,8 @@ public class DbVerifica {
             try {
                 con.close();
             } catch (SQLException e) {
-                System.out.println(e.toString());
+                System.out
+                        .println(e.toString());
             }
         }
         return nome_cognome;

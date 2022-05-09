@@ -23,7 +23,8 @@ public class UtentiDb {
     public void checkCreateDb() {
         File file = new File(DBNAME);
         if (file.exists()) {
-            System.out.println("Il database esiste");
+            System.out
+                    .println("Il database esiste");
         } else {
             try {
                 // ottengo il percorso per il database
@@ -35,7 +36,8 @@ public class UtentiDb {
                 // se non esiste, creo la tabella degli utenti
                 createTableUser(c);
             } catch (Exception e) { // eventuali errori
-                System.err.println(e.getClass().getName() + ": " + e.getMessage());
+                System.err
+                        .println(e.getClass().getName() + ": " + e.getMessage());
                 System.exit(0);
             }
         }
