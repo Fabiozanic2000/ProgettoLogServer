@@ -81,7 +81,7 @@ public class ParseLog extends TimerTask {
                 Map<String, Object> capture = gm.capture();
                 //System.out.print(capture.toString() + "  ");
 
-                String data = capture.get("MONTHDAY").toString() + "" + capture.get("MONTH").toString() + "." + capture.get("YEAR").toString();
+                String data = capture.get("MONTHDAY").toString() + "/" + capture.get("MONTH").toString() + "/" + capture.get("YEAR").toString();
 
                 String rawrequest;
                 if (capture.get("rawrequest") == null)
