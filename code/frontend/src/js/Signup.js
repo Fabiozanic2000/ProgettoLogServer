@@ -1,6 +1,7 @@
 import { sha3_512 } from 'js-sha3';
 import { useRef } from 'react';
 import {useEffect} from 'react';
+import {useState} from 'react';
 import '../css/Form.css';
 import '../css/Sfondo.css';
 import axios from 'axios';
@@ -8,13 +9,18 @@ axios.defaults.withCredentials = true;
 
 const Signup = (props) => {
 
+    const [titolo, setTitolo] = useState('');
+
     useEffect(async () => { //una volta caricata la pagina
-        if (props.professione == "cliente") // se sono nella signup non faccio niente
+        if (props.professione === "cliente") {// se sono nella signup non faccio niente
+            setTitolo("Registrati come cliente");
             return;
+        }
+        setTitolo("Registra un nuovo tecnico");
 
         const url = "http://localhost:9000/verifica"; //url al server java
         const risposta = await axios.post(url);
-        if (risposta.data.professione != "admin") { // se non sono admin non posso accedere
+        if (risposta.data.professione !== "admin") { // se non sono admin non posso accedere
         
             window.location.href = "http://localhost:3000/home";
         }
@@ -60,7 +66,7 @@ const Signup = (props) => {
         if (risposta.data.id) {
             alert("Utente inserito correttamente");
 
-            if (professione != "cliente") //se non è un cliente allora non eseguo il login
+            if (professione !== "cliente") //se non è un cliente allora non eseguo il login
                 return;
             
             //faccio il login
@@ -82,7 +88,7 @@ const Signup = (props) => {
 
     return ( 
         <div className="divSignup">
-            <h1>Signup</h1>
+            <h1>{titolo}</h1>
             <form onSubmit = {handleLoginForm}>
                 <input className='testo' type='text' id='nome' name='nome' placeholder='Nome' ref={nomeInput} required /> <br /><br />
                 <input className='testo' type='text' id='cognome' name='cognome' placeholder='Cognome' ref={cognomeInput} required /> <br /><br />

@@ -30,7 +30,7 @@ public class Main {
         server.createContext("/home", new RispostaPost()); //Pagina di benvenuto
         server.createContext("/logout", new Logout()); //Pagina di benvenuto
         server.createContext("/elimina", new Elimina(db));
-        server.createContext("/nero", new Pippo());
+        server.createContext("/nero", new Prova());
         server.setExecutor(null); //crea un esecutore di default
         server.start(); //fa partire il server
     }
