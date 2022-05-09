@@ -13,6 +13,22 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class ErrorLogParser {
+    private String convertiMese(String mese){
+        return switch (mese) {
+            case "Jan" -> "01";
+            case "Feb" -> "02";
+            case "Mar" -> "03";
+            case "Apr" -> "04";
+            case "May" -> "05";
+            case "Jun" -> "06";
+            case "Jul" -> "07";
+            case "Aug" -> "08";
+            case "Sep" -> "09";
+            case "Oct" -> "10";
+            case "Nov" -> "11";
+            case "Dec" -> "12";
+        };
+    }
     public void parse(File file, GeoIp geoip) throws IOException, GeoIp2Exception, SQLException {
         DblogErrori db = new DblogErrori("dberr");
         db.checkCreateDb();
@@ -35,14 +51,15 @@ public class ErrorLogParser {
                 Match gm = grok.match(input);
                 Map<String, Object> capture = gm.capture();
 
+                String data = convertiMese(capture.get("mese").toString()) + "/" + capture.get("giorno_del_mese").toString() +
+                        "/" + capture.get("anno").toString();
 
-                //String stato = geoip.getCountry(capture.get("clientip").toString());
-                //System.out.println(stato);
                 db.insert(capture.get("giorno_della_settimana").toString(),
-                        capture.get("mese").toString(),
+                        capture.get("mese").toString(), //ritora Aug, Sep ...
                         Integer.parseInt(capture.get("giorno_del_mese").toString()),
                         capture.get("orario").toString(),
                         Integer.parseInt(capture.get("anno").toString()),
+                        data,
                         capture.get("tipo_errore").toString(),
                         Integer.parseInt(capture.get("pid").toString()),
                         capture.get("clientip").toString(),

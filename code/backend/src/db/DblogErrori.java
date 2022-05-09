@@ -75,6 +75,7 @@ public class DblogErrori {
                     "giorno_del_mese INT," +
                     "orario TEXT," +
                     "anno INT," +
+                    "data TEXT,"+
                     "tipo_errore TEXT," +
                     "pid INT, " +
                     "clientip TEXT," +
@@ -107,10 +108,10 @@ public class DblogErrori {
         return percorso;
     }
 
-    public boolean insert(String giorno_della_settimana, String mese, int giorno_del_mese, String orario, int anno, String tipo_errore,
+    public boolean insert(String giorno_della_settimana, String mese, int giorno_del_mese, String orario, int anno, String data, String tipo_errore,
                           int pid, String clientip, int porta_client, String error_code, String payload, String paese) throws SQLException {
         DbInsertError dbInsert = new DbInsertError();
-        return dbInsert.insert(giorno_della_settimana, mese, giorno_del_mese, orario, anno, tipo_errore, pid, clientip, porta_client, error_code, payload, paese, this);
+        return dbInsert.insert(giorno_della_settimana, mese, giorno_del_mese, orario, anno, data, tipo_errore, pid, clientip, porta_client, error_code, payload, paese, this);
     }
 }
 
