@@ -3,17 +3,42 @@ import '../css/NavbarLoggato.css';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
-const NavbarLoggato = () => {
-    const clickBottone = async (e) =>
-    {
+const NavbarLoggato = (props) => {
+
+
+    const clickBottone = async (e) => {
         const url = 'http://localhost:9000/logout';
         const risposta = await axios.post(url);
-        window.location.href = window.location.href.replace("/home", "/");
+        window.location.href = "http://localhost:3000/";
     }
+
+
+    const pulsanti = [ {//variabile che contiene i vari pulsanti
+            pulsante: <td><Link className='navbarloggato' to='/home'>Home</Link></td>
+    }];
+
+    if (props.professione != "cliente") // se è un tecnico metto il pulsante per la pagina filtra
+        pulsanti.push({pulsante: <td><Link className="navbarloggato" to='/filtra'>Filtra</Link></td>});
+
+    if (props.professione == "admin") { // se è l'admin metto la possibilità di aggiungere, eliminare un utente
+        pulsanti.push({pulsante: <td><Link className="navbarloggato" to='/registra'>Registra</Link></td>});
+        pulsanti.push({pulsante: <td><Link className="navbarloggato" to='/elimina'>Elimina</Link></td>});
+    }
+
+    pulsanti.push({pulsante: <td><Link className="navbarloggato" to='/' onClick = {clickBottone}>Logout</Link></td>});
+
     return ( 
         <nav className="navbar">
             <div className="divLink">
-                <Link to = '/' onClick = {clickBottone} id='link'>Logout</Link>
+                <table>
+                    <tbody>
+                        <tr>
+
+                            {pulsanti.map(icona => icona.pulsante)}
+
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </nav>
     );
