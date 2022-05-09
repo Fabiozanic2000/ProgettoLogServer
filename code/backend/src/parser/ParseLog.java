@@ -55,10 +55,9 @@ public class ParseLog extends TimerTask {
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
-
                 continue;
             }
-            //if (file.)
+
 
             //stampa informazioni sul file
             System.out.println("File name: " + file.getName());
@@ -110,7 +109,7 @@ public class ParseLog extends TimerTask {
         }
         System.out.println("Ho eseguito l'inserimento dei dati nel db ");
         System.out.println("Inizio ad azzerare i file ");
-        for (File file : filesList){
+        for (File file : filesList) {
             //Chiamo il metodo per azzerare i file che viene passato come parametro
             try {
                 azzera.azzera(file);

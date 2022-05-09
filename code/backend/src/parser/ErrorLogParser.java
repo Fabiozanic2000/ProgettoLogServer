@@ -27,7 +27,7 @@ public class ErrorLogParser {
         final Grok grok = grokCompiler.compile("\\[%{DAY:giorno_della_settimana} %{MONTH:mese} %{MONTHDAY:giorno_del_mese} %{TIME:orario} %{YEAR:anno}\\] \\[:%{LOGLEVEL:tipo_errore}\\] \\[%{WORD:ignora} %{POSINT:pid}\\] \\[%{WORD:ignora} %{IP:clientip}:%{POSINT:porta_client}\\] \\[%{WORD:ignora} %{IP:ignora}\\] ModSecurity: %{WORD:errorcode}. %{GREEDYDATA:resto_del_mondo}");
         System.out.println("FILE degli errori");
         //StringBuffer sb = new StringBuffer();
-         int c = 0;
+        int c = 0;
         while (sc.hasNextLine()) {
             try {
                 c++;
@@ -54,10 +54,9 @@ public class ErrorLogParser {
 
                 //System.out.println("Fenicottero");
                 //System.out.println(c);
-            } catch (Exception ex){
+            } catch (Exception ex) {
                 ex.printStackTrace();
             }
-
         }
     }
 }
