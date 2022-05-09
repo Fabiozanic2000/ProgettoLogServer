@@ -22,10 +22,8 @@ public class Main {
 
 
         HttpServer server = HttpServer.create(new InetSocketAddress(9000), 0); //crea il server in ascolto sull porta 9000
-        System.out
-                .println("Server listening on port 9000");
+        System.out.println("Server listening on port 9000");
 
-        //UtentiDb db = new UtentiDb("utentidb");
 
         server.createContext("/login", new Login(db)); //metodo per eseguire login con cookie se esiste utente nel db
         server.createContext("/signup", new Signup(db)); //registrazione utente
@@ -35,6 +33,7 @@ public class Main {
         server.createContext("/nero", new Pippo());
         server.setExecutor(null); //crea un esecutore di default
         server.start(); //fa partire il server
+
         System.out.println("Eseguo il task assegnato");
         //creo uno scheduler che che esegue la classe passata con un rate fisso
         new Timer().scheduleAtFixedRate(new ParseLog(), 0, 100000); //100000 millis => 1.67 minuti

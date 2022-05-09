@@ -90,10 +90,15 @@ public class ParseLog extends TimerTask {
                     rawrequest = capture.get("rawrequest").toString();
 
                 try {
-                    db.insert(capture.get("request").toString(), capture.get("auth").toString(), capture.get("ident").toString(),
-                            capture.get("verb").toString(), capture.get("TIME").toString(), Integer.parseInt(capture.get("response").toString()),
-                            Integer.parseInt(capture.get("bytes").toString()), capture.get("clientip").toString(), rawrequest, data,
-                            capture.get("timestamp").toString(), geoip.getCountry(capture.get("clientip").toString()));
+                    db.insert(capture.get("request").toString(),
+                            capture.get("auth").toString(), capture.get("ident").toString(),
+                            capture.get("verb").toString(), capture.get("TIME").toString(),
+                            Integer.parseInt(capture.get("response").toString()),
+                            Integer.parseInt(capture.get("bytes").toString()),
+                            capture.get("clientip").toString(),
+                            rawrequest, data,
+                            capture.get("timestamp").toString(),
+                            geoip.getCountry(capture.get("clientip").toString()));
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 } catch (IOException e) {
@@ -101,14 +106,12 @@ public class ParseLog extends TimerTask {
                 } catch (GeoIp2Exception e) {
                     throw new RuntimeException(e);
                 }
-
-                //Chiamo la classe per azzerare il file così controllo se l'ho già letto
-
-
             }
         }
+
         System.out.println("Ho eseguito l'inserimento dei dati nel db ");
         System.out.println("Inizio ad azzerare i file ");
+
         for (File file : filesList) {
             //Chiamo il metodo per azzerare i file che viene passato come parametro
             try {

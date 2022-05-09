@@ -11,7 +11,6 @@ import java.net.InetAddress;
 
 public class GeoIp {
 
-
     public String getCountry(String ip) throws IOException, GeoIp2Exception {
         if (ip.equals("127.0.0.1")) //guardo che non sia in locale
             return "localhost";
