@@ -1,7 +1,7 @@
 package parser;
 
 import com.maxmind.geoip2.exception.GeoIp2Exception;
-import db.Dblog;
+import dblog.Dblog;
 import io.krakens.grok.api.Grok;
 import io.krakens.grok.api.GrokCompiler;
 import io.krakens.grok.api.Match;

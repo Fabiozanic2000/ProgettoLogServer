@@ -1,4 +1,6 @@
-package db;
+package dberrori;
+
+import dberrori.DbInsertError;
 
 import java.io.File;
 import java.sql.Connection;
@@ -7,10 +9,10 @@ import java.sql.Statement;
 
 import static java.sql.DriverManager.getConnection;
 
-public class Dblog {
+public class DblogErrori {
     private final String DBNAME;
 
-    public Dblog(String dbname) {
+    public DblogErrori(String dbname) {
         this.DBNAME = dbname;
     }
 
@@ -27,10 +29,10 @@ public class Dblog {
                 String percorso = this.getPercorso();
                 Class.forName("org.sqlite.JDBC");
                 //Connection c = getConnection("jdbc:sqlite:" + DBNAME);
-                //Connection c = getConnection("jdbc:sqlite:"+File.separator+DBNAME);
                 Connection c = getConnection(
                         "jdbc:sqlite:" + percorso + File.separator + "database" + File.separator +
                                 DBNAME);
+                //Connection c = getConnection("jdbc:sqlite:"+File.separator+DBNAME);
                 // se non esiste, creo la tabella degli utenti
                 createTableUser(c);
             } catch (Exception e) { // eventuali errori
@@ -52,7 +54,7 @@ public class Dblog {
             String percorso = this.getPercorso();
             Class.forName("org.sqlite.JDBC");
             c = getConnection("jdbc:sqlite:" + percorso + File.separator + "database" + File.separator + DBNAME);
-           // c = getConnection("jdbc:sqlite:" + DBNAME);
+            //c = getConnection("jdbc:sqlite:" + DBNAME);
         } catch (Exception e) {
             // eventuali errori
             System.exit(0);
@@ -63,25 +65,26 @@ public class Dblog {
     /**
      * Crea la tabella utenti del db
      *
-     * @param c
+     * @param c connessione con db
      */
     private void createTableUser(Connection c) {
         try {
             Statement stmt = c.createStatement();
-            String sql = "CREATE TABLE IF NOT EXISTS logfile " +
+            String sql = "CREATE TABLE IF NOT EXISTS logerror " +
                     "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    "request TEXT , " +
-                    "auth TEXT," +
-                    "ident TEXT," +
-                    "httpmethod TEXT," +
-                    "time TEXT," +
-                    "response INT," +
-                    "bytes INT, " +
+                    "giorno_della_settimana TEXT , " +
+                    "mese TEXT," +
+                    "giorno_del_mese INT," +
+                    "orario TEXT," +
+                    "anno INT," +
+                    "data INT,"+
+                    "tipo_errore TEXT," +
+                    "pid INT, " +
                     "clientip TEXT," +
-                    "rawrequest TEXT ," +
-                    "data TEXT, " +
-                    "timestamp TEXT , " +
-                    "paese TEXT)";
+                    "porta_client INT ," +
+                    "error_code TEXT, " +
+                    "paese TEXT, " +
+                    "payload TEXT)";
 
             stmt.executeUpdate(sql);
             stmt.close();
@@ -94,7 +97,7 @@ public class Dblog {
     /**
      * Serve per ottenere il percorso assoluto della root del progetto
      *
-     * @return
+     * @return il percorso
      */
     public String getPercorso() {
         File f = new File("");
@@ -107,18 +110,11 @@ public class Dblog {
         return percorso;
     }
 
-    /**
-     * ritorna l'ID dell'utente se il login è andato a buon fine, sennò ritorna 0
-     */
-    /*public int login(String email, String password) throws SQLException {
-        DbLogin login = new DbLogin();
-        return login.login(email, password, this);
-    }
-    */
-    public boolean insert(String request, String auth, String ident, String httpmethod, String time, int response,
-                          int bytes, String clientip, String rawrequest, String data, String timestamp, String paese) throws SQLException {
-        DbInsert dbInsert = new DbInsert();
-        return dbInsert.insert(request, auth, ident, httpmethod, time, response, bytes, clientip, rawrequest, data, timestamp, paese, this);
+    public boolean insert(String giorno_della_settimana, String mese, int giorno_del_mese, String orario, int anno, long data, String tipo_errore,
+                          int pid, String clientip, int porta_client, String error_code, String payload, String paese) throws SQLException {
+        DbInsertError dbInsert = new DbInsertError();
+        return dbInsert.insert(giorno_della_settimana, mese, giorno_del_mese, orario, anno, data, tipo_errore, pid, clientip, porta_client, error_code, payload, paese, this);
     }
 }
+
 
