@@ -15,7 +15,7 @@ const Home = (props) => {
             <Grafici />
 
         </div>
-     );
+    );
 }
  
 export default Home;
