@@ -30,6 +30,7 @@ public class Main {
         server.createContext("/verifica", new Verifica(db)); //logged = true
         server.createContext("/home", new RispostaPost()); //Pagina di benvenuto
         server.createContext("/logout", new Logout()); //Pagina di benvenuto
+        server.createContext("/elimina", new Elimina(db));
         server.createContext("/nero", new Pippo());
         server.setExecutor(null); //crea un esecutore di default
         server.start(); //fa partire il server
@@ -61,7 +62,7 @@ public class Main {
             URI requestedUri = t.getRequestURI(); //prende l'uri passato
             System.out
                     .println(requestedUri);
-            //String metodo = t.getRequestMethod(); //ottengo il metodo se è post o get
+            //String metodo = t.getRequestMethod(); //ottengo il metodo se Ã¨ post o get
             String response = "";
             rCode = 0;
             if ("GET".equals(t.getRequestMethod())) {
