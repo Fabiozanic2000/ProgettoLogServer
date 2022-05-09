@@ -1,16 +1,14 @@
-.navbar
-{
+.navbar {
     background-color: black;
     opacity: 0.8;
-    height: 30px;
+    height: 70px;
 }
 
-#link
-{
+.navbarloggato {
     position: relative;
     top: 15px;
     background-color: gold;
-    margin: 80%;
+    margin: auto;
     padding: 7px;
     border-radius: 5px;
     text-decoration: none;
@@ -18,7 +16,6 @@
     font-size: 25px;
 }
 
-#link:hover
-{
+.navbarloggato:hover {
     background-color: red;
 }

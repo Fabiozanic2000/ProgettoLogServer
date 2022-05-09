@@ -29,7 +29,8 @@ public class Main {
         server.createContext("/verifica", new Verifica(db)); //logged = true
         server.createContext("/home", new RispostaPost()); //Pagina di benvenuto
         server.createContext("/logout", new Logout()); //Pagina di benvenuto
-        server.createContext("/nero", new Prova());
+        server.createContext("/elimina", new Elimina(db));
+        server.createContext("/nero", new Pippo());
         server.setExecutor(null); //crea un esecutore di default
         server.start(); //fa partire il server
     }

@@ -4,16 +4,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import oggetti.OggettoVerifica;
 
 public class DbVerifica {
 
-    public String verifica(UtentiDb db, String id) throws SQLException {
+    public OggettoVerifica verifica(UtentiDb db, String id) throws SQLException {
         Connection con = db.connect();
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String nome_cognome="";
+        OggettoVerifica verifica = new OggettoVerifica("", "");
         try {
-            String userNameSurname = "Select nome, cognome from user where id=?"; // Per ottenere il nome di un utente
+            String userNameSurname = "Select nome, cognome, professione from user where id=?"; // Per ottenere il nome di un utente
             ps = con.prepareStatement(userNameSurname);
             ps.setString(1, id);
             rs = ps.executeQuery();
@@ -21,7 +22,10 @@ public class DbVerifica {
             nome = upperCaseFirst(nome);
             String cognome = rs.getString(2);
             cognome = upperCaseFirst(cognome);
-            nome_cognome = nome +" "+ cognome;
+            String nome_cognome = nome +" "+ cognome;
+
+            verifica.nome = nome_cognome;
+            verifica.professione = rs.getString(3);
         } catch (SQLException e) {
             System.out.println(e.toString());
         } finally {
@@ -32,7 +36,7 @@ public class DbVerifica {
                         .println(e.toString());
             }
         }
-        return nome_cognome;
+        return verifica;
     }
 
     private String upperCaseFirst(String val)
