@@ -41,7 +41,7 @@ public class ParseLog extends TimerTask {
         System.out.println("Inizio a parsare i file di log");
         for (File file : filesList) { //leggo ogni file una riga alla volta
 
-            if (!file.exists())
+            if (file.length() <= 0) //controlla se il file è vuoto e se lo è continua a leggere altrimenti lo parsa
                 continue;
 
             if (file.getName().contains(".err")) {
@@ -61,7 +61,7 @@ public class ParseLog extends TimerTask {
             //if (file.)
 
             //stampa informazioni sul file
-            //System.out.println("File name: " + file.getName());
+            System.out.println("File name: " + file.getName());
             //System.out.println("File path: " + file.getAbsolutePath());
             //System.out.println("Size :" + file.getTotalSpace());
 
@@ -82,7 +82,7 @@ public class ParseLog extends TimerTask {
                 Map<String, Object> capture = gm.capture();
                 //System.out.print(capture.toString() + "  ");
 
-                String data = capture.get("MONTHDAY").toString() + "." + capture.get("MONTH").toString() + "." + capture.get("YEAR").toString();
+                String data = capture.get("MONTHDAY").toString() + "" + capture.get("MONTH").toString() + "." + capture.get("YEAR").toString();
 
                 String rawrequest;
                 if (capture.get("rawrequest") == null)

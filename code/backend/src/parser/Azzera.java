@@ -7,12 +7,9 @@ import java.io.IOException;
 
 public class Azzera {
     public void azzera(File file) throws IOException {
-        /*BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(file));
         writer.write("");
-        writer.close();*/
-        if (file.delete())
-            System.out.println(file.getName() + "è stato eliminato");
-        else
-            System.out.println(file.getName() + "esiste ancora");
+        writer.close();
+
     }
 }
