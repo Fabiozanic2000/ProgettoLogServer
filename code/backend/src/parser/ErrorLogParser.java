@@ -9,10 +9,14 @@ import io.krakens.grok.api.Match;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 import java.util.Scanner;
 
 public class ErrorLogParser {
+
     private String convertiMese(String mese){
         return switch (mese) {
             case "Jan" -> "01";
@@ -27,6 +31,7 @@ public class ErrorLogParser {
             case "Oct" -> "10";
             case "Nov" -> "11";
             case "Dec" -> "12";
+            default -> "";
         };
     }
     public void parse(File file, GeoIp geoip) throws IOException, GeoIp2Exception, SQLException {
@@ -51,15 +56,19 @@ public class ErrorLogParser {
                 Match gm = grok.match(input);
                 Map<String, Object> capture = gm.capture();
 
-                String data = convertiMese(capture.get("mese").toString()) + "/" + capture.get("giorno_del_mese").toString() +
-                        "/" + capture.get("anno").toString();
+
+                String data = capture.get("anno").toString() + "-" + convertiMese(capture.get("mese").toString()) +
+                        "-" + capture.get("giorno_del_mese").toString();
+                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                Date data_unix = df.parse(data);
+                long unix_time = data_unix.getTime() /1000;
 
                 db.insert(capture.get("giorno_della_settimana").toString(),
                         capture.get("mese").toString(), //ritora Aug, Sep ...
                         Integer.parseInt(capture.get("giorno_del_mese").toString()),
                         capture.get("orario").toString(),
                         Integer.parseInt(capture.get("anno").toString()),
-                        data,
+                        unix_time,
                         capture.get("tipo_errore").toString(),
                         Integer.parseInt(capture.get("pid").toString()),
                         capture.get("clientip").toString(),
