@@ -11,20 +11,16 @@ import db.UtentiDb;
 import oggetti.OggettoVerifica;
 
 public class Verifica implements HttpHandler {
-
-    private Integer rCode;
-    private String response;
     private UtentiDb db;
 
-    public Verifica (UtentiDb db)
-    {
+    public Verifica (UtentiDb db) {
         this.db = db;
-        response = "";
-        rCode = 0;
     }
 
     @Override
     public void handle(HttpExchange t) throws IOException {
+        String response = "";
+        Integer rCode = 0;
         URI requestedUri = t.getRequestURI(); //prende l'uri contattato
         try {
             if ("POST".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/verifica"))==0) { //se sono con il post in /verifica

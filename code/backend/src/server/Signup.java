@@ -13,34 +13,25 @@ import java.sql.SQLException;
 
 public class Signup implements HttpHandler {
     private UtentiDb db;
-    private Integer rCode;
-    private String response;
-
-    private String nome;
-    private String cognome;
-    private String email;
-    private String password;
-    private String professione;
 
     /**
      * Costruttore della signup
      * @param db
      */
-    public Signup (UtentiDb db)
-    {
+    public Signup (UtentiDb db) {
         this.db = db;
-        rCode = 0;
-        response = "";
-
-        nome = "";
-        cognome = "";
-        email = "";
-        password = "";
-        professione = "";
     }
 
     @Override
     public void handle(HttpExchange t) throws IOException {
+        Integer rCode = 0;
+        String response = "";
+
+        String nome = "";
+        String cognome = "";
+        String email = "";
+        String password = "";
+        String professione = "";
         URI requestedUri = t.getRequestURI(); //prende l'uri contattato
         try {
             if ("POST".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/signup"))==0) { //se sono con il post in /signup
@@ -80,7 +71,6 @@ public class Signup implements HttpHandler {
                 rCode = 404;
                 response = "{\"errore\": \"Pagina non trovata\"}";
             }
-
 
         }
         catch (URISyntaxException e) { //errore nell'uri

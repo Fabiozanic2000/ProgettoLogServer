@@ -66,7 +66,8 @@ public class Elimina implements HttpHandler {
                 rCode = 200;
             }
             else { //diverso da post e options oppure usa un'altro url
-                System.out.println("URI non trovato");
+                System.out
+                        .println("URI non trovato");
                 rCode = 404;
                 response = "{\"errore\": \"Pagina non trovata\"}";
             }

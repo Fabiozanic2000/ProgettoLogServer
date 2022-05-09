@@ -90,7 +90,6 @@ public class Main {
                 }
             }
 
-
             // serve per far comunicare client e server
             t.getResponseHeaders()
                     .add("Access-Control-Allow-Origin", "*");

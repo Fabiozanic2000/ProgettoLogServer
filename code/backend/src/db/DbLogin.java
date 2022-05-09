@@ -13,8 +13,7 @@ public class DbLogin {
      * @param db
      * @return id
      */
-    public int login(String email, String password, UtentiDb db)
-    {
+    public int login(String email, String password, UtentiDb db) {
         Connection c = db.connect(); // si connette al db
         PreparedStatement pst = null; // prepara la query
         int id = -1;

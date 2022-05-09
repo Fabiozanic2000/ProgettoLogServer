@@ -17,31 +17,27 @@ import java.sql.SQLException;
 public class Login implements HttpHandler {
 
     private UtentiDb db;
-    private String email;
-    private String password;
-    private Integer rCode;
-    private String response;
 
     /**
      * Costruttore, riceve il db in input
-     * @param db
+     * @param db database degli utenti
      */
-    public Login (UtentiDb db)
-    {
+    public Login (UtentiDb db) {
         this.db = db;
-        email = "";
-        password = "";
-        response = "";
-        rCode = 0;
     }
 
     /**
      * Metodo che viene invocato quando si contatta /login
-     * @param t
+     * @param t rappresente la connessione HTTP tra client e server
      * @throws IOException
      */
     @Override
     public void handle(HttpExchange t) throws IOException {
+        String email = "";
+        String password = "";
+        String response = "";
+        int rCode = 0;
+
         URI requestedUri = t.getRequestURI(); //prende l'uri contattato
         try {
             if ("POST".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/login"))==0) {//se sono con il post in /login
@@ -77,7 +73,8 @@ public class Login implements HttpHandler {
                 rCode = 200;
             }
             else { //diverso da post e options oppure usa un'altro url
-                System.out.println("URI non trovato");
+                System.out
+                        .println("URI non trovato");
                 rCode = 404;
                 response = "{\"errore\": \"Pagina non trovata\"}";
             }

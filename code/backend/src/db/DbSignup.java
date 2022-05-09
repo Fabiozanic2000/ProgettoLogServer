@@ -6,8 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DbSignup {
-    public boolean signup (String nome, String cognome, String email, String password, String professione, UtentiDb db) throws SQLException
-    {
+    public boolean signup (String nome, String cognome, String email, String password, String professione, UtentiDb db) throws SQLException {
         Connection c = db.connect();
         PreparedStatement psr;
         int tot = 0;
@@ -39,7 +38,8 @@ public class DbSignup {
                 pstmt.executeUpdate();
                 return true;
             } catch (SQLException e) {
-                System.out.println(e.getMessage());
+                System.out
+                        .println(e.getMessage());
                 return false;
             } finally {
                 try {

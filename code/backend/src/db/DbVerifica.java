@@ -27,7 +27,8 @@ public class DbVerifica {
             verifica.nome = nome_cognome;
             verifica.professione = rs.getString(3);
         } catch (SQLException e) {
-            System.out.println(e.toString());
+            System.out
+                    .println(e.toString());
         } finally {
             try {
                 con.close();
@@ -39,8 +40,7 @@ public class DbVerifica {
         return verifica;
     }
 
-    private String upperCaseFirst(String val)
-    {
+    private String upperCaseFirst(String val) {
         char[] arr = val.toCharArray();
         arr[0] = Character.toUpperCase(arr[0]);
         return new String(arr);

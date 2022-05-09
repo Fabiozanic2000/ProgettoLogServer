@@ -29,12 +29,14 @@ public class DbElimina {
             return pstmt.executeUpdate();
         }
         catch (SQLException e) {
-            System.out.println(e.toString());
+            System.out
+                    .println(e.toString());
         } finally {
             try {
                 con.close();
             } catch (SQLException e) {
-                System.out.println(e.toString());
+                System.out
+                        .println(e.toString());
             }
         }
 

@@ -80,7 +80,8 @@ public class UtentiDb {
             stmt.executeUpdate(sql);
             stmt.close();
         } catch (Exception e) {
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.err
+                    .println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
     }
@@ -93,12 +94,10 @@ public class UtentiDb {
     {
         File f = new File("");
         String percorso = f.getAbsolutePath();
-        if (percorso.contains("/code/backend"))
-        {
+        if (percorso.contains("/code/backend")) {
             percorso = percorso.replace("/code/backend", "/");
         }
-        else if (percorso.contains("/code"))
-        {
+        else if (percorso.contains("/code")) {
             percorso = percorso.replace("/code", "/");
         }
         return percorso;
