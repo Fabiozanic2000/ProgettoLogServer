@@ -48,7 +48,7 @@ select {
     padding-bottom: 15px;
 }
 
-#data {
+#data2, #data1 {
     height: 40px;
     width: 50%;
     text-align: center;
