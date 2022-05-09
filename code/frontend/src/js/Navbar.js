@@ -1,5 +1,5 @@
-import {Link} from 'react-router-dom'; //se usi link invece di <a href> non passi per il server
 import '../css/Navbar.css';
+import {Link} from 'react-router-dom'; //se usi link invece di <a href> non passi per il server
 
 const Navbar = () => {
     return (
