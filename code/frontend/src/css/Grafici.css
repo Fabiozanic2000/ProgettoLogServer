@@ -1,14 +1,12 @@
-.grafici
-{
-    width: 80%;
+.grafici {
+    width: 100%;
 }
 
-.cellaGrafici
-{
+.cellaGrafici {
     width: 50%;
 }
 
-#tabellaGrafici
-{
-    width: 100%;
+#tabellaGrafici {
+    width: 50%;
+    margin: auto;
 }

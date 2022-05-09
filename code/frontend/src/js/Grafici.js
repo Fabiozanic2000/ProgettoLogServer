@@ -4,7 +4,6 @@ import { Chart as ChartJS } from "chart.js/auto"; //questo serve per mostrare il
 import "../css/Grafici.css";
 
 const Grafici = () => {
-
     //esempio semplificato dati dei log
     const dati = [{comunicazione: "buono", paese: "Italia", id: 2}, {comunicazione: "errore", paese: "Russia", id:1}, {comunicazione: "buono", paese: "Francia", id:2}, {comunicazione: "buono", paese: "Italia", id: 2}];
 
@@ -37,10 +36,8 @@ const Grafici = () => {
     posti.push({paese: dati[0].paese, numeri: 0});
     dati.forEach((dato) => {
         var trovato = false;
-        for (var i = 0; i < posti.length; i++)
-        {
-            if (posti[i].paese === dato.paese)
-            {
+        for (var i = 0; i < posti.length; i++) {
+            if (posti[i].paese === dato.paese) {
                 trovato = true;
                 posti[i].numeri += 1;
                 break;
@@ -60,8 +57,6 @@ const Grafici = () => {
         }],
     });
 
-
-
     //colora le label
     const labels = {
         plugins: {
@@ -76,6 +71,7 @@ const Grafici = () => {
             }
         }
     }
+
     return ( 
         <div className="grafici">
             <table id="tabellaGrafici">

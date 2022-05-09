@@ -8,6 +8,7 @@ import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 
 import db.UtentiDb;
+import oggetti.OggettoVerifica;
 
 public class Verifica implements HttpHandler {
 
@@ -39,15 +40,13 @@ public class Verifica implements HttpHandler {
                         response = "";
                     }
                     else {
-                        String nome = db.verifica(id);
-                        response = "{\"nome\": \""+nome+"\"}";
+                        OggettoVerifica oggetto = db.verifica(id);
+                        String nome = oggetto.nome;
+                        String professione = oggetto.professione;
+                        response = "{\"nome\": \""+nome+"\", \"professione\":\""+professione+"\"}";
                     }
                 }
-
-
-
                 rCode = 200;
-
             }
             else if ("OPTIONS".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/verifica"))==0) { //se è il preflight
                 rCode = 200;

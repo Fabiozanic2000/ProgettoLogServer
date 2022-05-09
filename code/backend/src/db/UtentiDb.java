@@ -2,6 +2,7 @@ package db;
 
 import java.io.File;
 import java.sql.*;
+import oggetti.OggettoVerifica;
 
 import static java.sql.DriverManager.getConnection;
 
@@ -109,8 +110,13 @@ public class UtentiDb {
         return login.login(email, password, this);
     }
 
-    public String verifica (String id) throws SQLException {
+    public OggettoVerifica verifica (String id) throws SQLException {
         DbVerifica verifica = new DbVerifica();
         return verifica.verifica(this, id);
+    }
+
+    public Integer elimina (String email) throws SQLException {
+        DbElimina elimina = new DbElimina();
+        return elimina.elimina(this, email);
     }
 }
