@@ -10,11 +10,32 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.TimerTask;
 
 public class ParseLog extends TimerTask {
+    private String convertiMese(String mese){
+        return switch (mese) {
+            case "Jan" -> "01";
+            case "Feb" -> "02";
+            case "Mar" -> "03";
+            case "Apr" -> "04";
+            case "May" -> "05";
+            case "Jun" -> "06";
+            case "Jul" -> "07";
+            case "Aug" -> "08";
+            case "Sep" -> "09";
+            case "Oct" -> "10";
+            case "Nov" -> "11";
+            case "Dec" -> "12";
+            default -> "";
+        };
+    }
     @Override
     public void run() {
         // creo il parser dei file di log
@@ -48,11 +69,7 @@ public class ParseLog extends TimerTask {
                 ErrorLogParser elp = new ErrorLogParser();
                 try {
                     elp.parse(file, geoip);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                } catch (GeoIp2Exception e) {
-                    throw new RuntimeException(e);
-                } catch (SQLException e) {
+                } catch (IOException | GeoIp2Exception | SQLException e) {
                     throw new RuntimeException(e);
                 }
                 continue;
@@ -81,7 +98,16 @@ public class ParseLog extends TimerTask {
                 Map<String, Object> capture = gm.capture();
                 //System.out.print(capture.toString() + "  ");
 
-                String data = capture.get("MONTHDAY").toString() + "/" + capture.get("MONTH").toString() + "/" + capture.get("YEAR").toString();
+                String data = capture.get("YEAR").toString() + "-" + convertiMese(capture.get("MONTH").toString()) + "-" + capture.get("MONTHDAY").toString();
+
+                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                Date data_unix;
+                try {
+                    data_unix = df.parse(data);
+                } catch (ParseException e) {
+                    throw new RuntimeException(e);
+                }
+                long unix_time = data_unix.getTime() /1000;
 
                 String rawrequest;
                 if (capture.get("rawrequest") == null)
@@ -96,14 +122,10 @@ public class ParseLog extends TimerTask {
                             Integer.parseInt(capture.get("response").toString()),
                             Integer.parseInt(capture.get("bytes").toString()),
                             capture.get("clientip").toString(),
-                            rawrequest, data,
+                            rawrequest, unix_time,
                             capture.get("timestamp").toString(),
                             geoip.getCountry(capture.get("clientip").toString()));
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                } catch (GeoIp2Exception e) {
+                } catch (SQLException | GeoIp2Exception | IOException e) {
                     throw new RuntimeException(e);
                 }
             }
