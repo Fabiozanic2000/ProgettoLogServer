@@ -1,21 +1,32 @@
 import { sha3_512 } from 'js-sha3';
 import { useRef } from 'react';
+import {useEffect} from 'react';
 import '../css/Form.css';
 import '../css/Sfondo.css';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
-const Signup = () => {
+const Signup = (props) => {
+
+    useEffect(async () => { //una volta caricata la pagina
+        if (props.professione == "cliente") // se sono nella signup non faccio niente
+            return;
+
+        const url = "http://localhost:9000/verifica"; //url al server java
+        const risposta = await axios.post(url);
+        if (risposta.data.professione != "admin") { // se non sono admin non posso accedere
+        
+            window.location.href = "http://localhost:3000/home";
+        }
+    });
 
     const emailInput = useRef();
     const nomeInput = useRef();
     const cognomeInput = useRef();
     const passwordInput = useRef();
     const password2Input = useRef();
-    const professioneInput = useRef();
 
-    const handleLoginForm = async (e) =>
-    {
+    const handleLoginForm = async (e) => {
         e.preventDefault(); //evita di ricaricare la pagina
         const url = "http://localhost:9000/signup";
 
@@ -23,13 +34,10 @@ const Signup = () => {
         const nome = nomeInput.current.value;
         const cognome = cognomeInput.current.value;
         const password2 = password2Input.current.value;
+        const professione = props.professione;
         let password = passwordInput.current.value;
-        const professione = professioneInput.current.value;
 
-        
-
-        if (password !== password2)
-        {
+        if (password !== password2) {
             alert("le due password devono essere uguali");
             return;
         }
@@ -49,46 +57,38 @@ const Signup = () => {
         const risposta = await axios.post(url, corpo);
 
         //guardo cosa è successo
-        if (risposta.data.id)
-        {
+        if (risposta.data.id) {
             alert("Utente inserito correttamente");
 
+            if (professione != "cliente") //se non è un cliente allora non eseguo il login
+                return;
+            
             //faccio il login
             const corpo2 = {email: email, password: password, withCredentials: true};
             const url2 = "http://localhost:9000/login";
             const risposta2 = await axios.post(url2, corpo2);
+
             //guardo se è tutto ok
-            if (risposta.data.id)
-            {
+            if (risposta.data.id) {
                 const home = window.location.href.replace("/signup", "/");
                 window.location.href = home + "home";
             }
             else
-            {
                 alert(risposta.data.errore);
-            }
         }
         else
-        {
             alert(risposta.data.errore);
-        }
     }
 
     return ( 
         <div className="divSignup">
             <h1>Signup</h1>
             <form onSubmit = {handleLoginForm}>
-            {/* <form> */ }
                 <input className='testo' type='text' id='nome' name='nome' placeholder='Nome' ref={nomeInput} required /> <br /><br />
                 <input className='testo' type='text' id='cognome' name='cognome' placeholder='Cognome' ref={cognomeInput} required /> <br /><br />
                 <input className='testo' type='email' id='email' name='email' placeholder='Email' ref={emailInput} required /><br /><br />
                 <input className='testo' type='password' id='password' name='password' minLength={Number('8')} placeholder='Password' ref={passwordInput} required /> <br /><br />
                 <input className='testo' type='password' id='password2' name='password2' minLength={Number('8')} placeholder='Reinserisci la password' ref={password2Input} required /> <br /><br />
-
-                <select name="professione" id="professione" ref={professioneInput}>
-                    <option value="tecnico">Tecnico</option>
-                    <option value="cliente">Cliente</option>
-                </select>
                 <br />
                 <br />
                 <button id='bottone' type='submit'> Invia</button>
