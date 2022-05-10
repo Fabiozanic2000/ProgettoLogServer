@@ -134,16 +134,15 @@ public class ParseLog extends TimerTask {
         System.out.println("Ho eseguito l'inserimento dei dati nel db ");
         System.out.println("Inizio ad azzerare i file ");
 
-        /*
+        // Chiamo il metodo per azzerare i file che viene passato come parametro
         for (File file : filesList) {
-            //Chiamo il metodo per azzerare i file che viene passato come parametro
             try {
                 azzera.azzera(file);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
-        */
+
         System.out.println("Ho finito di azzeerare i file ");
     }
 }
