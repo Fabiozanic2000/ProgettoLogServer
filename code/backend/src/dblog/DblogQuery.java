@@ -19,7 +19,8 @@ public class DblogQuery {
         boolean isStato = false;
 
         try {
-            String queryLog = "select * from logfile where data>=? and data<=? "; //creo la query
+            //String queryLog = "select * from logfile where data>=? and data<=? "; //creo la query
+            String queryLog = "select * from logfile "; //creo la query
 
             if (!stato.equals("")) { //se ho inserito uno stato, lo aggiungo nella query
                 queryLog += "paese=? ";
@@ -29,12 +30,12 @@ public class DblogQuery {
                 queryLog += "request=? ";
                 isTesto = true;
             }
-            queryLog += "order by data";
-
+            queryLog += "order by data;";
+            System.out.println(queryLog);
             //preparo la query
             pst = c.prepareStatement(queryLog);
-            pst.setInt(1, from);
-            pst.setInt(2, to);
+            //pst.setInt(1, from);
+            //pst.setInt(2, to);
             if (isTesto && isStato) { // se ce sia lo stato sia il testo
                 pst.setString(3, stato);
                 pst.setString(4, testo);
@@ -46,6 +47,11 @@ public class DblogQuery {
             pst.execute(); //eseguo la query
 
             ResultSet rs = pst.executeQuery(); //prendo il risultato
+
+            while(rs.next()) {
+                System.out.println("STATO: "+rs.getString(1));
+                System.out.println("CICCIOPASTICCIO");
+            }
 
             System.out.println("ciao");
 
