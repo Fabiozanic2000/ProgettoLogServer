@@ -16,7 +16,7 @@ const Loggato = () => {
     const [professione, setProfessione] = useState('');
 
     useEffect(async () => { //una volta caricata la pagina
-        const url = "http://localhost:9000/verifica"; //url al server java
+        const url = "http://localhost:9000/verifica"; //url al server java, controllo di essere loggato
         const risposta = await axios.post(url);
         if (!risposta.data.nome)      
             window.location.href = "http://localhost:3000";
@@ -24,6 +24,12 @@ const Loggato = () => {
             setNome(risposta.data.nome);
             setProfessione(risposta.data.professione);
         }
+
+        //QUERY AL DB DEI LOG
+        const url2 = "http://localhost:9000/query";
+        const corpo = {testo: "ciao", stato: "IT", from:1000, to:2000, scegli:"", withCredentials: true};
+
+        const risposta2 = await axios.post(url2, corpo);
     });
     
     return ( 
