@@ -46,7 +46,7 @@ public class DblogQuery {
             pst.execute(); //eseguo la query
 
             ResultSet rs = pst.executeQuery(); //prendo il risultato
-            
+
             System.out.println("ciao");
 
         }
