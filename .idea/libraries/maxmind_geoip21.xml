@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="maxmind.geoip21" type="repository">
+    <properties maven-id="com.maxmind.geoip2:geoip2:3.0.1" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/maxmind/geoip2/geoip2/3.0.1/geoip2-3.0.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/maxmind/db/maxmind-db/2.0.0/maxmind-db-2.0.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.13.2.2/jackson-databind-2.13.2.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.13.2/jackson-core-2.13.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.13.2/jackson-annotations-2.13.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
