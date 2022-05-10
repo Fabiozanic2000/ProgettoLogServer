@@ -66,6 +66,9 @@ public class Query implements HttpHandler {
                 System.out.println("to: "+to);
                 System.out.println("scegli: "+scegli);
                 System.out.println();
+
+                response = dbLog.query(testo, stato, from, to);
+
             }
             else if ("OPTIONS".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/query"))==0) { // per il preflight
                 rCode = 200;
@@ -85,6 +88,7 @@ public class Query implements HttpHandler {
             e.printStackTrace();
         }
 
+        response = "ciao";
 
         //invio la risposta al client (gli header servono per le politiche di cors)
         String origine = t.getRequestHeaders()
