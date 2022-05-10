@@ -42,11 +42,13 @@ const Loggato = () => {
         if (to === null) to = Math.round(new Date().getTime() / 1000);
         if (scegli === null) scegli = "";
             
-
+        //faccio la richiesta al server
         const url2 = "http://localhost:9000/query";
         const corpo = {testo: testo, stato: stato, from: from, to: to, scegli: scegli, withCredentials: true};
 
         const risposta2 = await axios.post(url2, corpo);
+
+        alert(risposta2.data.log[0].paese); //esempio di lettura dal server
     });
     
     return ( 

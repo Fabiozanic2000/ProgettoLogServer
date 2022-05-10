@@ -60,15 +60,10 @@ public class Query implements HttpHandler {
                 to = oggettoJson.getInt("to");
                 scegli = oggettoJson.getString("scegli");
 
-                System.out.println("testo: "+testo);
-                System.out.println("stato: "+stato);
-                System.out.println("from: "+from);
-                System.out.println("to: "+to);
-                System.out.println("scegli: "+scegli);
-                System.out.println();
-
-                response = dbLog.query(testo, stato, from, to);
-
+                //creo la response (un oggetto json)
+                response = "{";
+                response += dbLog.query(testo, stato, from, to);
+                response += "}";
             }
             else if ("OPTIONS".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/query"))==0) { // per il preflight
                 rCode = 200;
@@ -81,15 +76,12 @@ public class Query implements HttpHandler {
         catch (URISyntaxException e) { //errore nell'uri
             e.printStackTrace();
             System.exit(1);
-        } //catch (SQLException e) { //errore db
-          //  throw new RuntimeException(e);
-        //}
+        } catch (SQLException e) { //errore db
+            throw new RuntimeException(e);
+        }
         catch (Exception e) { //errore nella lettura del body della request
             e.printStackTrace();
         }
-
-        response = "ciao";
-
         //invio la risposta al client (gli header servono per le politiche di cors)
         String origine = t.getRequestHeaders()
                 .get("Origin")
