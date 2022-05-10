@@ -26,8 +26,25 @@ const Loggato = () => {
         }
 
         //QUERY AL DB DEI LOG
+        const urlParams = new URLSearchParams(window.location.href); //oggetto che legge i parametri dell'url
+
+        //ottengo i parametri
+        var testo = urlParams.get('testo');
+        var stato = urlParams.get('stato');
+        var from = urlParams.get('from');
+        var to = urlParams.get('to');
+        var scegli = urlParams.get('scegli');
+
+        //controllo che i campi siano diversi da null
+        if (testo === null) testo = "";
+        if (stato === null) stato = "";
+        if (from === null) from = Math.round(new Date().getTime() / 1000);
+        if (to === null) to = Math.round(new Date().getTime() / 1000);
+        if (scegli === null) scegli = "";
+            
+
         const url2 = "http://localhost:9000/query";
-        const corpo = {testo: "ciao", stato: "IT", from:1000, to:2000, scegli:"", withCredentials: true};
+        const corpo = {testo: testo, stato: stato, from: from, to: to, scegli: scegli, withCredentials: true};
 
         const risposta2 = await axios.post(url2, corpo);
     });

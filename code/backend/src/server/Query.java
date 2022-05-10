@@ -65,6 +65,7 @@ public class Query implements HttpHandler {
                 System.out.println("from: "+from);
                 System.out.println("to: "+to);
                 System.out.println("scegli: "+scegli);
+                System.out.println();
             }
             else if ("OPTIONS".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/query"))==0) { // per il preflight
                 rCode = 200;
