@@ -62,7 +62,16 @@ public class Query implements HttpHandler {
 
                 //creo la response (un oggetto json)
                 response = "{";
-                response += dbLog.query(testo, stato, from, to);
+                if (scegli.equals("buono"))
+                    response += dbLog.query(testo, stato, from, to);
+                else if (scegli.equals("errore"))
+                    response += dbErrori.query(testo, stato, from, to);
+                else {
+                    response += dbLog.query(testo, stato, from, to);
+                    response += ", ";
+                    response += dbErrori.query(testo, stato, from, to);
+                }
+
                 response += "}";
             }
             else if ("OPTIONS".equals(t.getRequestMethod()) && requestedUri.compareTo(new URI("/query"))==0) { // per il preflight

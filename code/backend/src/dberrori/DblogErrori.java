@@ -1,6 +1,7 @@
 package dberrori;
 
 import dberrori.DbInsertError;
+import dblog.DblogQuery;
 
 import java.io.File;
 import java.sql.Connection;
@@ -114,6 +115,11 @@ public class DblogErrori {
                           int pid, String clientip, int porta_client, String error_code, String payload, String paese) throws SQLException {
         DbInsertError dbInsert = new DbInsertError();
         return dbInsert.insert(giorno_della_settimana, mese, giorno_del_mese, orario, anno, data, tipo_errore, pid, clientip, porta_client, error_code, payload, paese, this);
+    }
+
+    public String query (String testo, String stato, int from, int to) throws SQLException {
+        DbErroriQuery query = new DbErroriQuery();
+        return query.query(this, testo, stato, from, to);
     }
 }
 

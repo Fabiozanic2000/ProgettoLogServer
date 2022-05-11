@@ -51,6 +51,9 @@ const Loggato = () => {
         //alert(risposta2.data.log[0].paese); //esempio di lettura dal server
         alert(risposta2.data.log[0].clientip);
         alert(risposta2.data.log.length);
+
+        alert(risposta2.data.err[1].clientip);
+        alert(risposta2.data.err.length);
     }, []);
     
     return ( 

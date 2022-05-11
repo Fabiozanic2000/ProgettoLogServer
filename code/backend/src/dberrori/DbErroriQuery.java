@@ -71,7 +71,7 @@ public class DbErroriQuery {
                 tmp += "\"data\": \""+rs.getInt("data")+"\", "; //aggiungo la data
                 tmp += "\"timestamp\": \""+timestamp+"\", "; //aggiungo il timestamp
                 tmp += "\"paese\": \""+rs.getString("paese")+"\", "; //aggiungo la request
-                tmp += "\"payload\": \""+rs.getString("payload")+"\""; //aggiungo la request
+                tmp += "\"payload\": \""+rs.getString("payload").replaceAll("\"", "'")+"\""; //aggiungo la request (devo sostituire per evitare danni)
                 tmp += "}";
 
                 if (!testo.equals("") && tmp.contains(testo)) { //se ho filtrato del testo, controllo che nel record ci sia il testo che ho inserito
@@ -96,7 +96,6 @@ public class DbErroriQuery {
                 ex.printStackTrace();
             }
         }
-        System.out.println(oggettoRisposta);
         return oggettoRisposta;
     }
 }
