@@ -1,4 +1,6 @@
-package dblog;
+package dberrori;
+
+import dblog.Dblog;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,12 +8,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Classe che fa le query al db dei log
+ * Classe per la query nel db degli errori
  */
-public class DblogQuery {
-
+public class DbErroriQuery {
     /**
-     * Funzione che esegue la query
+     * Funzione che fa la query sul db degli errori
      * @param db
      * @param testo
      * @param stato
@@ -20,7 +21,7 @@ public class DblogQuery {
      * @return
      * @throws SQLException
      */
-    public String query (Dblog db, String testo, String stato, int from, int to) throws SQLException {
+    public String query (DblogErrori db, String testo, String stato, int from, int to) throws SQLException {
         Connection c = db.connect(); // si connette al db
         PreparedStatement pst = null; // prepara la query
         String oggettoRisposta = "";
@@ -29,7 +30,7 @@ public class DblogQuery {
         boolean isStato = false;
 
         try {
-            String queryLog = "select * from logfile where data>=? and data<=? "; //creo la query
+            String queryLog = "select * from logerror where data>=? and data<=? "; //creo la query
 
             if (!stato.equals("")) { //se ho inserito uno stato, lo aggiungo nella query
                 queryLog += "and paese=? ";
@@ -49,7 +50,7 @@ public class DblogQuery {
 
             ResultSet rs = pst.executeQuery(); //prendo il risultato
 
-            oggettoRisposta = "\"log\": [{";
+            oggettoRisposta = "\"err\": [{";
             boolean primaVolta = true; //serve per mettere la virgola bene
 
             //scorro i record del db
@@ -58,19 +59,19 @@ public class DblogQuery {
                 if (!primaVolta)
                     tmp += ", {";
 
+                String timestamp = rs.getString("giorno_del_mese")+"/"+rs.getString("mese")+"/"; //creo il timestamp
+                timestamp += rs.getInt("anno")+":"+rs.getString("orario");
+
                 tmp += "\"id\": \""+rs.getInt("id")+"\", "; //aggiungo l'id
-                tmp += "\"request\": \""+rs.getString("request")+"\", "; //aggiungo la request
-                tmp += "\"auth\": \""+rs.getString("auth")+"\", "; //aggiungo la auth
-                tmp += "\"ident\": \""+rs.getString("ident")+"\", "; //aggiungo la ident
-                tmp += "\"httpmethod\": \""+rs.getString("httpmethod")+"\", "; //aggiungo la request
-                tmp += "\"time\": \""+rs.getString("time")+"\", "; //aggiungo la request
-                tmp += "\"response\": \""+rs.getInt("response")+"\", "; //aggiungo la response
-                tmp += "\"bytes\": \""+rs.getInt("bytes")+"\", "; //aggiungo i bytes
+                tmp += "\"tipoErrore\": \""+rs.getString("tipo_errore")+"\", "; //aggiungo il tipo dell'errore
+                tmp += "\"pid\": \""+rs.getInt("pid")+"\", "; //aggiungo il pid
                 tmp += "\"clientip\": \""+rs.getString("clientip")+"\", "; //aggiungo il clientip
-                tmp += "\"rawrequest\": \""+rs.getString("rawrequest")+"\", "; //aggiungo la rawrequest
+                tmp += "\"portaClient\": \""+rs.getInt("porta_client")+"\", "; //aggiungo il clientip
+                tmp += "\"errorCode\": \""+rs.getString("error_code")+"\", "; //aggiungo la rawrequest
                 tmp += "\"data\": \""+rs.getInt("data")+"\", "; //aggiungo la data
-                tmp += "\"timestamp\": \""+rs.getString("timestamp")+"\", "; //aggiungo il timestamp
-                tmp += "\"paese\": \""+rs.getString("paese")+"\""; //aggiungo la request
+                tmp += "\"timestamp\": \""+timestamp+"\", "; //aggiungo il timestamp
+                tmp += "\"paese\": \""+rs.getString("paese")+"\", "; //aggiungo la request
+                tmp += "\"payload\": \""+rs.getString("payload")+"\""; //aggiungo la request
                 tmp += "}";
 
                 if (!testo.equals("") && tmp.contains(testo)) { //se ho filtrato del testo, controllo che nel record ci sia il testo che ho inserito
@@ -95,6 +96,7 @@ public class DblogQuery {
                 ex.printStackTrace();
             }
         }
+        System.out.println(oggettoRisposta);
         return oggettoRisposta;
     }
 }
