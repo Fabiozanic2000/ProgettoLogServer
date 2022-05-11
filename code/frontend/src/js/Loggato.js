@@ -21,8 +21,12 @@ const Loggato = () => {
     //costruisco il grafico dei posti di default
     const [datiGraficoPosti, setDatiGraficoPosti] = useState(defaults.postiDefault);
 
+    //nome e professione per verificare che tutto sia ok
     const [nome, setNome] = useState('');
-    const [professione, setProfessione] = useState('');    
+    const [professione, setProfessione] = useState('');
+    
+    //dati da mandare alla pagina del filtro
+    const [dati, setDati] = useState('');
 
     useEffect(async () => { //una volta caricata la pagina
         const url = "http://localhost:9000/verifica"; //url al server java, controllo di essere loggato
@@ -61,6 +65,8 @@ const Loggato = () => {
         setDatiGraficoComunicazioni(comunicazioni);
         setDatiGraficoPosti(posti);
 
+        setDati(JSON.stringify(risposta2.data));
+
     }, []);
     
     return ( 
@@ -75,7 +81,7 @@ const Loggato = () => {
                     </Route>
 
                     <Route exact path='/filtra'>
-                        <PagFiltra />
+                        <PagFiltra dati={dati} />
                     </Route>
 
                     <Route exact path='/registra'>

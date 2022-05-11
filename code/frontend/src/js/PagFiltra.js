@@ -1,20 +1,27 @@
 import Log from './Log';
 import Spiegazione from './Spiegazione';
 import Filtra from './Filtra';
-import {useEffect} from 'react';
+import costruisciLog from '../funzioni/log';
+import {useEffect, useState} from 'react';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
-const PagFiltra = () => {
+const PagFiltra = (props) => {
+
+    //dati da mandare alla pagina del filtro
+    const [tabella, setTabella] = useState('');
 
     useEffect(async () => { //una volta caricata la pagina
         const url = "http://localhost:9000/verifica"; //url al server java
         const risposta = await axios.post(url);
-        if (risposta.data.professione == "cliente") { // se sei un cliente non puoi accedere
-        
+        if (risposta.data.professione == "cliente")  // se sei un cliente non puoi accedere
             window.location.href = "http://localhost:3000/home";
-        }
-    });
+
+        //alert(props.dati);
+        //alert(costruisciLog(props.dati));
+        setTabella(costruisciLog(props.dati));
+        
+    }, []);
 
     return ( 
         <div className="pagfiltra">
@@ -22,7 +29,7 @@ const PagFiltra = () => {
                 <tbody>
                     <tr>
                         <td className="tabellaLog">
-                            <Log />
+                            <Log tabella={tabella}/>
                         </td>
                         <td className="tabellaLog">
                             <Spiegazione />
