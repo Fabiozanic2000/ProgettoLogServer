@@ -2,7 +2,7 @@ import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet';
 import '../css/Mappa.css';
 
 const Mappa = () => {
-    
+
     return (
 
         <div className="mappa">

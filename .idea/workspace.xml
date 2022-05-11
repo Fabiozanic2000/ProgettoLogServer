@@ -3,10 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/dberrori/DbErroriQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/dberrori/DbErroriQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/dberrori/DblogErrori.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/dberrori/DblogErrori.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/server/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/server/Query.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/frontend/src/js/Loggato.js" beforeDir="false" afterPath="$PROJECT_DIR$/code/frontend/src/js/Loggato.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022t1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/2022t1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/Azzera.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/Azzera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/ErrorLogParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/ErrorLogParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/GeoIp.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/GeoIp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/ParseLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/ParseLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/server/Verifica.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/server/Verifica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/frontend/src/js/Mappa.js" beforeDir="false" afterPath="$PROJECT_DIR$/code/frontend/src/js/Mappa.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -35,10 +39,30 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="dberrori" />
+      <recent name="dblog" />
+      <recent name="oggetti" />
+      <recent name="parser" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.server.Main">
     <configuration name="server.Main" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -48,6 +72,78 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DbErroriQueryTest.query" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="2022t1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dberrori.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dberrori" />
+      <option name="MAIN_CLASS_NAME" value="dberrori.DbErroriQueryTest" />
+      <option name="METHOD_NAME" value="query" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DblogTest.connect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="2022t1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dblog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dblog" />
+      <option name="MAIN_CLASS_NAME" value="dblog.DblogTest" />
+      <option name="METHOD_NAME" value="connect" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DblogTest.getPercorso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="2022t1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dblog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dblog" />
+      <option name="MAIN_CLASS_NAME" value="dblog.DblogTest" />
+      <option name="METHOD_NAME" value="getPercorso" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeoIpTest.getCountry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="2022t1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="parser" />
+      <option name="MAIN_CLASS_NAME" value="parser.GeoIpTest" />
+      <option name="METHOD_NAME" value="getCountry" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DbErroriQueryTest.query" />
+        <item itemvalue="JUnit.DblogTest.getPercorso" />
+        <item itemvalue="JUnit.DblogTest.connect" />
+        <item itemvalue="JUnit.GeoIpTest.getCountry" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -72,6 +168,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/2022t1$server_Main.ic" NAME="server.Main Coverage Results" MODIFIED="1652201713063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/2022t1$server_Main.ic" NAME="server.Main Coverage Results" MODIFIED="1652175535429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

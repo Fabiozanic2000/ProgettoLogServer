@@ -11,6 +11,5 @@ public class Azzera {
         BufferedWriter writer = new BufferedWriter(new FileWriter(file));
         writer.write(""); //scrivo una stringa vuota così sovrascrivo il file
         writer.close(); //chiudo il file
-
     }
 }
