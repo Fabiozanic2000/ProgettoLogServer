@@ -48,8 +48,10 @@ const Loggato = () => {
 
         const risposta2 = await axios.post(url2, corpo);
 
-        alert(risposta2.data.log[0].paese); //esempio di lettura dal server
-    });
+        //alert(risposta2.data.log[0].paese); //esempio di lettura dal server
+        alert(risposta2.data.log[0].clientip);
+        alert(risposta2.data.log.length);
+    }, []);
     
     return ( 
         <Router>

@@ -26,7 +26,6 @@ public class DblogQuery {
         String oggettoRisposta = "";
 
         //queste variabili servono per vedere se devo filtrare per qualcosa o no
-        boolean isTesto = false;
         boolean isStato = false;
 
         try {
@@ -36,10 +35,6 @@ public class DblogQuery {
                 queryLog += "and paese=? ";
                 isStato = true;
             }
-            if (!testo.equals("")) { //se ho inserito un testo li inserisco nella query
-                queryLog += "and request=? ";
-                isTesto = true;
-            }
             queryLog += "order by data;";
 
             from = 0; //lo metto per il momento solo per stampare qualcosa
@@ -47,12 +42,7 @@ public class DblogQuery {
             pst = c.prepareStatement(queryLog);
             pst.setInt(1, from);
             pst.setInt(2, to);
-            if (isTesto && isStato) { // se ce sia lo stato sia il testo
-                pst.setString(3, stato);
-                pst.setString(4, testo);
-            } else if (isTesto)
-                pst.setString(3, testo); //se ce solo il testo
-            else if (isStato)
+            if (isStato)
                 pst.setString(3, stato); //se ce solo lo stato
 
             pst.execute(); //eseguo la query
@@ -63,27 +53,34 @@ public class DblogQuery {
             boolean primaVolta = true; //serve per mettere la virgola bene
             //scorro i record del db
             while(rs.next()) {
-                if (primaVolta)
+                String tmp = ""; //prendo i risulti, poi eventualmente verifico che vadino bene
+                if (!primaVolta)
+                    tmp += ", {";
+
+                tmp += "\"id\": \""+rs.getInt("id")+"\", "; //aggiungo l'id
+                tmp += "\"request\": \""+rs.getString("request")+"\", "; //aggiungo la request
+                tmp += "\"auth\": \""+rs.getString("auth")+"\", "; //aggiungo la auth
+                tmp += "\"ident\": \""+rs.getString("ident")+"\", "; //aggiungo la ident
+                tmp += "\"httpmethod\": \""+rs.getString("httpmethod")+"\", "; //aggiungo la request
+                tmp += "\"time\": \""+rs.getString("time")+"\", "; //aggiungo la request
+                tmp += "\"response\": \""+rs.getInt("response")+"\", "; //aggiungo la response
+                tmp += "\"bytes\": \""+rs.getInt("bytes")+"\", "; //aggiungo i bytes
+                tmp += "\"clientip\": \""+rs.getString("clientip")+"\", "; //aggiungo il clientip
+                tmp += "\"rawrequest\": \""+rs.getString("rawrequest")+"\", "; //aggiungo la rawrequest
+                tmp += "\"data\": \""+rs.getInt("data")+"\", "; //aggiungo la data
+                tmp += "\"timestamp\": \""+rs.getString("timestamp")+"\", "; //aggiungo il timestamp
+                tmp += "\"paese\": \""+rs.getString("paese")+"\""; //aggiungo la request
+                tmp += "}";
+
+                if (!testo.equals("") && tmp.contains(testo)) { //se ho filtrato del testo, controllo che nel record ci sia il testo che ho inserito
+                    oggettoRisposta += tmp;
                     primaVolta = false;
-                else
-                    oggettoRisposta += ", {";
-
-                oggettoRisposta += "\"id\": \""+rs.getInt("id")+"\", "; //aggiungo l'id
-                oggettoRisposta += "\"request\": \""+rs.getString("request")+"\", "; //aggiungo la request
-                oggettoRisposta += "\"auth\": \""+rs.getString("auth")+"\", "; //aggiungo la auth
-                oggettoRisposta += "\"ident\": \""+rs.getString("ident")+"\", "; //aggiungo la ident
-                oggettoRisposta += "\"httpmethod\": \""+rs.getString("httpmethod")+"\", "; //aggiungo la request
-                oggettoRisposta += "\"time\": \""+rs.getString("time")+"\", "; //aggiungo la request
-                oggettoRisposta += "\"response\": \""+rs.getInt("response")+"\", "; //aggiungo la response
-                oggettoRisposta += "\"bytes\": \""+rs.getInt("bytes")+"\", "; //aggiungo i bytes
-                oggettoRisposta += "\"clientip\": \""+rs.getString("clientip")+"\", "; //aggiungo il clientip
-                oggettoRisposta += "\"rawrequest\": \""+rs.getString("rawrequest")+"\", "; //aggiungo la rawrequest
-                oggettoRisposta += "\"data\": \""+rs.getInt("data")+"\", "; //aggiungo la data
-                oggettoRisposta += "\"timestamp\": \""+rs.getString("timestamp")+"\", "; //aggiungo il timestamp
-                oggettoRisposta += "\"paese\": \""+rs.getString("paese")+"\""; //aggiungo la request
-                oggettoRisposta += "}";
+                }
+                else if (testo.equals("")) { //se non ho inserito filtri, allora aggiungo direttamente
+                    oggettoRisposta += tmp;
+                    primaVolta = false;
+                }
             }
-
             oggettoRisposta += "]";
 
             if (primaVolta) oggettoRisposta = ""; //se primaVOlta è true vuol dire che non ci sono record, quindi devo azzerare l'oggetto che restituisco
