@@ -24,36 +24,6 @@ const Loggato = () => {
             setNome(risposta.data.nome);
             setProfessione(risposta.data.professione);
         }
-
-        //QUERY AL DB DEI LOG
-        const urlParams = new URLSearchParams(window.location.href); //oggetto che legge i parametri dell'url
-
-        //ottengo i parametri
-        var testo = urlParams.get('testo');
-        var stato = urlParams.get('stato');
-        var from = urlParams.get('from');
-        var to = urlParams.get('to');
-        var scegli = urlParams.get('scegli');
-
-        //controllo che i campi siano diversi da null
-        if (testo === null) testo = "";
-        if (stato === null) stato = "";
-        if (from === null) from = Math.round(new Date().getTime() / 1000);
-        if (to === null) to = Math.round(new Date().getTime() / 1000);
-        if (scegli === null) scegli = "";
-            
-        //faccio la richiesta al server
-        const url2 = "http://localhost:9000/query";
-        const corpo = {testo: testo, stato: stato, from: from, to: to, scegli: scegli, withCredentials: true};
-
-        const risposta2 = await axios.post(url2, corpo);
-
-        //alert(risposta2.data.log[0].paese); //esempio di lettura dal server
-        alert(risposta2.data.log[0].clientip);
-        alert(risposta2.data.log.length);
-
-        alert(risposta2.data.err[1].clientip);
-        alert(risposta2.data.err.length);
     }, []);
     
     return ( 
@@ -64,7 +34,7 @@ const Loggato = () => {
                 <Switch>
 
                     <Route exact path='/home'>
-                        <Home nome={nome}/>
+                        <Home nome={nome} />
                     </Route>
 
                     <Route exact path='/filtra'>

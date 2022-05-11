@@ -1,59 +1,30 @@
 import { useState } from "react";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto"; //questo serve per mostrare il grafico
+import {useEffect} from 'react';
 import "../css/Grafici.css";
+import axios from 'axios';
+axios.defaults.withCredentials = true;
+
 
 const Grafici = () => {
-    //esempio semplificato dati dei log
-    const dati = [{comunicazione: "buono", paese: "Italia", id: 2}, {comunicazione: "errore", paese: "Russia", id:1}, {comunicazione: "buono", paese: "Francia", id:2}, {comunicazione: "buono", paese: "Italia", id: 2}];
 
-    // colori del grafico
-    const colori = ["#33cc33", "red", "blue", "yellow", "grey", "green", "white", "orange", "black"]
-
-
-    //costrutto per il grafico delle comunicazioni
-    var buoni = 0;
-    var errori = 0;
-    dati.forEach((dato) => {
-        if (dato.comunicazione === "buono")
-            buoni += 1;
-        else
-            errori += 1;
-    });
-
-    //costruisco il grafico delle comunicazioni
     const [datiGraficoComunicazioni, setDatiGraficoComunicazioni] = useState({
-        labels: ["Avvenute", "Errori"], //lista delle labels della torta
+        labels: ["Deafult"], //lista delle labels della torta
         datasets: [{
             label: "Comunicazioni",
-            data: [buoni, errori], //dati che usa per creare il grafico
-            backgroundColor: colori //colora le barre
+            data: [1], //dati che usa per creare il grafico
+            backgroundColor: ["black"] //colora le barre
         }],
-    });
-
-    //costrutto per il grafico dei posti
-    var posti = [];
-    posti.push({paese: dati[0].paese, numeri: 0});
-    dati.forEach((dato) => {
-        var trovato = false;
-        for (var i = 0; i < posti.length; i++) {
-            if (posti[i].paese === dato.paese) {
-                trovato = true;
-                posti[i].numeri += 1;
-                break;
-            }
-        }
-        if (!trovato)
-                posti.push({paese: dato.paese, numeri: 1});
     });
 
     //costruisco il grafico dei posti
     const [datiGraficoPosti, setDatiGraficoPosti] = useState({
-        labels: posti.map((posto) => posto.paese), //lista delle labels della torta
+        labels: ["Deafult"], //lista delle labels della torta
         datasets: [{
             label: "Posti",
-            data: posti.map((posto) => posto.numeri), //dati che usa per creare il grafico
-            backgroundColor: colori //colora le barre
+            data: [1], //dati che usa per creare il grafico
+            backgroundColor: ["black"] //colora le barre
         }],
     });
 
@@ -72,6 +43,85 @@ const Grafici = () => {
         }
     }
 
+    useEffect(async () => { //una volta caricata la pagina
+        const urlParams = new URLSearchParams(window.location.href); //oggetto che legge i parametri dell'url
+
+        //ottengo i parametri
+        var testo = urlParams.get('testo');
+        var stato = urlParams.get('stato');
+        var from = urlParams.get('from');
+        var to = urlParams.get('to');
+        var scegli = urlParams.get('scegli');
+
+        //controllo che i campi siano diversi da null
+        if (testo === null) testo = "";
+        if (stato === null) stato = "";
+        if (from === null) from = Math.round(new Date().getTime() / 1000);
+        if (to === null) to = Math.round(new Date().getTime() / 1000);
+        if (scegli === null) scegli = "";
+            
+        //faccio la richiesta al server
+        const url2 = "http://localhost:9000/query";
+        const corpo = {testo: testo, stato: stato, from: from, to: to, scegli: scegli, withCredentials: true};
+        const risposta2 = await axios.post(url2, corpo);
+
+        const colori = ["#33cc33", "red", "blue", "yellow", "grey", "green", "white", "orange", "black"]; //colori dei grafici
+        const buoni = risposta2.data.log.length; //quante comunicazione avvenute ci sono
+        const errori = risposta2.data.err.length; //quante comunicazione fallite ci sono
+
+        //grafico delle comunicazioni
+        setDatiGraficoComunicazioni({ 
+            labels: ["Avvenute", "Errori"], //lista delle labels della torta
+            datasets: [{
+                label: "Comunicazioni",
+                data: [buoni, errori], //dati che usa per creare il grafico
+                backgroundColor: colori //colora le barre
+            }],
+        });
+
+        //costrutto per il grafico dei posti
+        var posti = [];
+        posti.push({paese: risposta2.data.log[0].paese, numeri: 0}); //inizializzo l'oggetto dei posti con i relativi contatori
+
+        //scorro i log
+        risposta2.data.log.forEach((dato) => {
+            var trovato = false;
+            for (var i = 0; i < posti.length; i++) { //se il paese è giò presente nell'array posti, incremento il contatore, altrimenti lo aggiungo
+                if (posti[i].paese === dato.paese) {
+                    trovato = true;
+                    posti[i].numeri += 1;
+                    break;
+                }
+            }
+            if (!trovato)
+                    posti.push({paese: dato.paese, numeri: 1});
+        });
+
+        //scorro gli errori
+        risposta2.data.err.forEach((dato) => {
+            var trovato = false;
+            for (var i = 0; i < posti.length; i++) { //se il paese è giò presente nell'array posti, incremento il contatore, altrimenti lo aggiungo
+                if (posti[i].paese === dato.paese) {
+                    trovato = true;
+                    posti[i].numeri += 1;
+                    break;
+                }
+            }
+            if (!trovato)
+                    posti.push({paese: dato.paese, numeri: 1});
+        });
+
+        //costruisco il grafico dei posti
+        setDatiGraficoPosti({
+            labels: posti.map((posto) => posto.paese), //lista delle labels della torta
+            datasets: [{
+                label: "Posti",
+                data: posti.map((posto) => posto.numeri), //dati che usa per creare il grafico
+                backgroundColor: colori //colora le barre
+            }],
+        });
+    }, []);
+    
     return ( 
         <div className="grafici">
             <table id="tabellaGrafici">
