@@ -17,8 +17,6 @@ const PagFiltra = (props) => {
         if (risposta.data.professione == "cliente")  // se sei un cliente non puoi accedere
             window.location.href = "http://localhost:3000/home";
 
-        //alert(props.dati);
-        //alert(costruisciLog(props.dati));
         setTabella(costruisciLog(props.dati));
         
     }, []);
