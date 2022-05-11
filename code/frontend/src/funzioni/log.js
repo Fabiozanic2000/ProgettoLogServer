@@ -19,21 +19,21 @@ const costruisciLog = function (dati) {
 
     var unione = [];
     oggetto.log.forEach(log => {
-        unione.push({ "timestamp": log.timestamp, "paese": log.paese, "tipo": "buono", "data": log.data });
+        unione.push({ "timestamp": log.timestamp, "paese": log.paese, "tipo": "buono", "data": log.data, "id": log.id });
     });
     oggetto.err.forEach(err => {
-        unione.push({ "timestamp": err.timestamp, "paese": err.paese, "tipo": "errore", "data": err.data });
+        unione.push({ "timestamp": err.timestamp, "paese": err.paese, "tipo": "errore", "data": err.data, "id": "a"+err.id });
     });
 
     unione = ordina(unione); //ordino gli elementi per data
 
     for (var i = 0; i < unione.length; i++) {
         if (i == 0) //se è il primo
-            tabella += "<p id='primo' className='" + unione[i].tipo + "'>";
+            tabella += "<p id='"+unione[i].id+"' className='primo " + unione[i].tipo + "'>";
         else if (i == unione.length - 1) // se è l'ultimo
-            tabella += "<p id='ultimo' className='" + unione[i].tipo + "'>";
+            tabella += "<p id='"+unione[i].id+"' className='ultimo " + unione[i].tipo + "'>";
         else //quelli in mezzo
-            tabella += "<p className='" + unione[i].tipo + "'>";
+            tabella += "<p id='"+unione[i].id+"' className='" + unione[i].tipo + "'>";
 
         tabella += unione[i].timestamp + ", " + unione[i].paese;
         tabella += "</p>";
