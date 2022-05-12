@@ -1,7 +1,20 @@
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet';
+import {useEffect, useState} from 'react';
 import '../css/Mappa.css';
+import parse from 'html-react-parser';
+//import oggetto from '../funzioni/capitali';
+import costruisciMarker from '../funzioni/marker';
+const Mappa = (props) => {
 
-const Mappa = () => {
+    /*
+    const [marker, setMarker] = useState('');
+    useEffect(async () => { //una volta caricata la pagina
+        //alert(costruisciMarker("shish"));
+        //alert(props.dati);
+        const oggetto = JSON.parse(props.dati);
+        setMarker(costruisciMarker(oggetto)); //costruisco i marker
+    }, []);
+    */
 
     return (
 
@@ -12,17 +25,21 @@ const Mappa = () => {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
 
-                <Marker position={[51.505, -0.09] /* puntatore inghilterra */}>
-                    <Popup class="buono">
+                {parse(props.marker)}
+                {/*
+                <Marker position={[51.505, -0.09] >
+                    <Popup>
                         Inghilterra
                     </Popup>
                 </Marker>
 
-                <Marker position={[60.505, 55.09] /* puntatore russia */}>
+                <Marker position={[55.755826, 37.6173] >
                     <Popup>
                         Russia
                     </Popup>
                 </Marker>
+                */}
+                
 
             </MapContainer>
         </div>

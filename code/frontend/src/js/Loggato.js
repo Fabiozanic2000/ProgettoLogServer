@@ -9,6 +9,7 @@ import {useEffect} from 'react';
 import {useState} from 'react';
 import datiGrafici from '../funzioni/datiGrafici';
 import defaults from '../funzioni/defaultGrafici';
+import costruisciMarker from '../funzioni/marker';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
@@ -27,6 +28,9 @@ const Loggato = () => {
     
     //dati da mandare alla pagina del filtro
     const [dati, setDati] = useState('');
+
+    //dati dei merker
+    const [marker, setMarker] = useState('');
 
     useEffect(async () => { //una volta caricata la pagina
         const url = "http://localhost:9000/verifica"; //url al server java, controllo di essere loggato
@@ -67,6 +71,8 @@ const Loggato = () => {
 
         setDati(JSON.stringify(risposta2.data));
 
+        setMarker(costruisciMarker(risposta2.data))
+
     }, []);
     
     return ( 
@@ -77,7 +83,7 @@ const Loggato = () => {
                 <Switch>
 
                     <Route exact path='/home'>
-                        <Home nome={nome} datiGraficoComunicazioni={datiGraficoComunicazioni} datiGraficoPosti={datiGraficoPosti}/>
+                        <Home nome={nome} marker={marker} datiGraficoComunicazioni={datiGraficoComunicazioni} datiGraficoPosti={datiGraficoPosti}/>
                     </Route>
 
                     <Route exact path='/filtra'>

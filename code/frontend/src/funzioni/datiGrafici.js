@@ -1,5 +1,5 @@
 const datiGrafici = function (risposta2) {
-    const colori = ["#33cc33", "red", "blue", "yellow", "grey", "green", "white", "orange", "black"]; //colori dei grafici
+    const colori = ["blue", "yellow", "grey", "green", "white", "#66ccff", "orange", "black", "#ff33cc", "violet"]; //colori dei grafici
     const buoni = risposta2.data.log.length; //quante comunicazione avvenute ci sono
     const errori = risposta2.data.err.length; //quante comunicazione fallite ci sono
 
@@ -9,7 +9,7 @@ const datiGrafici = function (risposta2) {
         datasets: [{
             label: "Comunicazioni",
             data: [buoni, errori], //dati che usa per creare il grafico
-            backgroundColor: colori //colora le barre
+            backgroundColor: ["#33cc33", "red"] //colora le barre verde e rosso
         }],
     };
 
