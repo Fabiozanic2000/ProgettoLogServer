@@ -84,7 +84,7 @@ public class DblogQuery {
             }
             oggettoRisposta += "]";
 
-            if (primaVolta) oggettoRisposta = ""; //se primaVOlta è true vuol dire che non ci sono record, quindi devo azzerare l'oggetto che restituisco
+            if (primaVolta) oggettoRisposta = "\"log\": []"; //se primaVOlta è true vuol dire che non ci sono record, quindi devo azzerare l'oggetto che restituisco
         }
         catch (SQLException ex) {
             ex.printStackTrace();

@@ -62,10 +62,14 @@ public class Query implements HttpHandler {
 
                 //creo la response (un oggetto json)
                 response = "{";
-                if (scegli.equals("buono"))
+                if (scegli.equals("buono")) {
                     response += dbLog.query(testo, stato, from, to);
-                else if (scegli.equals("errore"))
+                    response += ", \"err\":[]";
+                }
+                else if (scegli.equals("errore")) {
+                    response += "\"log\":[], ";
                     response += dbErrori.query(testo, stato, from, to);
+                }
                 else {
                     response += dbLog.query(testo, stato, from, to);
                     response += ", ";
@@ -91,6 +95,7 @@ public class Query implements HttpHandler {
         catch (Exception e) { //errore nella lettura del body della request
             e.printStackTrace();
         }
+        //System.out.println(response);
         //invio la risposta al client (gli header servono per le politiche di cors)
         String origine = t.getRequestHeaders()
                 .get("Origin")
