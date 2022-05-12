@@ -14,8 +14,18 @@ const datiGrafici = function (risposta2) {
     };
 
     //costrutto per il grafico dei posti
+    //i try servono perchè non sempre ci sono i log o gli errori, quindi se uno fallisco provo l'altro e se fallisce anche il secondo allora non c'è niente
     var posti = [];
-    posti.push({paese: risposta2.data.log[0].paese, numeri: 0}); //inizializzo l'oggetto dei posti con i relativi contatori
+    try {
+        posti.push({paese: risposta2.data.log[0].paese, numeri: 0}); //inizializzo l'oggetto dei posti con i relativi contatori
+    } catch {
+        try {
+            posti.push({paese: risposta2.data.err[0].paese, numeri: 0});
+        }
+        catch {
+            return;
+        }
+    }
 
     //scorro i log
     risposta2.data.log.forEach((dato) => {
