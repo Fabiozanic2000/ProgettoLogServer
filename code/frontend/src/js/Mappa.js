@@ -23,8 +23,8 @@ const Mappa = () => {
         //controllo che i campi siano diversi da null
         if (testo === null) testo = "";
         if (stato === null) stato = "";
-        if (from === null) from = Math.round(new Date().getTime() / 1000) - 90000;
-        if (to === null) to = Math.round(new Date().getTime() / 1000) + 90000;
+        if (from === null || from === "") from = Math.round(new Date().getTime() / 1000) - 90000;
+        if (to === null || to === "") to = Math.round(new Date().getTime() / 1000) + 90000;
         if (scegli === null) scegli = "";
 
         const url2 = "http://localhost:9000/query";

@@ -11,7 +11,6 @@ import datiGrafici from '../funzioni/datiGrafici';
 import defaults from '../funzioni/defaultGrafici';
 import getCookie from '../funzioni/getCookie';
 import axios from 'axios';
-//import { Cookies } from 'react-cookie';
 axios.defaults.withCredentials = true;
 
 
@@ -50,13 +49,12 @@ const Loggato = () => {
         //controllo che i campi siano diversi da null
         if (testo === null) testo = "";
         if (stato === null) stato = "";
-        if (from === null) from = Math.round(new Date().getTime() / 1000) - 90000;
-        if (to === null) to = Math.round(new Date().getTime() / 1000) + 90000;
+        if (from === null || from === "") from = Math.round(new Date().getTime() / 1000) - 90000;
+        if (to === null || to === "") to = Math.round(new Date().getTime() / 1000) + 90000;
         if (scegli === null) scegli = "";
 
         const url2 = "http://localhost:9000/query";
         const corpo = {testo: testo, stato: stato, from: from, to: to, scegli: scegli, withCredentials: true};
-
 
         const risposta2 = await axios.post(url2, corpo);
 

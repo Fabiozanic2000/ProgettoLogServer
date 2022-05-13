@@ -11,7 +11,7 @@ const Filtra = () => {
     const data2Input = useRef();
     const benevoliInput = useRef();
 
-    const [cookies, setCookie] = useCookies();
+    const [cookies, setCookie] = useCookies(); //variabile che gestisce i cookie
 
     const handleLoginForm = async (e) => {
         e.preventDefault(); //evita di ricaricare la pagina
@@ -49,6 +49,7 @@ const Filtra = () => {
         setCookie('from', from,{path: '/home'});
         setCookie('da', to,{path: '/home'});
         setCookie('scegli', scegli,{path: '/home'});
+        
         window.location.href = "http://localhost:3000/home"; //rimando a /home dove farà la query
     }
 
