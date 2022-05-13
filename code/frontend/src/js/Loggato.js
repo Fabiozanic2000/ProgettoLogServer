@@ -9,7 +9,9 @@ import {useEffect} from 'react';
 import {useState} from 'react';
 import datiGrafici from '../funzioni/datiGrafici';
 import defaults from '../funzioni/defaultGrafici';
+import getCookie from '../funzioni/getCookie';
 import axios from 'axios';
+//import { Cookies } from 'react-cookie';
 axios.defaults.withCredentials = true;
 
 
@@ -28,9 +30,6 @@ const Loggato = () => {
     //dati da mandare alla pagina del filtro
     const [dati, setDati] = useState('');
 
-    //dati dei merker
-    const [marker, setMarker] = useState('');
-
     useEffect(async () => { //una volta caricata la pagina
         const url = "http://localhost:9000/verifica"; //url al server java, controllo di essere loggato
         const risposta = await axios.post(url);
@@ -40,16 +39,13 @@ const Loggato = () => {
             setNome(risposta.data.nome);
             setProfessione(risposta.data.professione);
         }
-
-        //QUERY PER LEGGERE I LOG
-        const urlParams = new URLSearchParams(window.location.href); //oggetto che legge i parametri dell'url
-
-        //ottengo i parametri
-        var testo = urlParams.get('testo');
-        var stato = urlParams.get('stato');
-        var from = urlParams.get('from');
-        var to = urlParams.get('to');
-        var scegli = urlParams.get('scegli');
+        
+        //prendo i campi dai cookie
+        var testo = getCookie('testo');
+        var stato = getCookie('stato');
+        var from = getCookie('from');
+        var to = getCookie('da');
+        var scegli = getCookie('scegli');
 
         //controllo che i campi siano diversi da null
         if (testo === null) testo = "";
@@ -60,6 +56,7 @@ const Loggato = () => {
 
         const url2 = "http://localhost:9000/query";
         const corpo = {testo: testo, stato: stato, from: from, to: to, scegli: scegli, withCredentials: true};
+
 
         const risposta2 = await axios.post(url2, corpo);
 

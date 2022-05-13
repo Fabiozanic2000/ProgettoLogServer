@@ -2,23 +2,22 @@ import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet';
 import {useEffect, useState} from 'react';
 import '../css/Mappa.css';
 import costruisciMarker from '../funzioni/marker';
+import getCookie from '../funzioni/getCookie';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
-const Mappa = (props) => {
+const Mappa = () => {
 
     const [marker, setMarker] = useState([]);
 
     useEffect(async () => { //una volta caricata la pagina
-        //QUERY PER LEGGERE I LOG
-        const urlParams = new URLSearchParams(window.location.href); //oggetto che legge i parametri dell'url
 
-        //ottengo i parametri
-        var testo = urlParams.get('testo');
-        var stato = urlParams.get('stato');
-        var from = urlParams.get('from');
-        var to = urlParams.get('to');
-        var scegli = urlParams.get('scegli');
+        //prendo i campi dai cookie
+        var testo = getCookie('testo');
+        var stato = getCookie('stato');
+        var from = getCookie('from');
+        var to = getCookie('da');
+        var scegli = getCookie('scegli');
 
 
         //controllo che i campi siano diversi da null

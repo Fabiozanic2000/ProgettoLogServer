@@ -1,6 +1,7 @@
 import '../css/Form.css';
 import '../css/Filtra.css';
 import { useRef } from 'react';
+import { useCookies } from 'react-cookie';
 
 const Filtra = () => {
 
@@ -9,6 +10,8 @@ const Filtra = () => {
     const data1Input = useRef();
     const data2Input = useRef();
     const benevoliInput = useRef();
+
+    const [cookies, setCookie] = useCookies();
 
     const handleLoginForm = async (e) => {
         e.preventDefault(); //evita di ricaricare la pagina
@@ -39,21 +42,14 @@ const Filtra = () => {
             from = Math.round(new Date().getTime() / 1000);
             to = Math.round(new Date().getTime() / 1000); 
         }
-
-        //creo il nuovo link
-        var nuovoLink = "http://localhost:3000/home";
-        nuovoLink += "?from="+from+"&to="+to;
-
-        if (testo !== "")
-            nuovoLink += "&testo="+testo;
-
-        if (stato !== "")
-            nuovoLink += "&stato="+stato;
         
-        if (scegli !== "")
-            nuovoLink += "&scegli="+scegli;
-        
-        window.location.href = nuovoLink; //rimando a /home dove farà la query
+        //setto i cookie
+        setCookie('testo', testo,{path: '/home'});
+        setCookie('stato', stato,{path: '/home'});
+        setCookie('from', from,{path: '/home'});
+        setCookie('da', to,{path: '/home'});
+        setCookie('scegli', scegli,{path: '/home'});
+        window.location.href = "http://localhost:3000/home"; //rimando a /home dove farà la query
     }
 
     return ( 
