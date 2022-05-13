@@ -9,7 +9,6 @@ import {useEffect} from 'react';
 import {useState} from 'react';
 import datiGrafici from '../funzioni/datiGrafici';
 import defaults from '../funzioni/defaultGrafici';
-import costruisciMarker from '../funzioni/marker';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
@@ -70,9 +69,6 @@ const Loggato = () => {
         setDatiGraficoPosti(posti);
 
         setDati(JSON.stringify(risposta2.data));
-
-        setMarker(costruisciMarker(risposta2.data))
-
     }, []);
     
     return ( 
@@ -83,7 +79,7 @@ const Loggato = () => {
                 <Switch>
 
                     <Route exact path='/home'>
-                        <Home nome={nome} marker={marker} datiGraficoComunicazioni={datiGraficoComunicazioni} datiGraficoPosti={datiGraficoPosti}/>
+                        <Home nome={nome} datiGraficoComunicazioni={datiGraficoComunicazioni} datiGraficoPosti={datiGraficoPosti}/>
                     </Route>
 
                     <Route exact path='/filtra'>

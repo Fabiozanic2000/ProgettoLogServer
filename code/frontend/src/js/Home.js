@@ -9,7 +9,7 @@ const Home = (props) => {
         <div className="home">
             <h1>Benvenuto, {props.nome}</h1>
             
-            <Mappa marker={props.marker}/>
+            <Mappa/>
             
             <Grafici datiGraficoPosti={props.datiGraficoPosti} datiGraficoComunicazioni={props.datiGraficoComunicazioni}/>
                         
