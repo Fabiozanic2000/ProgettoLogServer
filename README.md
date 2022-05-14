@@ -44,4 +44,4 @@ Se non funziona, lanciarlo da amministratore
 
 Aprire la root del progetto da terminale e lanciare il seguente comando:
 
-#### `java -jar 2022t1.jar`
+#### `java -jar ./code/2022t1.jar`
