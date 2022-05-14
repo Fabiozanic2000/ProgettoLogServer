@@ -19,8 +19,8 @@
 integrati nell’IDE
 
 # LINK 
-- https://tree.taiga.io/project/271413-team1_pds2022/timeline
-- https://nodejs.dev/
+- [Taiga](https://tree.taiga.io/project/271413-team1_pds2022/timeline)
+- [NodeJS](https://nodejs.dev/)
 - [Mattermost](http://64.225.69.78:8065/signup_user_complete/?id=sxcmexmn8jgm3xfw3s7atdaqwy)
 # Usare l'applicazione
 
