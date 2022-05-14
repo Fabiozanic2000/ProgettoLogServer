@@ -122,5 +122,10 @@ public class Dblog {
         DbInsert dbInsert = new DbInsert();
         return dbInsert.insert(request, auth, ident, httpmethod, time, response, bytes, clientip, rawrequest, data, timestamp, paese, this);
     }
+
+    public String query (String testo, String stato, int from, int to) throws SQLException {
+        DblogQuery query = new DblogQuery();
+        return query.query(this, testo, stato, from, to);
+    }
 }
 

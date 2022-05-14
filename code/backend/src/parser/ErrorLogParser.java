@@ -17,7 +17,7 @@ import java.util.Scanner;
 
 public class ErrorLogParser {
 
-    private String convertiMese(String mese){
+    private String convertiMese(String mese) {
         return switch (mese) {
             case "Jan" -> "01";
             case "Feb" -> "02";
@@ -38,7 +38,6 @@ public class ErrorLogParser {
         DblogErrori db = new DblogErrori("dberr");
         db.checkCreateDb();
 
-
         Scanner sc = new Scanner(file);
         String input;
         GrokCompiler grokCompiler = GrokCompiler.newInstance();
@@ -46,7 +45,8 @@ public class ErrorLogParser {
 
         //inserire pattern che deve compilare
         final Grok grok = grokCompiler.compile("\\[%{DAY:giorno_della_settimana} %{MONTH:mese} %{MONTHDAY:giorno_del_mese} %{TIME:orario} %{YEAR:anno}\\] \\[:%{LOGLEVEL:tipo_errore}\\] \\[%{WORD:ignora} %{POSINT:pid}\\] \\[%{WORD:ignora} %{IP:clientip}:%{POSINT:porta_client}\\] \\[%{WORD:ignora} %{IP:ignora}\\] ModSecurity: %{WORD:errorcode}. %{GREEDYDATA:resto_del_mondo}");
-        System.out.println("FILE degli errori");
+        System.out
+                .println("FILE degli errori");
         //StringBuffer sb = new StringBuffer();
         int c = 0;
         while (sc.hasNextLine()) {
@@ -56,7 +56,6 @@ public class ErrorLogParser {
                 Match gm = grok.match(input);
                 Map<String, Object> capture = gm.capture();
 
-
                 String data = capture.get("anno").toString() + "-" + convertiMese(capture.get("mese").toString()) +
                         "-" + capture.get("giorno_del_mese").toString();
                 DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
@@ -64,21 +63,35 @@ public class ErrorLogParser {
                 long unix_time = data_unix.getTime() /1000;
 
                 db.insert(capture.get("giorno_della_settimana").toString(),
-                        capture.get("mese").toString(), //ritora Aug, Sep ...
-                        Integer.parseInt(capture.get("giorno_del_mese").toString()),
-                        capture.get("orario").toString(),
-                        Integer.parseInt(capture.get("anno").toString()),
+                        capture.get("mese")
+                                .toString(), //ritora Aug, Sep ...
+                        Integer.parseInt(capture
+                                .get("giorno_del_mese")
+                                .toString()),
+                        capture.get("orario")
+                                .toString(),
+                        Integer.parseInt(capture
+                                .get("anno")
+                                .toString()),
                         unix_time,
-                        capture.get("tipo_errore").toString(),
-                        Integer.parseInt(capture.get("pid").toString()),
-                        capture.get("clientip").toString(),
-                        Integer.parseInt(capture.get("porta_client").toString()),
-                        capture.get("errorcode").toString(),
-                        geoip.getCountry(capture.get("clientip").toString()),
-                        capture.get("resto_del_mondo").toString());
+                        capture.get("tipo_errore")
+                                .toString(),
+                        Integer.parseInt(capture
+                                .get("pid")
+                                .toString()),
+                        capture.get("clientip")
+                                .toString(),
+                        Integer.parseInt(capture
+                                .get("porta_client")
+                                .toString()),
+                        capture.get("errorcode")
+                                .toString(),
+                        geoip.getCountry(capture
+                                .get("clientip")
+                                .toString()),
+                        capture.get("resto_del_mondo")
+                                .toString());
                 //System.out.println(capture.toString());
-
-                //System.out.println("Fenicottero");
                 //System.out.println(c);
             } catch (Exception ex) {
                 ex.printStackTrace();

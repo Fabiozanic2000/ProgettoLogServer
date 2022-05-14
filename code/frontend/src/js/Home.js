@@ -4,15 +4,14 @@ import '../css/tabella.css';
 import '../css/Home.css';
 
 const Home = (props) => {
-    
+
     return ( 
         <div className="home">
             <h1>Benvenuto, {props.nome}</h1>
             
-            <Mappa />
+            <Mappa/>
             
-           
-            <Grafici />
+            <Grafici datiGraficoPosti={props.datiGraficoPosti} datiGraficoComunicazioni={props.datiGraficoComunicazioni}/>
                         
         </div>
      );

@@ -143,7 +143,7 @@ public class ParseLog extends TimerTask {
             }
         }
 
-        System.out.println("Ho finito di azzeerare i file ");
+        System.out.println("Ho finito di azzerare i file ");
     }
 }
 

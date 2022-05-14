@@ -81,6 +81,4 @@ public class Verifica implements HttpHandler {
         os.write(response.getBytes(StandardCharsets.UTF_8));
         os.close();
     }
-
-
 }

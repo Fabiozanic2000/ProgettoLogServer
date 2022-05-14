@@ -2,6 +2,7 @@ out/
 code/frontend/node_modules
 .DS*
 code/.DS*
+code/frontend/src/.DS*
 code/backend/out/
 code/backend/.idea
 code/backend/Unnamed.run.xml

@@ -17,7 +17,8 @@ public class GeoIp {
 
         File database = new File("." + File.separator + "code" + File.separator + "backend" + File.separator + "lib" + File.separator + "GeoLite2-City.mmdb"); //legge il database per capire da dove vengono gli ip
 
-        DatabaseReader reader = new DatabaseReader.Builder(database).build(); //lettore del db (forse)
+        DatabaseReader reader = new DatabaseReader.Builder(database)
+                .build(); //lettore del db (forse)
 
         InetAddress ipAddress = InetAddress.getByName(ip); //prendo l'indirizzo ip della classe giusta
 
@@ -25,6 +26,7 @@ public class GeoIp {
 
         //restituisco lo stato
         Country country = response.getCountry();
+
         return country.getIsoCode();
     }
 }
