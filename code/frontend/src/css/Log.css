@@ -34,3 +34,7 @@ p {
 #lel:hover {
     background-color: blue;
 }
+
+p:hover {
+    background-color: #00ccff;
+}
