@@ -16,10 +16,10 @@ const PagFiltra = (props) => {
     const [spiegazione, setSpiegazione] = useState('');
 
     useEffect(async () => { //una volta caricata la pagina
-        const url = "http://64.225.69.78:9000/verifica"; //url al server java
+        const url = "http://localhost:9000/verifica"; //url al server java
         const risposta = await axios.post(url);
         if (risposta.data.professione == "cliente")  // se sei un cliente non puoi accedere
-            window.location.href = "http://64.225.69.78:3000/home";
+            window.location.href = "http://localhost:3000/home";
 
         setTabella(costruisciLog(props.dati));
         

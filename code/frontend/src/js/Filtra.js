@@ -50,7 +50,7 @@ const Filtra = () => {
         setCookie('da', to,{path: '/home'});
         setCookie('scegli', scegli,{path: '/home'});
         
-        window.location.href = "http://64.225.69.78:3000/home"; //rimando a /home dove farà la query
+        window.location.href = "http://localhost:3000/home"; //rimando a /home dove farà la query
     }
 
     return ( 

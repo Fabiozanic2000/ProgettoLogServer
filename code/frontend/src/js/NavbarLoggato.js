@@ -9,7 +9,7 @@ const NavbarLoggato = (props) => {
     const [cookies, setCookie] = useCookies(); //variabile che gestisce i cookie
 
     const clickBottone = async (e) => {
-        const url = 'http://64.225.69.78:9000/logout';
+        const url = 'http://localhost:9000/logout';
         await axios.post(url);
         
         //cancello i cookie
@@ -19,7 +19,7 @@ const NavbarLoggato = (props) => {
         setCookie('da', "",{path: '/home'});
         setCookie('scegli', "",{path: '/home'});
         
-        window.location.href = "http://64.225.69.78:3000";
+        window.location.href = "http://localhost:3000";
     }
 
     const pulsanti = [ {//variabile che contiene i vari pulsanti
