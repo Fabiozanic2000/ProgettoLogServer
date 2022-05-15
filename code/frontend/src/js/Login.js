@@ -13,7 +13,7 @@ const Login = () => {
 
     const handleLoginForm = async (e) => {
         e.preventDefault(); //evita di ricaricare la pagina
-        const url = "http://localhost:9000/login"; //url al server java
+        const url = "http://64.225.69.78:9000/login"; //url al server java
 
         const email = emailInput.current.value; //prendo il valore dell'input text
         let password = passwordInput.current.value;
