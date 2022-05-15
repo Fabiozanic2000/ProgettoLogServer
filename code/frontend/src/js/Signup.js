@@ -18,11 +18,11 @@ const Signup = (props) => {
         }
         setTitolo("Registra un nuovo tecnico");
 
-        const url = "http://localhost:9000/verifica"; //url al server java
+        const url = "http://64.225.69.78:9000/verifica"; //url al server java
         const risposta = await axios.post(url);
         if (risposta.data.professione !== "admin") { // se non sono admin non posso accedere
         
-            window.location.href = "http://localhost:3000/home";
+            window.location.href = "http://64.225.69.78:3000/home";
         }
     });
 
@@ -34,7 +34,7 @@ const Signup = (props) => {
 
     const handleLoginForm = async (e) => {
         e.preventDefault(); //evita di ricaricare la pagina
-        const url = "http://localhost:9000/signup";
+        const url = "http://64.225.69.78:9000/signup";
 
         const email = emailInput.current.value;
         const nome = nomeInput.current.value;
@@ -71,7 +71,7 @@ const Signup = (props) => {
             
             //faccio il login
             const corpo2 = {email: email, password: password, withCredentials: true};
-            const url2 = "http://localhost:9000/login";
+            const url2 = "http://64.225.69.78:9000/login";
             const risposta2 = await axios.post(url2, corpo2);
 
             //guardo se è tutto ok
