@@ -28,12 +28,12 @@ const costruisciLog = function (dati) {
     unione = ordina(unione); //ordino gli elementi per data
 
     for (var i = 0; i < unione.length; i++) {
-        if (i == 0) //se è il primo
-            tabella += "<p id='"+unione[i].id+"' className='primo " + unione[i].tipo + "'>";
-        else if (i == unione.length - 1) // se è l'ultimo
-            tabella += "<p id='"+unione[i].id+"' className='ultimo " + unione[i].tipo + "'>";
+        if (i === 0) //se è il primo
+            tabella += "<p id='"+unione[i].id+"' className='blu primo " + unione[i].tipo + "'>";
+        else if (i === unione.length - 1) // se è l'ultimo
+            tabella += "<p id='"+unione[i].id+"' className='blu ultimo " + unione[i].tipo + "'>";
         else //quelli in mezzo
-            tabella += "<p id='"+unione[i].id+"' className='" + unione[i].tipo + "'>";
+            tabella += "<p id='"+unione[i].id+"' className='blu " + unione[i].tipo + "'>";
 
         tabella += unione[i].timestamp + ", " + unione[i].paese;
         tabella += "</p>";

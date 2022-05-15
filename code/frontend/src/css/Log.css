@@ -35,6 +35,6 @@ p {
     background-color: blue;
 }
 
-p:hover {
+.blu:hover {
     background-color: #00ccff;
 }
