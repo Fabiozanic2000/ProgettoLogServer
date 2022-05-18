@@ -1,6 +1,6 @@
 # 2022T1
 
-## Heimdall: statistiche file di log http in modo semplificato tramite web app
+## Heimdall: statistiche file di log http in modo semplificato tramite web app.
 ### Web app che permette di visualizzare tramite statistiche e grafici il contenuto di file di log generati da Apache web server. 
 # GRUPPO
 
@@ -22,6 +22,7 @@ integrati nell’IDE
 - [Taiga](https://tree.taiga.io/project/271413-team1_pds2022/timeline)
 - [NodeJS](https://nodejs.dev/)
 - [Mattermost](http://64.225.69.78:8065/signup_user_complete/?id=sxcmexmn8jgm3xfw3s7atdaqwy)
+- [Web App](http://64.225.69.78:3000/) (il server potrebbe dare alcuni problemi, per risolverli bisogna provare a cancellare i cookie, passare alla modalità incognito o cambiare browser, in ogni caso bisogna usare il protocollo HTTP non HTTPS)
 # Usare l'applicazione
 
 ## Frontend
