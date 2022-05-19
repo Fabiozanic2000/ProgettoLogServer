@@ -37,7 +37,6 @@ public class DblogQuery {
             }
             queryLog += "order by data;";
 
-            from = 0; //lo metto per il momento solo per stampare qualcosa
             //preparo la query
             pst = c.prepareStatement(queryLog);
             pst.setInt(1, from);
