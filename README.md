@@ -4,8 +4,8 @@
 ### Web app che permette di visualizzare tramite statistiche e grafici il contenuto di file di log generati da Apache web server. 
 # GRUPPO
 
-- Alex Caraffi, 147283, Project Owner 
-- Fabio Zanichelli, 142111, Scrum Master 
+- Alex Caraffi (superflem), 147283, Project Owner 
+- Fabio Zanichelli , 142111, Scrum Master 
 - Francesco Castorini, 143541
 - Antonio Benevento Vitale Nigro, 148399
 - Luca Dall'Olio, 146936
