@@ -5,7 +5,7 @@
 # GRUPPO
 
 - Alex Caraffi (superflem), 147283, Project Owner 
-- Fabio Zanichelli , 142111, Scrum Master 
+- Fabio Zanichelli (Zukkerino) , 142111, Scrum Master 
 - Francesco Castorini, 143541
 - Antonio Benevento Vitale Nigro, 148399
 - Luca Dall'Olio, 146936
