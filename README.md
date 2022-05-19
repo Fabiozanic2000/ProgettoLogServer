@@ -2,7 +2,7 @@
 
 ## Heimdall: statistiche file di log http in modo semplificato tramite web app.
 ### Web app che permette di visualizzare tramite statistiche e grafici il contenuto di file di log generati da Apache web server. 
-# GRUPPO
+# GRUPPO 
 
 - Alex Caraffi (superflem), 147283, Project Owner 
 - Fabio Zanichelli (Zukkerino) , 142111, Scrum Master 
