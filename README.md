@@ -4,12 +4,12 @@
 ### Web app che permette di visualizzare tramite statistiche e grafici il contenuto di file di log generati da Apache web server. 
 # GRUPPO 
 
-- Alex Caraffi (superflem), 147283, Project Owner 
+- Alex Caraffi (superflem), 147283, Project Owner. 
 - Fabio Zanichelli (Zukkerino) , 142111, Scrum Master 
 - Francesco Castorini (Il-castor), 143541
 - Antonio Benevento Vitale Nigro (BennyBanana), 148399
 - Luca Dall'Olio (Belix), 146936
-- Francesco Malferrari, 142795
+- Francesco Malferrari, 142795    
 
 # Come utilizzare il repository
 - /doc/presentation ← Presentazioni (ppt. o simile); NON caricate i video, mettete dei link. 
