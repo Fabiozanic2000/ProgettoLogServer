@@ -7,10 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/junit_jupiter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/junit_jupiter.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileTest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/parser/AzzeraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/parser/AzzeraTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,13 +54,13 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="parser" />
       <recent name="dberrori" />
       <recent name="dblog" />
       <recent name="oggetti" />
-      <recent name="parser" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AzzeraTest.azzera">
+  <component name="RunManager" selected="JUnit.ErrorLogParserTest.parse">
     <configuration name="server.Main" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -137,7 +134,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeoIpTest.getCountry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ErrorLogParserTest.parse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="2022t1" />
       <extension name="coverage">
         <pattern>
@@ -146,8 +143,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="parser" />
-      <option name="MAIN_CLASS_NAME" value="parser.GeoIpTest" />
-      <option name="METHOD_NAME" value="getCountry" />
+      <option name="MAIN_CLASS_NAME" value="parser.ErrorLogParserTest" />
+      <option name="METHOD_NAME" value="parse" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ErrorLogParserTest.parse" />
         <item itemvalue="JUnit.AzzeraTest.azzera" />
         <item itemvalue="JUnit.DbErroriQueryTest.query" />
         <item itemvalue="JUnit.DblogTest.getPercorso" />
         <item itemvalue="JUnit.DblogTest.connect" />
-        <item itemvalue="JUnit.GeoIpTest.getCountry" />
       </list>
     </recent_temporary>
   </component>
