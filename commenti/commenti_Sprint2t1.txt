@@ -7,14 +7,15 @@ Backlog. rimane il problema che le US sono ancora troppo grandi e raramente spac
 DB: sqlite, 3 tabelle, con dati
 Test: presente qualche test. Non calcolo il coverage, ma mi sembra basso. Notate che NON SONO unit testi, ma son INTEGRATION TEST in quanto fanno riferimento ad entità esterne (internet, db)
 Codice: mi sembra ci sia soprattutto codice di collegamento, poca elaborazione di dati
+Retrospettiva: Non avete usato il formato Essence. Non avete analizzato se i propositi delle retrospettiva dello s1 hanno ottenuto risultati oppure no. Gli action point sono un po' più precisi, ma non troppo. RIFATE. 
+
 
 GIT
 Chi è superflem? Zukkerino è Zanichelli? Magari mettete questi nick nel readme così capisco. 
 Antonio Benevento Vitale Nigro, contribuisce in qualche modo?
 
 
-MANCANO: 
-Retrospetiva,
+MANCA: 
 Report review  
 
 
