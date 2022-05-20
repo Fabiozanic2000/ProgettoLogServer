@@ -15,7 +15,7 @@ class AzzeraTest {
 
     @Test
     void azzera() {
-        File file = new File("fileTest");
+        File file = new File("."+File.separator+"test"+File.separator+"parser","fileTest");
         BufferedWriter writer = null;
         try {
             writer = new BufferedWriter(new FileWriter(file));
@@ -23,7 +23,7 @@ class AzzeraTest {
             writer.close();
             Azzera az = new Azzera();
             az.azzera(file);
-            assertEquals("", Files.readString(Path.of("fileTest")));
+            assertEquals("", Files.readString(Path.of("."+File.separator+"test"+File.separator+"parser"+File.separator+"fileTest")));
         } catch (IOException e) {
             e.printStackTrace();
         }
