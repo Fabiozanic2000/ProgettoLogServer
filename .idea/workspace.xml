@@ -7,10 +7,117 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2022t1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/2022t1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/Mail.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/Mail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/classpath-include" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/APACHE-LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/CDDL-LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/css/maven-base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/css/maven-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/css/print.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/css/site.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/google-api-client-android-dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/google-api-client-appengine-dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/google-api-client-dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/google-api-client-gson-dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/google-api-client-jackson2-dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/google-api-client-java6-dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/google-api-client-servlet-dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/google-http-client-android-dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/google-http-client-appengine-dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/google-http-client-dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/google-http-client-gson-dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/google-http-client-jackson2-dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/google-http-client-jdo-dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/google-oauth-client-appengine-dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/google-oauth-client-dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/google-oauth-client-java6-dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/google-oauth-client-jetty-dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/google-oauth-client-servlet-dependencies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/images/close.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/images/collapsed.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/images/expanded.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/images/external.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/images/icon_error_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/images/icon_info_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/images/icon_success_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/images/icon_warning_sml.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/images/logos/build-by-maven-black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/images/logos/build-by-maven-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/images/logos/maven-feather.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/dependencies/images/newwindow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/descriptor.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/google-api-services-storage-v1-rev171-1.25.0-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/google-api-services-storage-v1-rev171-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/google-api-services-storage-v1-rev171-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/google-api-services-storage-v1-rev171-1.25.0.jar.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/google-api-client-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/google-api-client-android-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/google-api-client-appengine-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/google-api-client-gson-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/google-api-client-jackson2-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/google-api-client-java6-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/google-api-client-servlet-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/google-http-client-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/google-http-client-android-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/google-http-client-appengine-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/google-http-client-gson-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/google-http-client-jackson2-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/google-http-client-jdo-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/google-oauth-client-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/google-oauth-client-appengine-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/google-oauth-client-java6-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/google-oauth-client-jetty-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/google-oauth-client-servlet-1.25.0-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/gson-2.1-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/httpclient-4.5.5-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/jackson-core-2.9.6-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/jdo2-api-2.3-eb-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/jetty-6.1.26-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/jetty-util-6.1.26-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs-sources/transaction-api-1.1-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-api-client-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-api-client-1.25.0.jar.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-api-client-android-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-api-client-android-1.25.0.jar.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-api-client-appengine-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-api-client-gson-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-api-client-jackson2-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-api-client-java6-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-api-client-servlet-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-http-client-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-http-client-1.25.0.jar.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-http-client-android-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-http-client-android-1.25.0.jar.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-http-client-appengine-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-http-client-gson-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-http-client-gson-1.25.0.jar.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-http-client-jackson2-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-http-client-jackson2-1.25.0.jar.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-http-client-jdo-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-http-client-jdo-1.25.0.jar.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-oauth-client-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-oauth-client-1.25.0.jar.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-oauth-client-appengine-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-oauth-client-java6-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-oauth-client-jetty-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/google-oauth-client-servlet-1.25.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/gson-2.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/gson-2.1.jar.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/httpclient-4.5.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/jackson-core-2.9.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/jackson-core-2.9.6.jar.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/jdo2-api-2.3-eb.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/jetty-6.1.26.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/jetty-util-6.1.26.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/jsr305-3.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/libs/transaction-api-1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/proguard-google-api-client.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/lib/storage/readme.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/server/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/server/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/code/code.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/code/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dberr" beforeDir="false" afterPath="$PROJECT_DIR$/database/dberr" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +152,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/code/backend/lib/javax.mail.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/code/backend/lib/sqlite-jdbc-3.36.0.3.jar" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -62,7 +169,7 @@
       <recent name="oggetti" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.javaMail">
+  <component name="RunManager" selected="Application.server.Main">
     <configuration name="javaMail" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="15" />
       <option name="MAIN_CLASS_NAME" value="parser.javaMail" />
@@ -135,6 +242,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.parser.javaMail" />
       <item itemvalue="Application.server.Main" />
       <item itemvalue="Application.javaMail" />
       <item itemvalue="JUnit.AzzeraTest.azzera" />

@@ -22,7 +22,7 @@ public class Main {
         UtentiDb dbUtenti = new UtentiDb("utentidb");
         dbUtenti.checkCreateDb();
 
-        HttpServer server = HttpServer.create(new InetSocketAddress(7000), 0); //crea il server in ascolto sull porta 9000
+        HttpServer server = HttpServer.create(new InetSocketAddress(9000), 0); //crea il server in ascolto sull porta 9000
         System.out.println("Server listening on port 9000");
 
         server.createContext("/login", new Login(dbUtenti)); //metodo per eseguire login con cookie se esiste utente nel db

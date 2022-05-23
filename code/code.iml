@@ -20,5 +20,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="sun.activation.javax" level="project" />
+    <orderEntry type="library" name="sqlite-jdbc-3.36.0.3" level="project" />
   </component>
 </module>
