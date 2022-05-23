@@ -37,5 +37,14 @@
     </orderEntry>
     <orderEntry type="module" module-name="code" scope="TEST" />
     <orderEntry type="library" name="junit.jupiter" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/code/backend/lib/javax.mail.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

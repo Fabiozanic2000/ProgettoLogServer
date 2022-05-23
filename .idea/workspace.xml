@@ -8,10 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.err" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.err" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022t1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/2022t1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/backend/src/parser/ErrorLogParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/ErrorLogParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/ParseLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/ParseLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/dberr" beforeDir="false" afterPath="$PROJECT_DIR$/database/dberr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/code/code.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -40,17 +39,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/UNIVERSITA/TERZOANNO/SECONDO/PDS/2022t1&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Users/eucas/Documents/UNIVERSITA/3_ANNO/PdS/2022t1/code/backend/lib/javax.mail.jar",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -62,7 +69,16 @@
       <recent name="oggetti" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.server.Main">
+  <component name="RunManager" selected="Application.parser.javaMail">
+    <configuration name="parser.javaMail" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="15" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="parser.javaMail" />
+      <module name="2022t1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="server.Main" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -152,6 +168,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.server.Main" />
+      <item itemvalue="Application.parser.javaMail" />
+      <item itemvalue="JUnit.AzzeraTest.azzera" />
+      <item itemvalue="JUnit.DbErroriQueryTest.query" />
+      <item itemvalue="JUnit.DbInsertTest.insert" />
+      <item itemvalue="JUnit.DblogTest.getPercorso" />
+      <item itemvalue="JUnit.ErrorLogParserTest.parse" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.DbInsertTest.insert" />

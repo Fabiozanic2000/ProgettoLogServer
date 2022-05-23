@@ -58,6 +58,8 @@ public class ErrorLogParser {
                 System.out.println("dataora: " + dataora);
                 System.out.println(capture.get("clientip").toString());
                 System.out.println("#######");
+
+
             }
         }
         lastTime = currentTime;
