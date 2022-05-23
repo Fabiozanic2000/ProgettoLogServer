@@ -13,14 +13,15 @@ public class Mail{
         properties.put("mail.smtp.starttls.enable", "true");
         properties.put("mail.smtp.host", "smtp.gmail.com");
         properties.put("mail.smtp.port", 587);
+        properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 
         String myAccountEmail = "pds.teamuno@gmail.com";
         String password = "@mazepin9";
 
         Session session = Session.getInstance(properties, new Authenticator() {
-        @Override
-           protected PasswordAuthentication getPasswordAuthentication(){
-            return new PasswordAuthentication(myAccountEmail, password);
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication(){
+                return new PasswordAuthentication(myAccountEmail, password);
         }
         });
 

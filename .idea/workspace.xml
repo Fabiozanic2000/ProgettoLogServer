@@ -9,8 +9,9 @@
     <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/2022t1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/2022t1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/ErrorLogParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/ErrorLogParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/Mail.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/Mail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/code/code.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dberr" beforeDir="false" afterPath="$PROJECT_DIR$/database/dberr" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,25 +40,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/eucas/Documents/UNIVERSITA/3_ANNO/PdS/2022t1/code/backend/lib/javax.mail.jar",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/code/backend/lib/javax.mail.jar" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -69,7 +62,28 @@
       <recent name="oggetti" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.parser.javaMail">
+  <component name="RunManager" selected="Application.javaMail">
+    <configuration name="javaMail" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="15" />
+      <option name="MAIN_CLASS_NAME" value="parser.javaMail" />
+      <module name="2022t1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="javaMail" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="parser.javaMail" />
+      <module name="code" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="parser.javaMail" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="15" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -104,54 +118,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DbErroriQueryTest.query" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="2022t1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dberrori.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dberrori" />
-      <option name="MAIN_CLASS_NAME" value="dberrori.DbErroriQueryTest" />
-      <option name="METHOD_NAME" value="query" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DbInsertTest.insert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="2022t1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dblog.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dblog" />
-      <option name="MAIN_CLASS_NAME" value="dblog.DbInsertTest" />
-      <option name="METHOD_NAME" value="insert" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DblogTest.getPercorso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="2022t1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dblog.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dblog" />
-      <option name="MAIN_CLASS_NAME" value="dblog.DblogTest" />
-      <option name="METHOD_NAME" value="getPercorso" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ErrorLogParserTest.parse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="2022t1" />
       <extension name="coverage">
@@ -170,20 +136,16 @@
     </configuration>
     <list>
       <item itemvalue="Application.server.Main" />
-      <item itemvalue="Application.parser.javaMail" />
+      <item itemvalue="Application.javaMail" />
       <item itemvalue="JUnit.AzzeraTest.azzera" />
-      <item itemvalue="JUnit.DbErroriQueryTest.query" />
-      <item itemvalue="JUnit.DbInsertTest.insert" />
-      <item itemvalue="JUnit.DblogTest.getPercorso" />
       <item itemvalue="JUnit.ErrorLogParserTest.parse" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DbInsertTest.insert" />
+        <item itemvalue="Application.javaMail" />
+        <item itemvalue="Application.javaMail" />
         <item itemvalue="JUnit.ErrorLogParserTest.parse" />
         <item itemvalue="JUnit.AzzeraTest.azzera" />
-        <item itemvalue="JUnit.DbErroriQueryTest.query" />
-        <item itemvalue="JUnit.DblogTest.getPercorso" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +175,21 @@
       </map>
     </option>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NoClassDefFoundError" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/2022t1$server_Main.ic" NAME="server.Main Coverage Results" MODIFIED="1653315217118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/2022t1$server_Main.ic" NAME="server.Main Coverage Results" MODIFIED="1652175535429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
