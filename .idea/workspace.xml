@@ -36,36 +36,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Users/User/Desktop/UNIVERSITA/TERZOANNO/SECONDO/PDS/2022t1",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="dberrori" />
       <recent name="dblog" />
-      <recent name="oggetti" />
       <recent name="parser" />
+      <recent name="dberrori" />
+      <recent name="oggetti" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.server.Main">
+  <component name="RunManager" selected="JUnit.DbInsertTest.insert">
     <configuration name="server.Main" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="server.Main" />
       <module name="code" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AzzeraTest.azzera" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="2022t1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="parser" />
+      <option name="MAIN_CLASS_NAME" value="parser.AzzeraTest" />
+      <option name="METHOD_NAME" value="azzera" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -86,7 +100,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DblogTest.connect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DbInsertTest.insert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="2022t1" />
       <extension name="coverage">
         <pattern>
@@ -95,8 +109,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dblog" />
-      <option name="MAIN_CLASS_NAME" value="dblog.DblogTest" />
-      <option name="METHOD_NAME" value="connect" />
+      <option name="MAIN_CLASS_NAME" value="dblog.DbInsertTest" />
+      <option name="METHOD_NAME" value="insert" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -118,7 +132,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeoIpTest.getCountry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ErrorLogParserTest.parse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="2022t1" />
       <extension name="coverage">
         <pattern>
@@ -127,8 +141,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="parser" />
-      <option name="MAIN_CLASS_NAME" value="parser.GeoIpTest" />
-      <option name="METHOD_NAME" value="getCountry" />
+      <option name="MAIN_CLASS_NAME" value="parser.ErrorLogParserTest" />
+      <option name="METHOD_NAME" value="parse" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -136,10 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DbInsertTest.insert" />
+        <item itemvalue="JUnit.ErrorLogParserTest.parse" />
+        <item itemvalue="JUnit.AzzeraTest.azzera" />
         <item itemvalue="JUnit.DbErroriQueryTest.query" />
         <item itemvalue="JUnit.DblogTest.getPercorso" />
-        <item itemvalue="JUnit.DblogTest.connect" />
-        <item itemvalue="JUnit.GeoIpTest.getCountry" />
       </list>
     </recent_temporary>
   </component>
@@ -151,8 +166,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652167631611</updated>
+      <workItem from="1653292251713" duration="2168000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
