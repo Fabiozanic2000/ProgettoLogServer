@@ -10,10 +10,9 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class ErrorLogParser {
 
@@ -34,6 +33,37 @@ public class ErrorLogParser {
             default -> "";
         };
     }
+    public long lastTime = -1;
+    public ArrayList<String> ipSospetti = new ArrayList<String>();
+    private void malevolo(Map<String, Object> capture) throws ParseException {
+        int threshold = 2; //delta
+
+        String lastLine = "";
+        String dataora = capture.get("anno").toString() + "-" + convertiMese(capture.get("mese").toString()) +
+                "-" + capture.get("giorno_del_mese").toString() + " " + capture.get("orario");
+        //System.out.println("la data e " + dataora);
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+        long currentTime = dateFormat.parse(dataora).getTime()/1000;
+        //System.out.println("ts : "+currentTime);
+
+        if (lastTime != -1){
+            long duration = (currentTime - lastTime);
+            if (duration <= threshold){
+                /*if (Collections.frequency(ipSospetti, capture.get("clientip")) == 0){
+                    ipSospetti.add(capture.get("clientip").toString());
+                }
+                else if*/
+                System.out.println("########");
+                System.out.println("dataora: " + dataora);
+                System.out.println(capture.get("clientip").toString());
+                System.out.println("#######");
+            }
+        }
+        lastTime = currentTime;
+        System.out.println("lastTime" + lastTime);
+
+    }
     public void parse(File file, GeoIp geoip) throws IOException, GeoIp2Exception, SQLException {
         DblogErrori db = new DblogErrori("dberr");
         db.checkCreateDb();
@@ -48,16 +78,22 @@ public class ErrorLogParser {
         System.out
                 .println("FILE degli errori");
         //StringBuffer sb = new StringBuffer();
-        int c = 0;
+        long delta = 5;
         while (sc.hasNextLine()) {
             try {
-                c++;
+
                 input = sc.nextLine(); //legga la riga
                 Match gm = grok.match(input);
                 Map<String, Object> capture = gm.capture();
 
+
+                malevolo(capture);
+
+
+                //servono per il db dopo
                 String data = capture.get("anno").toString() + "-" + convertiMese(capture.get("mese").toString()) +
-                        "-" + capture.get("giorno_del_mese").toString();
+                        "-" + capture.get("giorno_del_mese").toString() ;
+
                 DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
                 Date data_unix = df.parse(data);
                 long unix_time = data_unix.getTime() /1000;
