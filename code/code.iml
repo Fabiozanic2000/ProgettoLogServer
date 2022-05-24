@@ -10,5 +10,14 @@
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="maxmind.geoip2" level="project" />
     <orderEntry type="library" name="io.krakens.java.grok" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/backend/lib/javax.mail.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
