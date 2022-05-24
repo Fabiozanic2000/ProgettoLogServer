@@ -36,17 +36,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/User/Desktop/UNIVERSITA/TERZOANNO/SECONDO/PDS/2022t1",
-    "nodejs_package_manager_path": "npm"
-  }
-}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -58,7 +47,7 @@
       <recent name="oggetti" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DbInsertTest.insert">
+  <component name="RunManager" selected="Application.server.Main">
     <configuration name="server.Main" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -148,6 +137,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.server.Main" />
+      <item itemvalue="JUnit.DbErroriQueryTest.query" />
+      <item itemvalue="JUnit.DbInsertTest.insert" />
+      <item itemvalue="JUnit.DblogTest.getPercorso" />
+      <item itemvalue="JUnit.AzzeraTest.azzera" />
+      <item itemvalue="JUnit.ErrorLogParserTest.parse" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.DbInsertTest.insert" />
