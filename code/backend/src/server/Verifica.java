@@ -32,8 +32,6 @@ public class Verifica implements HttpHandler {
                 else {
                     String id = cookie.substring(3,cookie.length()); //estraggo l'id del cookie
 
-                    System.out.println(id);
-
                     if (id.equals("-1")) {
                         response = "";
                     }
