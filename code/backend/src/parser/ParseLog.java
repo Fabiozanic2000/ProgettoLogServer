@@ -19,7 +19,6 @@ import java.util.Scanner;
 import java.util.TimerTask;
 
 public class ParseLog extends TimerTask {
-
     private String convertiMese(String mese){
         return switch (mese) {
             case "Jan" -> "01";
@@ -58,7 +57,7 @@ public class ParseLog extends TimerTask {
 
         //li metto in un array e li leggo uno per uno
         File[] filesList = directoryPath.listFiles();
-        System.out.println("List of files and directories in the specified directory:");
+
         Scanner sc;
         System.out.println("Inizio a parsare i file di log");
         for (File file : filesList) { //leggo ogni file una riga alla volta
@@ -136,13 +135,13 @@ public class ParseLog extends TimerTask {
         System.out.println("Inizio ad azzerare i file ");
 
         // Chiamo il metodo per azzerare i file che viene passato come parametro
-        for (File file : filesList) {
+        /*for (File file : filesList) {
             try {
                 azzera.azzera(file);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }
+        }*/
 
         System.out.println("Ho finito di azzerare i file ");
     }

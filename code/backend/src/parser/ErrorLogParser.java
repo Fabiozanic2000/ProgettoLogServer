@@ -116,18 +116,18 @@ public class ErrorLogParser {
         }
     }
 
-    public long lastTime = -1;
-    public ArrayList<String> ipSospetti = new ArrayList<String>();
-
     /**
      * Questa funzione serve per rilevare se c'è del traffico malevolo.
      * @param capture risultato parsing con libreria grok
      * @throws ParseException errore parsing
      */
+
+    public HashMap<String, Controllo> ipSospetti = new HashMap<String, Controllo>(); //dizionario
+
     private void malevolo(Map<String, Object> capture) throws ParseException {
         int threshold = 2; //delta
 
-        String lastLine = "";
+        // String lastLine = "";
         String dataora = capture.get("anno").toString() + "-" + convertiMese(capture.get("mese").toString()) +
                 "-" + capture.get("giorno_del_mese").toString() + " " + capture.get("orario");
         //System.out.println("la data e " + dataora);
@@ -136,13 +136,10 @@ public class ErrorLogParser {
         long currentTime = dateFormat.parse(dataora).getTime()/1000;
         //System.out.println("ts : "+currentTime);
 
-        if (lastTime != -1){
+        /*if (lastTime != -1){
             long duration = (currentTime - lastTime);
             if (duration <= threshold){
-                /*if (Collections.frequency(ipSospetti, capture.get("clientip")) == 0){
-                    ipSospetti.add(capture.get("clientip").toString());
-                }
-                else if*/
+
                 System.out.println("########");
                 System.out.println("dataora: " + dataora);
                 System.out.println(capture.get("clientip").toString());
@@ -150,9 +147,14 @@ public class ErrorLogParser {
 
 
             }
-        }
-        lastTime = currentTime;
-        System.out.println("lastTime" + lastTime);
-
+        }*/
+        //lastTime = currentTime;
+        //System.out.println("lastTime" + lastTime);
+        // if (!ipSospetti.containsKey(capture.get("clientip").toString())){
+        ipSospetti.putIfAbsent(capture.get("clientip").toString(), new Controllo());
+        System.out.println(capture.get("clientip").toString());
+        System.out.println(dataora);
+        ipSospetti.get(capture.get("clientip").toString()).check(currentTime, threshold);
+        // }
     }
 }

@@ -11,11 +11,10 @@
   <component name="ChangeListManager">
     <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/Azzera.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/Azzera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/GeoIp.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/GeoIp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/Mail.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/Mail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.err" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.err" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/ErrorLogParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/ErrorLogParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/backend/src/parser/ParseLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/ParseLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/server/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/server/Signup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dberr" beforeDir="false" afterPath="$PROJECT_DIR$/database/dberr" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
