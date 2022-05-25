@@ -14,8 +14,16 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+/**
+ * Classe per il parsing dei log deli errori
+ */
 public class ErrorLogParser {
 
+    /**
+     * Converte il mese da parola in numero.
+     * @param mese il mese in parola
+     * @return il mese in numero
+     */
     private String convertiMese(String mese) {
         return switch (mese) {
             case "Jan" -> "01";
@@ -33,6 +41,16 @@ public class ErrorLogParser {
             default -> "";
         };
     }
+
+
+    /**
+     * Questa funzione realizza il parsing dei log degli errori, con geolocalizzazione ip.
+     * @param file file dei log
+     * @param geoip serve per la localizzazione
+     * @throws IOException eccezione lettura da file
+     * @throws GeoIp2Exception eccezione localizzazione
+     * @throws SQLException eccezione database
+     */
     public void parse(File file, GeoIp geoip) throws IOException, GeoIp2Exception, SQLException {
         DblogErrori db = new DblogErrori("dberr");
         db.checkCreateDb();
@@ -47,10 +65,8 @@ public class ErrorLogParser {
         System.out
                 .println("FILE degli errori");
         //StringBuffer sb = new StringBuffer();
-        int c = 0;
         while (sc.hasNextLine()) {
             try {
-                c++;
                 input = sc.nextLine(); //legga la riga
                 Match gm = grok.match(input);
                 Map<String, Object> capture = gm.capture();
@@ -100,10 +116,14 @@ public class ErrorLogParser {
         }
     }
 
-
     public long lastTime = -1;
     public ArrayList<String> ipSospetti = new ArrayList<String>();
 
+    /**
+     * Questa funzione serve per rilevare se c'è del traffico malevolo.
+     * @param capture risultato parsing con libreria grok
+     * @throws ParseException errore parsing
+     */
     private void malevolo(Map<String, Object> capture) throws ParseException {
         int threshold = 2; //delta
 
