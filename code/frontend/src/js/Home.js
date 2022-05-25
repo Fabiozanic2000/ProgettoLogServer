@@ -16,7 +16,7 @@ const Home = (props) => {
                             <Mappa/>
                         </td>
                         <td>
-                            <Grafici datiGraficoPosti={props.datiGraficoPosti} datiGraficoComunicazioni={props.datiGraficoComunicazioni}/>
+                            <Grafici datiGraficoPosti={props.datiGraficoPosti} datiGraficoComunicazioni={props.datiGraficoComunicazioni} datiGraficoBytes={props.datiGraficoBytes}/>
                         </td>
                     </tr>
                 </tbody>

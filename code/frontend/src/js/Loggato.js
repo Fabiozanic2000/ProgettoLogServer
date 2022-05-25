@@ -22,6 +22,9 @@ const Loggato = () => {
     //costruisco il grafico dei posti di default
     const [datiGraficoPosti, setDatiGraficoPosti] = useState(defaults.postiDefault);
 
+    //costruisco il grafico dei posti di default
+    const [datiGraficoBytes, setDatiGraficoBytes] = useState(defaults.bytesDefault);
+
     //nome e professione per verificare che tutto sia ok
     const [nome, setNome] = useState('');
     const [professione, setProfessione] = useState('');
@@ -58,10 +61,12 @@ const Loggato = () => {
 
         const risposta2 = await axios.post(url2, corpo);
 
-        var comunicazioni, posti; //creo i grafici e li passo al componente appropriato
-        [comunicazioni, posti] = datiGrafici (risposta2);
+        var comunicazioni, posti, bytes; //creo i grafici e li passo al componente appropriato
+        [comunicazioni, posti, bytes] = datiGrafici (risposta2);
         setDatiGraficoComunicazioni(comunicazioni);
         setDatiGraficoPosti(posti);
+        if (bytes !== "fallito")
+            setDatiGraficoBytes(bytes);
 
         setDati(JSON.stringify(risposta2.data));
     }, []);
@@ -74,7 +79,7 @@ const Loggato = () => {
                 <Switch>
 
                     <Route exact path='/home'>
-                        <Home nome={nome} datiGraficoComunicazioni={datiGraficoComunicazioni} datiGraficoPosti={datiGraficoPosti}/>
+                        <Home nome={nome} datiGraficoComunicazioni={datiGraficoComunicazioni} datiGraficoPosti={datiGraficoPosti} datiGraficoBytes={datiGraficoBytes}/>
                     </Route>
 
                     <Route exact path='/filtra'>
