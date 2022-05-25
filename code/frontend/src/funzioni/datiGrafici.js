@@ -70,7 +70,7 @@ const datiGrafici = function (risposta2) {
     //i try servono perchè non sempre ci sono i log o gli errori, quindi se uno fallisco provo l'altro e se fallisce anche il secondo allora non c'è niente
     var date = [];
     try {
-        date.push({data: risposta2.data.log[0].timestamp.substring(0, 11), contatore: 0}); //inizializzo l'oggetto dei posti con i relativi contatori
+        date.push({data: risposta2.data.log[0].timestamp.substring(0, 11), contatore: parseInt(0)}); //inizializzo l'oggetto dei posti con i relativi contatori
     } catch {
         return [datiGraficoComunicazioni, datiGraficoPosti, "fallito"];
     }
@@ -81,12 +81,12 @@ const datiGrafici = function (risposta2) {
         for (var i = 0; i < date.length; i++) { //se il paese è giò presente nell'array posti, incremento il contatore, altrimenti lo aggiungo
             if (date[i].data === dato.timestamp.substring(0, 11)) {
                 trovato = true;
-                date[i].contatore += dato.bytes;
+                date[i].contatore += parseInt(dato.bytes);
                 break;
             }
         }
         if (!trovato)
-            date.push({data: dato.timestamp.substring(0, 11), contatore: dato.bytes});
+            date.push({data: dato.timestamp.substring(0, 11), contatore: parseInt(dato.bytes)});
     });
 
     
