@@ -35,11 +35,16 @@ public class Main {
         server.setExecutor(null); //crea un esecutore di default
         server.start(); //fa partire il server
 
+        /*
         System.out.println("Eseguo il task assegnato");
         //creo uno scheduler che che esegue la classe passata con un rate fisso
         new Timer().scheduleAtFixedRate(new ParseLog(), 0, 100000); //100000 millis => 1.67 minuti
         System.out.println("Eseguito il task, ora aspetto");
         Thread.sleep(100000); //stesso commento di sopra
+
+
+         */
+
     }
 
     static class Prova  implements HttpHandler {
