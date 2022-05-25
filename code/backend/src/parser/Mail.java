@@ -5,7 +5,15 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
+/**
+ * Classe per l'invio di mail di notifica.
+ */
 public class Mail{
+    /**
+     * Invia la mail di notifica.
+     * @param recepient
+     * @throws MessagingException
+     */
     public static void sendEmail(String recepient) throws MessagingException {
         Properties properties = new Properties();
 

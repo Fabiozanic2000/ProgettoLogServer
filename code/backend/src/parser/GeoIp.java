@@ -9,8 +9,18 @@ import java.io.File;
 import java.io.IOException;
 import java.net.InetAddress;
 
+/**
+ * Classe per la geolocalizzazione dell'indirizzo ip
+ */
 public class GeoIp {
 
+    /**
+     * Ritorna la nazione dell'indirizzo ip
+     * @param ip l'indirizzo ip
+     * @return Stringa di due lettere che specifica la nazione dell'indirizzo ip
+     * @throws IOException eccezione I/O
+     * @throws GeoIp2Exception eccezione geolocalizzazione
+     */
     public String getCountry(String ip) throws IOException, GeoIp2Exception {
         if (ip.equals("127.0.0.1")) //guardo che non sia in locale
             return "localhost";

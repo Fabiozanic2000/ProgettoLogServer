@@ -19,6 +19,7 @@ import java.util.Scanner;
 import java.util.TimerTask;
 
 public class ParseLog extends TimerTask {
+
     private String convertiMese(String mese){
         return switch (mese) {
             case "Jan" -> "01";

@@ -11,6 +11,9 @@ import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 
+/**
+ * Classe per la registrazione di un utente nel database
+ */
 public class Signup implements HttpHandler {
     private UtentiDb db;
 
