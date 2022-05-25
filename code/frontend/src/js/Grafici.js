@@ -35,6 +35,9 @@ const Grafici = (props) => {
                         <td className="cellaGrafici">
                             <Pie data={props.datiGraficoPosti} className="torta" options = {labels}/>; {/* grafico delle comunicazioni */}
                         </td>
+                        <td className="cellaGrafici">
+                            <Pie data={props.datiGraficoBytes} className="torta" options = {labels}/>; {/* grafico delle comunicazioni */}
+                        </td>
                     </tr>
                 </tbody>
             </table>
