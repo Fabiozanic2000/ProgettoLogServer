@@ -47,9 +47,12 @@ public class Mail {
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
             message.setSubject("Do not reply");
 
+            float probabilita= (float) (messaggiErrati*99.9/15); // Probabilità approssimabile a 100 se arrivano 15 messaggi errati
+
             message.setContent("<h2>Rilevato traffico malevolo. </h2> <hp> Sono arrivati: " + messaggiErrati + " pacchetti errati nel giro" +
                     "di pochi secondi. <br /> " +
-                    "E' previsto che saliranno da: <ul><li> ip: " + ip_address + " </li> <li> località: " + stato + "</l1> </ul> </p>", "text/html");
+                    "E' previsto che saliranno con una probabilità di " + probabilita + "%<br/>" +
+                    "da: <ul><li> ip: " + ip_address + " </li> <li> località: " + stato + "</l1> </ul> </p>", "text/html");
             return message;
         } catch (Exception ex) {
             ex.printStackTrace();

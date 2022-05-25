@@ -17,7 +17,7 @@ public class Controllo {
         else{
             contatore = 0;
         }
-        if (contatore == 4) {
+        if (contatore >= 4) {
             // In questa funzione bisogna accedere alle mail dei tecnici nel db
             // Togliere le mail attuali e mettere verosimili per non mandarle a sconosciute
             try {
@@ -25,8 +25,6 @@ public class Controllo {
             } catch (MessagingException e) {
                 e.printStackTrace();
             }
-            // TODO
-            System.out.println("\t4 messaggi di fila");
         }
     }
 }
