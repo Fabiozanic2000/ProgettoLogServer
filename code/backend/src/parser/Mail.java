@@ -9,11 +9,13 @@ import java.util.Properties;
  * Classe per l'invio di mail di notifica.
  */
 public class Mail {
+
+    private static final int MAX_ERRORI = 15;
     /**
      * Invia la mail di notifica.
      *
-     * @param recepient
-     * @throws MessagingException
+     * @param recepient indirizzo email destinatario
+     * @throws MessagingException eccezione email
      */
     public static void sendEmail(String recepient, int messaggiErrati, String ip_address, String stato) throws MessagingException {
         Properties properties = new Properties();
@@ -47,9 +49,12 @@ public class Mail {
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
             message.setSubject("Do not reply");
 
-            float probabilita= (float) (messaggiErrati*99.9/15); // Probabilità approssimabile a 100 se arrivano 15 messaggi errati
+            if (messaggiErrati > MAX_ERRORI) //per evitare probabilità oltre il 100%
+                messaggiErrati = MAX_ERRORI;
 
-            message.setContent("<h2>Rilevato traffico malevolo. </h2> <hp> Sono arrivati: " + messaggiErrati + " pacchetti errati nel giro" +
+            float probabilita= (float) (messaggiErrati*99.99/15); // Probabilità approssimabile a 100 se arrivano 15 messaggi errati
+
+            message.setContent("<h2>Rilevato traffico malevolo. </h2> <hp> Sono arrivati: " + messaggiErrati + " pacchetti errati nel giro " +
                     "di pochi secondi. <br /> " +
                     "E' previsto che saliranno con una probabilità di " + probabilita + "%<br/>" +
                     "da: <ul><li> ip: " + ip_address + " </li> <li> località: " + stato + "</l1> </ul> </p>", "text/html");
