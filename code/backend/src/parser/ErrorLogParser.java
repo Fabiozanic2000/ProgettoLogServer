@@ -122,9 +122,9 @@ public class ErrorLogParser {
      */
 
 
-    private void malevolo(Map<String, Object> capture) throws ParseException {
+    private void malevolo(Map<String, Object> capture) throws ParseException, IOException, GeoIp2Exception {
         int threshold = 2; //delta
-
+        GeoIp ip = new GeoIp();
 
         String dataora = capture.get("anno").toString() + "-" + convertiMese(capture.get("mese").toString()) +
                 "-" + capture.get("giorno_del_mese").toString() + " " + capture.get("orario");
@@ -135,7 +135,8 @@ public class ErrorLogParser {
         ipSospetti.putIfAbsent(capture.get("clientip").toString(), new Controllo());
         System.out.println(capture.get("clientip").toString());
         System.out.println(dataora);
-        ipSospetti.get(capture.get("clientip").toString()).check(currentTime, threshold);
+        ipSospetti.get(capture.get("clientip").toString()).check(currentTime, threshold, capture.get("clientip").toString()
+        , ip.getCountry(capture.get("clientip").toString()));
 
     }
 }
