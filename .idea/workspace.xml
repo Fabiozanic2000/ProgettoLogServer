@@ -11,9 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/Controllo.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/Controllo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/code/code.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/dberr" beforeDir="false" afterPath="$PROJECT_DIR$/database/dberr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/ErrorLogParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/ErrorLogParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +48,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
@@ -195,6 +194,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/2022t1$server_Main.ic" NAME="server.Main Coverage Results" MODIFIED="1653376942310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

@@ -62,9 +62,7 @@ public class ErrorLogParser {
 
         //inserire pattern che deve compilare
         final Grok grok = grokCompiler.compile("\\[%{DAY:giorno_della_settimana} %{MONTH:mese} %{MONTHDAY:giorno_del_mese} %{TIME:orario} %{YEAR:anno}\\] \\[:%{LOGLEVEL:tipo_errore}\\] \\[%{WORD:ignora} %{POSINT:pid}\\] \\[%{WORD:ignora} %{IP:clientip}:%{POSINT:porta_client}\\] \\[%{WORD:ignora} %{IP:ignora}\\] ModSecurity: %{WORD:errorcode}. %{GREEDYDATA:resto_del_mondo}");
-        System.out
-                .println("FILE degli errori");
-        //StringBuffer sb = new StringBuffer();
+        System.out.println("FILE degli errori");
         while (sc.hasNextLine()) {
             try {
                 input = sc.nextLine(); //legga la riga
@@ -108,13 +106,14 @@ public class ErrorLogParser {
                                 .toString()),
                         capture.get("resto_del_mondo")
                                 .toString());
-                //System.out.println(capture.toString());
-                //System.out.println(c);
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
         }
     }
+
+
+    public HashMap<String, Controllo> ipSospetti = new HashMap<String, Controllo>(); //dizionario
 
     /**
      * Questa funzione serve per rilevare se c'è del traffico malevolo.
@@ -122,39 +121,21 @@ public class ErrorLogParser {
      * @throws ParseException errore parsing
      */
 
-    public HashMap<String, Controllo> ipSospetti = new HashMap<String, Controllo>(); //dizionario
 
     private void malevolo(Map<String, Object> capture) throws ParseException {
         int threshold = 2; //delta
 
-        // String lastLine = "";
+
         String dataora = capture.get("anno").toString() + "-" + convertiMese(capture.get("mese").toString()) +
                 "-" + capture.get("giorno_del_mese").toString() + " " + capture.get("orario");
-        //System.out.println("la data e " + dataora);
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
         long currentTime = dateFormat.parse(dataora).getTime()/1000;
-        //System.out.println("ts : "+currentTime);
 
-        /*if (lastTime != -1){
-            long duration = (currentTime - lastTime);
-            if (duration <= threshold){
-
-                System.out.println("########");
-                System.out.println("dataora: " + dataora);
-                System.out.println(capture.get("clientip").toString());
-                System.out.println("#######");
-
-
-            }
-        }*/
-        //lastTime = currentTime;
-        //System.out.println("lastTime" + lastTime);
-        // if (!ipSospetti.containsKey(capture.get("clientip").toString())){
         ipSospetti.putIfAbsent(capture.get("clientip").toString(), new Controllo());
         System.out.println(capture.get("clientip").toString());
         System.out.println(dataora);
         ipSospetti.get(capture.get("clientip").toString()).check(currentTime, threshold);
-        // }
+
     }
 }
