@@ -9,13 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="Miglioramento codice&#10;&#10;Co-authored-by: Il-castor &lt;274987@studenti.unimore.it&gt;&#10;Co-authored-by: Malferrari &lt;274851@studenti.unimore.it&gt;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/server/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/server/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/frontend/src/funzioni/datiGrafici.js" beforeDir="false" afterPath="$PROJECT_DIR$/code/frontend/src/funzioni/datiGrafici.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/dberr" beforeDir="false" afterPath="$PROJECT_DIR$/database/dberr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/dblog" beforeDir="false" afterPath="$PROJECT_DIR$/database/dblog" afterDir="false" />
-    </list>
+    <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="Miglioramento codice&#10;&#10;Co-authored-by: Il-castor &lt;274987@studenti.unimore.it&gt;&#10;Co-authored-by: Malferrari &lt;274851@studenti.unimore.it&gt;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
