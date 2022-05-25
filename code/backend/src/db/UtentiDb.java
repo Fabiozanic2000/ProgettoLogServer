@@ -6,13 +6,30 @@ import oggetti.OggettoVerifica;
 
 import static java.sql.DriverManager.getConnection;
 
+/**
+ * Classe per il database degli utenti
+ */
 public class UtentiDb {
     private final String DBNAME;
 
+    /**
+     * Costruttore della classe UtentiDb, setta il nome del db
+     * @param dbname nome del database
+     */
     public UtentiDb(String dbname) {
         this.DBNAME = dbname;
     }
 
+    /**
+     * Funzione per la registrazione
+     * @param nome nome dell'utente
+     * @param cognome cognome dell'utente
+     * @param email email dell'utente
+     * @param password password dell'utente
+     * @param professione professione dell'utente
+     * @return true se tutto fa bene, false altrimenti
+     * @throws SQLException eccezione database
+     */
     public boolean signup(String nome, String cognome, String email, String password, String professione) throws SQLException {
         DbSignup signup = new DbSignup();
         return signup.signup(nome, cognome, email, password, professione, this);
@@ -64,7 +81,7 @@ public class UtentiDb {
 
     /**
      * Crea la tabella utenti del db
-     * @param c
+     * @param c connessione al db
      */
     private void createTableUser(Connection c) {
         try {
@@ -88,7 +105,7 @@ public class UtentiDb {
 
     /**
      * Serve per ottenere il percorso assoluto della root del progetto
-     * @return
+     * @return ritorna il percorso
      */
     public String getPercorso()
     {
@@ -104,7 +121,9 @@ public class UtentiDb {
     }
 
     /**
-     * ritorna l'ID dell'utente se il login è andato a buon fine, sennò ritorna 0
+     * ritorna l'ID dell'utente se il login è andato a buon fine, sennò ritorna zero
+     * @param email l'email per il login
+     * @param password password per il login
      */
     public int login(String email, String password) throws SQLException {
         DbLogin login = new DbLogin();
