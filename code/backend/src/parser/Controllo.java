@@ -20,11 +20,11 @@ public class Controllo {
         if (contatore == 4) {
             // In questa funzione bisogna accedere alle mail dei tecnici nel db
             // Togliere le mail attuali e mettere verosimili per non mandarle a sconosciute
-            /*try {
+            try {
                 Mail.sendEmail("pds.teamuno@gmail.com");
             } catch (MessagingException e) {
                 e.printStackTrace();
-            }*/
+            }
             // TODO
             System.out.println("\t4 messaggi di fila");
         }
