@@ -51,7 +51,7 @@ public class Mail {
             if (messaggiErrati > MAX_ERRORI) //per evitare probabilità oltre il 100%
                 messaggiErrati = MAX_ERRORI;
 
-            float probabilita= (float) (messaggiErrati*99.99/15); // Probabilità approssimabile a 100 se arrivano 15 messaggi errati
+            float probabilita= (float) (messaggiErrati*99.99/MAX_ERRORI); // Probabilità approssimabile a 100 se arrivano 15 messaggi errati
 
             message.setContent("<h2>Rilevato traffico malevolo. </h2> <hp> Sono arrivati: " + messaggiErrati + " pacchetti errati nel giro " +
                     "di pochi secondi. <br /> " +

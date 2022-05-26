@@ -74,7 +74,6 @@ public class Signup implements HttpHandler {
                 rCode = 404;
                 response = "{\"errore\": \"Pagina non trovata\"}";
             }
-
         }
         catch (URISyntaxException e) { //errore nell'uri
            // e.printStackTrace();
@@ -85,7 +84,6 @@ public class Signup implements HttpHandler {
         catch (Exception e) { //errore nella lettura del body della request
             //e.printStackTrace();
         }
-
 
         //invio la risposta al client (gli header servono per le politiche di cors)
         String origine = t.getRequestHeaders()

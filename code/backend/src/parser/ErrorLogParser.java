@@ -112,7 +112,6 @@ public class ErrorLogParser {
         }
     }
 
-
     private HashMap<String, Controllo> ipSospetti = new HashMap<>(); //dizionario
 
     /**
@@ -120,8 +119,6 @@ public class ErrorLogParser {
      * @param capture risultato parsing con libreria grok
      * @throws ParseException errore parsing
      */
-
-
     private void malevolo(Map<String, Object> capture) throws ParseException, IOException, GeoIp2Exception {
         int threshold = 2; //delta
         GeoIp ip = new GeoIp();
@@ -136,6 +133,5 @@ public class ErrorLogParser {
 
         ipSospetti.get(capture.get("clientip").toString()).check(currentTime, threshold, capture.get("clientip").toString()
         , ip.getCountry(capture.get("clientip").toString()));
-
     }
 }

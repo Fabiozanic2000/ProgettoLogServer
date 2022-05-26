@@ -20,7 +20,6 @@ public class DbSignup {
             tot = -1;
             while (rs.next()) {
                 tot = rs.getInt("tot");
-
             }
         } catch (SQLException ex) {
             ex.printStackTrace();

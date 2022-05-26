@@ -9,7 +9,6 @@ import java.sql.SQLException;
  * Classe che fa le query al db dei log
  */
 public class DblogQuery {
-
     /**
      * Funzione che esegue la query
      * @param db

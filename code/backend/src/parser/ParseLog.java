@@ -75,7 +75,6 @@ public class ParseLog extends TimerTask {
                 continue;
             }
 
-
             //stampa informazioni sul file
             //System.out.println("File name: " + file.getName());
 
@@ -140,7 +139,6 @@ public class ParseLog extends TimerTask {
                 throw new RuntimeException(e);
             }
         }
-
         System.out.println("Ho finito di azzerare i file ");
     }
 }

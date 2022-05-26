@@ -22,9 +22,7 @@ public class Controllo {
             contatore = 0;
         }
         if (contatore >= 4) {
-
             try {
-
                 UtentiDb dbUtenti = new UtentiDb("utentidb");
                 dbUtenti.checkCreateDb();
                 ArrayList<String> indirizzi;
