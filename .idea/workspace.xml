@@ -10,17 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="Miglioramento codice&#10;&#10;Co-authored-by: Il-castor &lt;274987@studenti.unimore.it&gt;&#10;Co-authored-by: Malferrari &lt;274851@studenti.unimore.it&gt;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/db/DbSignup.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/db/DbSignup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/dberrori/DbErroriQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/dberrori/DbErroriQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/dberrori/DbInsertError.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/dberrori/DbInsertError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/dblog/DblogQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/dblog/DblogQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/Controllo.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/Controllo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/ErrorLogParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/ErrorLogParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/Mail.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/Mail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/ParseLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/ParseLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/server/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/server/Signup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/server/Verifica.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/server/Verifica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/2022t1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/META-INF/MANIFEST.MF" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,16 +48,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
