@@ -10,13 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="Miglioramento codice&#10;&#10;Co-authored-by: Il-castor &lt;274987@studenti.unimore.it&gt;&#10;Co-authored-by: Malferrari &lt;274851@studenti.unimore.it&gt;">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.err" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.err" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/ParseLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/ParseLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/server/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/server/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/dberr" beforeDir="false" afterPath="$PROJECT_DIR$/database/dberr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/utentidb" beforeDir="false" afterPath="$PROJECT_DIR$/database/utentidb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/db/DbElimina.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/db/DbElimina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/db/DbMail.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/db/DbMail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/db/DbSignup.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/db/DbSignup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/db/DbVerifica.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/db/DbVerifica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/db/UtentiDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/db/UtentiDb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/dberrori/DbErroriQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/dberrori/DbErroriQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/dberrori/DbInsertError.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/dberrori/DbInsertError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/dberrori/DblogErrori.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/dberrori/DblogErrori.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/dblog/Dblog.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/dblog/Dblog.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

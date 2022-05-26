@@ -20,7 +20,7 @@ public class DbSignup {
             tot = -1;
             while (rs.next()) {
                 tot = rs.getInt("tot");
-                // System.out.print(tot);
+
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -38,14 +38,14 @@ public class DbSignup {
                 pstmt.executeUpdate();
                 return true;
             } catch (SQLException e) {
-                System.out
-                        .println(e.getMessage());
+                //System.out
+                        //.println(e.getMessage());
                 return false;
             } finally {
                 try {
                     c.close();
                 } catch (SQLException ex) {
-                    ex.printStackTrace();
+                   // ex.printStackTrace();
                 }
             }
         }

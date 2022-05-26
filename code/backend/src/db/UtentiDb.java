@@ -56,8 +56,8 @@ public class UtentiDb {
                 // se non esiste, creo la tabella degli utenti
                 createTableUser(c);
             } catch (Exception e) { // eventuali errori
-                System.err
-                        .println(e.getClass().getName() + ": " + e.getMessage());
+                //System.err
+                        //.println(e.getClass().getName() + ": " + e.getMessage());
                 System.exit(0);
             }
         }

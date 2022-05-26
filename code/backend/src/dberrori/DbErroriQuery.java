@@ -1,7 +1,5 @@
 package dberrori;
 
-import dblog.Dblog;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -73,11 +71,7 @@ public class DbErroriQuery {
                 tmp += "\"payload\": \""+rs.getString("payload").replaceAll("\"", "'")+"\""; //aggiungo la request (devo sostituire per evitare danni)
                 tmp += "}";
 
-                if (!testo.equals("") && tmp.contains(testo)) { //se ho filtrato del testo, controllo che nel record ci sia il testo che ho inserito
-                    oggettoRisposta += tmp;
-                    primaVolta = false;
-                }
-                else if (testo.equals("")) { //se non ho inserito filtri, allora aggiungo direttamente
+                if ((!testo.equals("") && tmp.contains(testo)) || testo.equals(""))  { //se ho filtrato del testo, controllo che nel record ci sia il testo che ho inserito
                     oggettoRisposta += tmp;
                     primaVolta = false;
                 }

@@ -19,8 +19,6 @@ public class DbElimina {
      */
     public Integer elimina(UtentiDb db, String email) throws SQLException  {
         Connection con = db.connect();
-        PreparedStatement psr;
-        ResultSet rs = null;
 
         try {
             String queryElimina = "delete from user where email=?";
@@ -29,14 +27,14 @@ public class DbElimina {
             return pstmt.executeUpdate();
         }
         catch (SQLException e) {
-            System.out
-                    .println(e.toString());
+            //System.out
+                    //.println(e.toString());
         } finally {
             try {
                 con.close();
             } catch (SQLException e) {
-                System.out
-                        .println(e.toString());
+                //System.out
+                       // .println(e.toString());
             }
         }
 

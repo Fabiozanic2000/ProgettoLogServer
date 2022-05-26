@@ -9,10 +9,10 @@ import java.util.ArrayList;
 public class DbMail {
     public ArrayList<String> indirizzi(UtentiDb db) throws SQLException {
         Connection con = db.connect();
-        PreparedStatement ps = null;
-        ResultSet rs = null;
+        PreparedStatement ps;
+        ResultSet rs;
 
-        ArrayList<String> indirizziEmail = new ArrayList<String>();
+        ArrayList<String> indirizziEmail = new ArrayList<>();
 
         try {
             String queryIndirizzi = "Select email from user where professione!=?"; // Per ottenere le mail di tecnici e admin
@@ -23,12 +23,12 @@ public class DbMail {
                 indirizziEmail.add(rs.getString("email"));
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
         } finally {
             try {
                 con.close(); //chiudo la connessione al db
             } catch (SQLException ex) {
-                ex.printStackTrace();
+                //ex.printStackTrace();
             }
         }
         return indirizziEmail;

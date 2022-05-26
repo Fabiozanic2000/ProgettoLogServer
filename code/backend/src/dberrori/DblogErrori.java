@@ -1,8 +1,5 @@
 package dberrori;
 
-import dberrori.DbInsertError;
-import dblog.DblogQuery;
-
 import java.io.File;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -29,15 +26,15 @@ public class DblogErrori {
                 //ottengo il percorso per il database
                 String percorso = this.getPercorso();
                 Class.forName("org.sqlite.JDBC");
-                //Connection c = getConnection("jdbc:sqlite:" + DBNAME);
+
                 Connection c = getConnection(
                         "jdbc:sqlite:" + percorso + File.separator + "database" + File.separator +
                                 DBNAME);
-                //Connection c = getConnection("jdbc:sqlite:"+File.separator+DBNAME);
+
                 // se non esiste, creo la tabella degli utenti
                 createTableUser(c);
             } catch (Exception e) { // eventuali errori
-                System.err.println(e.getClass().getName() + ": " + e.getMessage());
+                //System.err.println(e.getClass().getName() + ": " + e.getMessage());
                 System.exit(0);
             }
         }

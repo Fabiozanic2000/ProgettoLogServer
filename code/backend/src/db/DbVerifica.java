@@ -22,19 +22,18 @@ public class DbVerifica {
             nome = upperCaseFirst(nome);
             String cognome = rs.getString(2);
             cognome = upperCaseFirst(cognome);
-            String nome_cognome = nome +" "+ cognome;
 
-            verifica.nome = nome_cognome;
+            verifica.nome = nome +" "+ cognome;
             verifica.professione = rs.getString(3);
         } catch (SQLException e) {
-            System.out
-                    .println(e.toString());
+            //System.out
+                    //.println(e.toString());
         } finally {
             try {
                 con.close();
             } catch (SQLException e) {
-                System.out
-                        .println(e.toString());
+               // System.out
+                        //.println(e.toString());
             }
         }
         return verifica;
