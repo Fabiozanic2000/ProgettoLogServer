@@ -31,7 +31,6 @@ public class Main {
         server.createContext("/logout", new Logout()); //Pagina di benvenuto
         server.createContext("/elimina", new Elimina(dbUtenti)); //pagina dell'admin per eliminare gli utenti registrati
         server.createContext("/query", new Query()); //pagina dell'admin per eliminare gli utenti registrati
-        server.createContext("/nero", new Prova());
         server.setExecutor(null); //crea un esecutore di default
         server.start(); //fa partire il server
 
@@ -40,21 +39,5 @@ public class Main {
         new Timer().scheduleAtFixedRate(new ParseLog(), 0, 100000); //100000 millis => 1.67 minuti
         System.out.println("Eseguito il task, ora aspetto");
         Thread.sleep(100000); //stesso commento di sopra
-    }
-
-    static class Prova  implements HttpHandler {
-        @Override
-        public void handle(HttpExchange t) throws IOException {
-            t.getResponseHeaders()
-                    .set("Set-Cookie", "id=nero; HttpOnly; Expires=900");
-
-            String response = "ciao";
-            t.sendResponseHeaders(200, response.length());
-            OutputStream os = t.getResponseBody(); //chiude la comunicazione
-            //os.write(response.getBytes());
-            os.write(response
-                    .getBytes(StandardCharsets.UTF_8));
-            os.close();
-        }
     }
 }
