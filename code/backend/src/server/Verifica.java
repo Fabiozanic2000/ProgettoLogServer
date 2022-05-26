@@ -30,7 +30,12 @@ public class Verifica implements HttpHandler {
                     response = "";
                 }
                 else {
-                    String id = cookie.substring(3,cookie.length()); //estraggo l'id del cookie
+                    String id = "-1";
+                    int indice = cookie.indexOf(", id=");
+                    if (indice != -1) //se l'id non è in prima posizione
+                        id = cookie.substring(indice+5, indice+7);
+                    else if (cookie.substring(0, 2).equals("id"))
+                        id = cookie.substring(3, 5); //estraggo l'id del cookie che è in prima posizione
 
                     if (id.equals("-1")) {
                         response = "";
