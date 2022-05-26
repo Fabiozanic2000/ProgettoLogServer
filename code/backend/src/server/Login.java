@@ -73,20 +73,20 @@ public class Login implements HttpHandler {
                 rCode = 200;
             }
             else { //diverso da post e options oppure usa un'altro url
-                System.out
-                        .println("URI non trovato");
+               // System.out
+                       // .println("URI non trovato");
                 rCode = 404;
                 response = "{\"errore\": \"Pagina non trovata\"}";
             }
         }
         catch (URISyntaxException e) { //errore nell'uri
-            e.printStackTrace();
+            //e.printStackTrace();
             System.exit(1);
         } catch (SQLException e) { //errore db
             throw new RuntimeException(e);
         }
         catch (Exception e) { //errore nella lettura del body della request
-            e.printStackTrace();
+            //e.printStackTrace();
         }
 
         //invio la risposta al client (gli header servono per le politiche di cors)

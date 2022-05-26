@@ -72,11 +72,7 @@ public class DblogQuery {
                 tmp += "\"paese\": \""+rs.getString("paese")+"\""; //aggiungo la request
                 tmp += "}";
 
-                if (!testo.equals("") && tmp.contains(testo)) { //se ho filtrato del testo, controllo che nel record ci sia il testo che ho inserito
-                    oggettoRisposta += tmp;
-                    primaVolta = false;
-                }
-                else if (testo.equals("")) { //se non ho inserito filtri, allora aggiungo direttamente
+                if ( (!testo.equals("") && tmp.contains(testo)) || testo.equals(""))  { //se ho filtrato del testo, controllo che nel record ci sia il testo che ho inserito
                     oggettoRisposta += tmp;
                     primaVolta = false;
                 }
@@ -86,12 +82,12 @@ public class DblogQuery {
             if (primaVolta) oggettoRisposta = "\"log\": []"; //se primaVOlta è true vuol dire che non ci sono record, quindi devo azzerare l'oggetto che restituisco
         }
         catch (SQLException ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
         } finally {
             try {
                 c.close(); //chiudo la connessione al db
             } catch (SQLException ex) {
-                ex.printStackTrace();
+                //ex.printStackTrace();
             }
         }
         return oggettoRisposta;

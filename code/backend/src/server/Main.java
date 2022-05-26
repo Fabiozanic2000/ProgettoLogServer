@@ -1,19 +1,10 @@
 package server;
 
-import com.sun.net.httpserver.HttpExchange;
-import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 import db.UtentiDb;
-import dberrori.DblogErrori;
 import parser.ParseLog;
 
-import java.io.IOException;
-import java.io.OutputStream;
 import java.net.InetSocketAddress;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.nio.charset.StandardCharsets;
-import java.sql.SQLException;
 import java.util.Timer;
 
 public class Main {

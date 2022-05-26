@@ -105,14 +105,6 @@ public class Dblog {
         return percorso;
     }
 
-    /**
-     * ritorna l'ID dell'utente se il login è andato a buon fine, sennò ritorna 0
-     */
-    /*public int login(String email, String password) throws SQLException {
-        DbLogin login = new DbLogin();
-        return login.login(email, password, this);
-    }
-    */
     public boolean insert(String request, String auth, String ident, String httpmethod, String time, int response,
                           int bytes, String clientip, String rawrequest, long data, String timestamp, String paese) throws SQLException {
         DbInsert dbInsert = new DbInsert();

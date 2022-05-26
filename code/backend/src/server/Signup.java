@@ -57,12 +57,12 @@ public class Signup implements HttpHandler {
                 professione = oggettoJson.getString("professione");
 
                 if (db.signup(nome, cognome, email, password, professione)) { // eseguo la query
-                    //return "inserito";
+
                     rCode = 200;
                     response = "{\"id\": \"registrato\"}";
                 }
                 else {
-                    //return "errore";
+
                     rCode = 200;
                     response = "{\"errore\": \"Mail gia' in uso\"}";
                 }
@@ -77,13 +77,13 @@ public class Signup implements HttpHandler {
 
         }
         catch (URISyntaxException e) { //errore nell'uri
-            e.printStackTrace();
+           // e.printStackTrace();
             System.exit(1);
         } catch (SQLException e) { //errore db
             throw new RuntimeException(e);
         }
         catch (Exception e) { //errore nella lettura del body della request
-            e.printStackTrace();
+            //e.printStackTrace();
         }
 
 

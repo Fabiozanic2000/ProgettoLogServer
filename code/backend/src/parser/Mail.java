@@ -38,7 +38,6 @@ public class Mail {
 
         Message message = prepareMessage(session, myAccountEmail, recepient, messaggiErrati, ip_address, stato);
         Transport.send(message);
-        System.out.println("Messaggio inviato con successo");
     }
 
     private static Message prepareMessage(Session session, String myAccountEmail, String recepient, int messaggiErrati,

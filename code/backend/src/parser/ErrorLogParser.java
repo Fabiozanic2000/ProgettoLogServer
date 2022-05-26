@@ -74,8 +74,8 @@ public class ErrorLogParser {
                 String data = capture.get("anno").toString() + "-" + convertiMese(capture.get("mese").toString()) +
                         "-" + capture.get("giorno_del_mese").toString();
                 DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-                Date data_unix = df.parse(data);
-                long unix_time = data_unix.getTime() /1000;
+                Date dataUnix = df.parse(data);
+                long unixTime = dataUnix.getTime() /1000;
 
                 db.insert(capture.get("giorno_della_settimana").toString(),
                         capture.get("mese")
@@ -88,7 +88,7 @@ public class ErrorLogParser {
                         Integer.parseInt(capture
                                 .get("anno")
                                 .toString()),
-                        unix_time,
+                        unixTime,
                         capture.get("tipo_errore")
                                 .toString(),
                         Integer.parseInt(capture
@@ -113,7 +113,7 @@ public class ErrorLogParser {
     }
 
 
-    public HashMap<String, Controllo> ipSospetti = new HashMap<String, Controllo>(); //dizionario
+    private HashMap<String, Controllo> ipSospetti = new HashMap<>(); //dizionario
 
     /**
      * Questa funzione serve per rilevare se c'è del traffico malevolo.
@@ -133,8 +133,7 @@ public class ErrorLogParser {
         long currentTime = dateFormat.parse(dataora).getTime()/1000;
 
         ipSospetti.putIfAbsent(capture.get("clientip").toString(), new Controllo());
-        System.out.println(capture.get("clientip").toString());
-        System.out.println(dataora);
+
         ipSospetti.get(capture.get("clientip").toString()).check(currentTime, threshold, capture.get("clientip").toString()
         , ip.getCountry(capture.get("clientip").toString()));
 

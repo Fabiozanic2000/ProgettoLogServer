@@ -77,9 +77,7 @@ public class ParseLog extends TimerTask {
 
 
             //stampa informazioni sul file
-            System.out.println("File name: " + file.getName());
-            //System.out.println("File path: " + file.getAbsolutePath());
-            //System.out.println("Size :" + file.getTotalSpace());
+            //System.out.println("File name: " + file.getName());
 
             //scanner del file
             try {
@@ -96,7 +94,7 @@ public class ParseLog extends TimerTask {
                 //fa il match della stringa in input con il pattern da matchare
                 Match gm = grok.match(input);
                 Map<String, Object> capture = gm.capture();
-                //System.out.print(capture.toString() + "  ");
+
 
                 String data = capture.get("YEAR").toString() + "-" + convertiMese(capture.get("MONTH").toString()) + "-" + capture.get("MONTHDAY").toString();
 
@@ -107,7 +105,7 @@ public class ParseLog extends TimerTask {
                 } catch (ParseException e) {
                     throw new RuntimeException(e);
                 }
-                long unix_time = data_unix.getTime() /1000;
+                long unixTime = data_unix.getTime() /1000;
 
                 String rawrequest;
                 if (capture.get("rawrequest") == null)
@@ -122,7 +120,7 @@ public class ParseLog extends TimerTask {
                             Integer.parseInt(capture.get("response").toString()),
                             Integer.parseInt(capture.get("bytes").toString()),
                             capture.get("clientip").toString(),
-                            rawrequest, unix_time,
+                            rawrequest, unixTime,
                             capture.get("timestamp").toString(),
                             geoip.getCountry(capture.get("clientip").toString()));
                 } catch (SQLException | GeoIp2Exception | IOException e) {

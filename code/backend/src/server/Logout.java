@@ -30,11 +30,11 @@ public class Logout implements HttpHandler {
             }
         }
         catch (URISyntaxException e) { //errore nell'uri
-            e.printStackTrace();
+            //e.printStackTrace();
             System.exit(1);
         }
         catch (Exception e) { //errore nella lettura del body della request
-            e.printStackTrace();
+            //e.printStackTrace();
         }
 
         //invio la risposta al client (gli header servono per le politiche di cors)
