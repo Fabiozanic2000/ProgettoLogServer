@@ -1,5 +1,6 @@
 .grafici {
     width: 100%;
+    text-align: center;
 }
 
 .cellaGrafici {
@@ -7,6 +8,12 @@
 }
 
 #tabellaGrafici {
-    width: 85%;
+    width: 50%;
+    margin: auto;
+}
+
+#bytes {
+    height: 80%;
+    width: 80%;
     margin: auto;
 }
