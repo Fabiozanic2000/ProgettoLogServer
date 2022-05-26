@@ -51,7 +51,7 @@ public class Elimina implements HttpHandler {
                 JSONObject oggettoJson = new JSONObject(oggettoStringa);
 
                 email = oggettoJson.getString("email");
-                if (email.equals("admin.admin@admin.admin"))
+                if (email.equals("pds.teamuno@gmail.com"))
                     response = "{\"errore\": \"Non puoi eliminare questo account\"}";
                 else {
                     Integer errore = db.elimina(email);
