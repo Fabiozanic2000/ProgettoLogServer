@@ -9,7 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="Miglioramento codice&#10;&#10;Co-authored-by: Il-castor &lt;274987@studenti.unimore.it&gt;&#10;Co-authored-by: Malferrari &lt;274851@studenti.unimore.it&gt;" />
+    <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="Miglioramento codice&#10;&#10;Co-authored-by: Il-castor &lt;274987@studenti.unimore.it&gt;&#10;Co-authored-by: Malferrari &lt;274851@studenti.unimore.it&gt;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dberr" beforeDir="false" afterPath="$PROJECT_DIR$/database/dberr" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -37,28 +40,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Users/User/Desktop/UNIVERSITA/TERZOANNO/SECONDO/PDS/2022t1"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="dblog" />
+      <recent name="server" />
       <recent name="parser" />
+      <recent name="dblog" />
       <recent name="dberrori" />
       <recent name="oggetti" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.server.Main">
+  <component name="RunManager" selected="JUnit.MainTest.main">
     <configuration name="server.Main" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -84,22 +85,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DbErroriQueryTest.query" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="2022t1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dberrori.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dberrori" />
-      <option name="MAIN_CLASS_NAME" value="dberrori.DbErroriQueryTest" />
-      <option name="METHOD_NAME" value="query" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DbInsertTest.insert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="2022t1" />
       <extension name="coverage">
@@ -111,22 +96,6 @@
       <option name="PACKAGE_NAME" value="dblog" />
       <option name="MAIN_CLASS_NAME" value="dblog.DbInsertTest" />
       <option name="METHOD_NAME" value="insert" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DblogTest.getPercorso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="2022t1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dblog.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dblog" />
-      <option name="MAIN_CLASS_NAME" value="dblog.DblogTest" />
-      <option name="METHOD_NAME" value="getPercorso" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -148,21 +117,53 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GeoIpTest.getCountry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="2022t1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="parser" />
+      <option name="MAIN_CLASS_NAME" value="parser.GeoIpTest" />
+      <option name="METHOD_NAME" value="getCountry" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.main" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="2022t1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="server" />
+      <option name="MAIN_CLASS_NAME" value="server.MainTest" />
+      <option name="METHOD_NAME" value="main" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.server.Main" />
-      <item itemvalue="JUnit.DbErroriQueryTest.query" />
+      <item itemvalue="JUnit.GeoIpTest.getCountry" />
+      <item itemvalue="JUnit.MainTest.main" />
       <item itemvalue="JUnit.DbInsertTest.insert" />
-      <item itemvalue="JUnit.DblogTest.getPercorso" />
       <item itemvalue="JUnit.AzzeraTest.azzera" />
       <item itemvalue="JUnit.ErrorLogParserTest.parse" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MainTest.main" />
+        <item itemvalue="JUnit.GeoIpTest.getCountry" />
         <item itemvalue="JUnit.DbInsertTest.insert" />
         <item itemvalue="JUnit.ErrorLogParserTest.parse" />
         <item itemvalue="JUnit.AzzeraTest.azzera" />
-        <item itemvalue="JUnit.DbErroriQueryTest.query" />
-        <item itemvalue="JUnit.DblogTest.getPercorso" />
       </list>
     </recent_temporary>
   </component>
