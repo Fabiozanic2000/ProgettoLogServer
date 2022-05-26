@@ -2,6 +2,8 @@ package db;
 
 import java.io.File;
 import java.sql.*;
+import java.util.ArrayList;
+
 import oggetti.OggettoVerifica;
 
 import static java.sql.DriverManager.getConnection;
@@ -138,5 +140,10 @@ public class UtentiDb {
     public Integer elimina (String email) throws SQLException {
         DbElimina elimina = new DbElimina();
         return elimina.elimina(this, email);
+    }
+
+    public ArrayList<String> indirizziMail() throws SQLException {
+        DbMail dbMail = new DbMail();
+        return dbMail.indirizzi(this);
     }
 }
