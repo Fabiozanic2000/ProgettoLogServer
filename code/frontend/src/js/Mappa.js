@@ -27,7 +27,7 @@ const Mappa = () => {
         if (to === null || to === "") to = Math.round(new Date().getTime() / 1000) + 90000;
         if (scegli === null) scegli = "";
 
-        const url2 = "http://localhost:9000/query";
+        const url2 = "http://64.225.69.78:9000/query";
         const corpo = {testo: testo, stato: stato, from: from, to: to, scegli: scegli, withCredentials: true};
 
         const risposta2 = await axios.post(url2, corpo);
