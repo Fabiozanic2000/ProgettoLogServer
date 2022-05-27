@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="Sistemato errore dove non si riusciva a inserire gli errori nel db. Forse ottimizizzazione invio mail in BCC con multipli indirizzi">
+    <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="Ottimizzato l'invio delle email inserendo il multiple recepient">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.err" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.err" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.1" afterDir="false" />
@@ -25,7 +25,7 @@
       <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.7" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.7" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.8" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.8" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.9" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/Controllo.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/Controllo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/ErrorLogParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/ErrorLogParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dberr" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dblog" beforeDir="false" />
     </list>
@@ -208,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653627784668</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Ottimizzato l'invio delle email inserendo il multiple recepient">
+      <created>1653628433322</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1653628433322</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +235,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Miglioramento codice&#10;&#10;Co-authored-by: Il-castor &lt;274987@studenti.unimore.it&gt;&#10;Co-authored-by: Malferrari &lt;274851@studenti.unimore.it&gt;" />
     <MESSAGE value="Sistemato errore dove non si riusciva a inserire gli errori nel db. Forse ottimizizzazione invio mail in BCC con multipli indirizzi" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sistemato errore dove non si riusciva a inserire gli errori nel db. Forse ottimizizzazione invio mail in BCC con multipli indirizzi" />
+    <MESSAGE value="Ottimizzato l'invio delle email inserendo il multiple recepient" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ottimizzato l'invio delle email inserendo il multiple recepient" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
