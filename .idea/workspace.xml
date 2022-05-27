@@ -191,7 +191,28 @@
       <option name="project" value="LOCAL" />
       <updated>1653488058406</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Sistemato errore dove non si riusciva a inserire gli errori nel db. Forse ottimizizzazione invio mail in BCC con multipli indirizzi">
+      <created>1653627784668</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1653627784668</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Ottimizzato l'invio delle email inserendo il multiple recepient">
+      <created>1653628433322</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1653628433322</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Sistemati piccoli bug">
+      <created>1653629262820</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1653629262820</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,13 +231,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Miglioramento codice&#10;&#10;Co-authored-by: Il-castor &lt;274987@studenti.unimore.it&gt;&#10;Co-authored-by: Malferrari &lt;274851@studenti.unimore.it&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Miglioramento codice&#10;&#10;Co-authored-by: Il-castor &lt;274987@studenti.unimore.it&gt;&#10;Co-authored-by: Malferrari &lt;274851@studenti.unimore.it&gt;" />
+    <MESSAGE value="Sistemato errore dove non si riusciva a inserire gli errori nel db. Forse ottimizizzazione invio mail in BCC con multipli indirizzi" />
+    <MESSAGE value="Ottimizzato l'invio delle email inserendo il multiple recepient" />
+    <MESSAGE value="Sistemati piccoli bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sistemati piccoli bug" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/2022t1$server_Main.ic" NAME="server.Main Coverage Results" MODIFIED="1653376942310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/2022t1$server_Main.ic" NAME="server.Main Coverage Results" MODIFIED="1653627444923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
