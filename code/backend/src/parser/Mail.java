@@ -1,8 +1,11 @@
 package parser;
 
 import javax.mail.*;
+import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -17,7 +20,7 @@ public class Mail {
      * @param recepient indirizzo email destinatario
      * @throws MessagingException eccezione email
      */
-    public static void sendEmail(String recepient, int messaggiErrati, String ip_address, String stato) throws MessagingException {
+    public static void sendEmail(List<String> recepient, int messaggiErrati, String ip_address, String stato) throws MessagingException {
         Properties properties = new Properties();
 
         properties.put("mail.smtp.auth", "true");
@@ -40,12 +43,27 @@ public class Mail {
         Transport.send(message);
     }
 
-    private static Message prepareMessage(Session session, String myAccountEmail, String recepient, int messaggiErrati,
+    private static Address[] getRecipients(List<String> emails) throws AddressException {
+        Address[] addresses = new Address[emails.size()];
+        for (int i =0;i < emails.size();i++) {
+            addresses[i] = new InternetAddress(emails.get(i));
+        }
+        return addresses;
+    }
+
+    private static Message prepareMessage(Session session, String myAccountEmail, List<String> recepient, int messaggiErrati,
                                           String ip_address, String stato) {
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(myAccountEmail));
-            message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
+
+            /*Address[] a = new Address[recepient.size()];
+            for (int i=0; i<recepient.size(); i++){
+                a[i] = new InternetAddress(recepient.get(i));
+            }*/
+
+           // message.addRecipient(Message.RecipientType.BCC, a);
+            message.addRecipients(Message.RecipientType.BCC, getRecipients(recepient));
             message.setSubject("Do not reply");
 
             if (messaggiErrati > MAX_ERRORI) //per evitare probabilità oltre il 100%

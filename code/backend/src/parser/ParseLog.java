@@ -53,7 +53,7 @@ public class ParseLog extends TimerTask {
 
         //leggo tutti i file della cartella
         File directoryPath = new File("." + File.separator + "code" + File.separator + "backend" + File.separator + "log_file");
-        System.out.println(directoryPath.getAbsolutePath());
+       // System.out.println(directoryPath.getAbsolutePath());
 
         //li metto in un array e li leggo uno per uno
         File[] filesList = directoryPath.listFiles();
@@ -66,6 +66,7 @@ public class ParseLog extends TimerTask {
                 continue;
 
             if (file.getName().contains(".err")) {
+
                 ErrorLogParser elp = new ErrorLogParser();
                 try {
                     elp.parse(file, geoip);
@@ -76,7 +77,7 @@ public class ParseLog extends TimerTask {
             }
 
             //stampa informazioni sul file
-            //System.out.println("File name: " + file.getName());
+            System.out.println("File name: " + file.getName());
 
             //scanner del file
             try {
@@ -132,13 +133,13 @@ public class ParseLog extends TimerTask {
         System.out.println("Inizio ad azzerare i file ");
 
         // Chiamo il metodo per azzerare i file che viene passato come parametro
-        for (File file : filesList) {
+        /*for (File file : filesList) {
             try {
                 azzera.azzera(file);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }
+        }*/
         System.out.println("Ho finito di azzerare i file ");
     }
 }

@@ -11,16 +11,27 @@
   <component name="ChangeListManager">
     <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="Miglioramento codice&#10;&#10;Co-authored-by: Il-castor &lt;274987@studenti.unimore.it&gt;&#10;Co-authored-by: Malferrari &lt;274851@studenti.unimore.it&gt;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/db/DbSignup.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/db/DbSignup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/dberrori/DbErroriQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/dberrori/DbErroriQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.err" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.err" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.10" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.11" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.11" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.12" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.13" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.13" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.2" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.3" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.4" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.5" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.6" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.7" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.8" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.9" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.9" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/backend/src/dberrori/DbInsertError.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/dberrori/DbInsertError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/dblog/DblogQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/dblog/DblogQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/backend/src/parser/Controllo.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/Controllo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/backend/src/parser/ErrorLogParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/ErrorLogParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/backend/src/parser/Mail.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/Mail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/backend/src/parser/ParseLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/ParseLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/server/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/server/Signup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/server/Verifica.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/server/Verifica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dberr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dblog" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,6 +231,6 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/2022t1$server_Main.ic" NAME="server.Main Coverage Results" MODIFIED="1653376942310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/2022t1$server_Main.ic" NAME="server.Main Coverage Results" MODIFIED="1653627013512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

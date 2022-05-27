@@ -12,7 +12,7 @@ public class DbInsertError {
         PreparedStatement psr;
         String sql = null;
         try {
-            sql = "insert into logerror (giornoDellaSettimana, mese, giornoDelMese, orario, anno, data, tipoErrore, pid, clientip, porta_client, error_code, paese, payload) VALUES (?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?)";
+            sql = "insert into logerror (giorno_della_settimana, mese, giorno_del_mese, orario, anno, data, tipo_errore, pid, clientip, porta_client, error_code, paese, payload) VALUES (?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?)";
             psr = c.prepareStatement(sql);
             psr.setString(1, giornoDellaSettimana);
             psr.setString(2, mese);

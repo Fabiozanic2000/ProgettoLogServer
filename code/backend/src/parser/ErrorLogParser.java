@@ -60,23 +60,43 @@ public class ErrorLogParser {
         GrokCompiler grokCompiler = GrokCompiler.newInstance();
         grokCompiler.registerDefaultPatterns();
 
+        int threshold = 2; //delta
+        GeoIp ip = new GeoIp();
+         HashMap<String, Controllo> ipSospetti = new HashMap<>(); //dizionario
+
         //inserire pattern che deve compilare
         final Grok grok = grokCompiler.compile("\\[%{DAY:giorno_della_settimana} %{MONTH:mese} %{MONTHDAY:giorno_del_mese} %{TIME:orario} %{YEAR:anno}\\] \\[:%{LOGLEVEL:tipo_errore}\\] \\[%{WORD:ignora} %{POSINT:pid}\\] \\[%{WORD:ignora} %{IP:clientip}:%{POSINT:porta_client}\\] \\[%{WORD:ignora} %{IP:ignora}\\] ModSecurity: %{WORD:errorcode}. %{GREEDYDATA:resto_del_mondo}");
         System.out.println("FILE degli errori");
+        int c = 0;
         while (sc.hasNextLine()) {
             try {
                 input = sc.nextLine(); //legga la riga
                 Match gm = grok.match(input);
                 Map<String, Object> capture = gm.capture();
 
-                malevolo(capture);
+                //malevolo(capture);
+
+
+                String timestamp = capture.get("anno").toString() + "-" + convertiMese(capture.get("mese").toString()) +
+                        "-" + capture.get("giorno_del_mese").toString() + " " + capture.get("orario");
+
+                SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+                long currentTime = dateFormat.parse(timestamp).getTime()/1000;
+
+                ipSospetti.putIfAbsent(capture.get("clientip").toString(), new Controllo());
+
+                ipSospetti.get(capture.get("clientip").toString()).check(currentTime, threshold, capture.get("clientip").toString()
+                        , ip.getCountry(capture.get("clientip").toString()));
+
+
 
                 String data = capture.get("anno").toString() + "-" + convertiMese(capture.get("mese").toString()) +
                         "-" + capture.get("giorno_del_mese").toString();
                 DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
                 Date dataUnix = df.parse(data);
                 long unixTime = dataUnix.getTime() /1000;
-
+                c++;
+                System.out.println("chiamo db insert "+c);
                 db.insert(capture.get("giorno_della_settimana").toString(),
                         capture.get("mese")
                                 .toString(), //ritora Aug, Sep ...
@@ -112,14 +132,14 @@ public class ErrorLogParser {
         }
     }
 
-    private HashMap<String, Controllo> ipSospetti = new HashMap<>(); //dizionario
+
 
     /**
      * Questa funzione serve per rilevare se c'è del traffico malevolo.
      * @param capture risultato parsing con libreria grok
      * @throws ParseException errore parsing
      */
-    private void malevolo(Map<String, Object> capture) throws ParseException, IOException, GeoIp2Exception {
+    /*private void malevolo(Map<String, Object> capture) throws ParseException, IOException, GeoIp2Exception {
         int threshold = 2; //delta
         GeoIp ip = new GeoIp();
 
@@ -133,5 +153,5 @@ public class ErrorLogParser {
 
         ipSospetti.get(capture.get("clientip").toString()).check(currentTime, threshold, capture.get("clientip").toString()
         , ip.getCountry(capture.get("clientip").toString()));
-    }
+    }*/
 }
