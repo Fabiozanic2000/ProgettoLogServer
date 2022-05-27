@@ -4,7 +4,6 @@ import javax.mail.*;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
@@ -42,7 +41,9 @@ public class Mail {
         Message message = prepareMessage(session, myAccountEmail, recepient, messaggiErrati, ip_address, stato);
         Transport.send(message);
     }
-
+    /*
+        Funzione che restituisce un array di indirizzi che ricava dalla lista in input
+     */
     private static Address[] getRecipients(List<String> emails) throws AddressException {
         Address[] addresses = new Address[emails.size()];
         for (int i =0;i < emails.size();i++) {
@@ -57,12 +58,8 @@ public class Mail {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(myAccountEmail));
 
-            /*Address[] a = new Address[recepient.size()];
-            for (int i=0; i<recepient.size(); i++){
-                a[i] = new InternetAddress(recepient.get(i));
-            }*/
 
-           // message.addRecipient(Message.RecipientType.BCC, a);
+
             message.addRecipients(Message.RecipientType.BCC, getRecipients(recepient));
             message.setSubject("Do not reply");
 

@@ -2,7 +2,6 @@ package parser;
 
 import db.UtentiDb;
 
-import javax.mail.Address;
 import javax.mail.MessagingException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -29,8 +28,7 @@ public class Controllo {
                 dbUtenti.checkCreateDb();
                 ArrayList<String> indirizzi;
                 indirizzi = dbUtenti.indirizziMail();
-                List<String> dest = new ArrayList<>();
-                dest.addAll(indirizzi);
+                List<String> dest = new ArrayList<>(indirizzi);
                 //List<String> destt = dest;
                 Mail.sendEmail(dest, contatore, ip_address, stato);
             } catch (MessagingException | SQLException e) {

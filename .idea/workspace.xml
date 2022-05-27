@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="Miglioramento codice&#10;&#10;Co-authored-by: Il-castor &lt;274987@studenti.unimore.it&gt;&#10;Co-authored-by: Malferrari &lt;274851@studenti.unimore.it&gt;">
+    <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="Sistemato errore dove non si riusciva a inserire gli errori nel db. Forse ottimizizzazione invio mail in BCC con multipli indirizzi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.err" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.err" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.1" afterDir="false" />
@@ -25,11 +25,7 @@
       <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.7" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.7" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.8" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.8" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.9" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/dberrori/DbInsertError.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/dberrori/DbInsertError.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/backend/src/parser/Controllo.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/Controllo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/ErrorLogParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/ErrorLogParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/Mail.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/Mail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/ParseLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/ParseLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dberr" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dblog" beforeDir="false" />
     </list>
@@ -205,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653488058406</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Sistemato errore dove non si riusciva a inserire gli errori nel db. Forse ottimizizzazione invio mail in BCC con multipli indirizzi">
+      <created>1653627784668</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1653627784668</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,13 +227,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Miglioramento codice&#10;&#10;Co-authored-by: Il-castor &lt;274987@studenti.unimore.it&gt;&#10;Co-authored-by: Malferrari &lt;274851@studenti.unimore.it&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Miglioramento codice&#10;&#10;Co-authored-by: Il-castor &lt;274987@studenti.unimore.it&gt;&#10;Co-authored-by: Malferrari &lt;274851@studenti.unimore.it&gt;" />
+    <MESSAGE value="Sistemato errore dove non si riusciva a inserire gli errori nel db. Forse ottimizizzazione invio mail in BCC con multipli indirizzi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sistemato errore dove non si riusciva a inserire gli errori nel db. Forse ottimizizzazione invio mail in BCC con multipli indirizzi" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/2022t1$server_Main.ic" NAME="server.Main Coverage Results" MODIFIED="1653627013512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/2022t1$server_Main.ic" NAME="server.Main Coverage Results" MODIFIED="1653627444923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
