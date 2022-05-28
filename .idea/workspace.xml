@@ -11,22 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="Miglioramento codice&#10;&#10;Co-authored-by: Il-castor &lt;274987@studenti.unimore.it&gt;&#10;Co-authored-by: Malferrari &lt;274851@studenti.unimore.it&gt;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.err" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.err" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.10" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.10" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.11" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.11" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.12" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.12" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.13" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.13" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.2" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.3" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.4" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.5" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.6" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.7" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.8" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.9" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/log_file/gnetshop.log.9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/parser/ParseLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/parser/ParseLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/code.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,11 +47,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -198,6 +183,7 @@
       <updated>1652167631611</updated>
       <workItem from="1653292251713" duration="2168000" />
       <workItem from="1653585325583" duration="60000" />
+      <workItem from="1653652559628" duration="4008000" />
     </task>
     <task id="LOCAL-00001" summary="Miglioramento codice&#10;&#10;Co-authored-by: Il-castor &lt;274987@studenti.unimore.it&gt;&#10;Co-authored-by: Malferrari &lt;274851@studenti.unimore.it&gt;">
       <created>1653488058406</created>
