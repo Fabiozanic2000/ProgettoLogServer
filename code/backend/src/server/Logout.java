@@ -7,6 +7,9 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * Classe per il logout
+ */
 public class Logout implements HttpHandler {
     private Integer rCode = 0;
     private String response = "";

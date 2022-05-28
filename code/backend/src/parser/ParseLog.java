@@ -18,7 +18,15 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.TimerTask;
 
+/**
+ * Classe per il parser dei log
+ */
 public class ParseLog extends TimerTask {
+    /**
+     * Converte il mese da stringa di tre lettere a numero a due cifre
+     * @param mese il mese
+     * @return il mese convertito
+     */
     private String convertiMese(String mese){
         return switch (mese) {
             case "Jan" -> "01";

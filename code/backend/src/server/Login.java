@@ -14,6 +14,9 @@ import java.util.Scanner;
 import org.json.JSONObject;
 import java.sql.SQLException;
 
+/**
+ * Classe per il login
+ */
 public class Login implements HttpHandler {
 
     private UtentiDb db;

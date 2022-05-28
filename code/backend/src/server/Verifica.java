@@ -10,6 +10,9 @@ import java.nio.charset.StandardCharsets;
 import db.UtentiDb;
 import oggetti.OggettoVerifica;
 
+/**
+ * Controlla i cookies per verificare che l'utente sia loggato
+ */
 public class Verifica implements HttpHandler {
     private UtentiDb db;
 
