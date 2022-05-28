@@ -5,7 +5,21 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Classe per la registrazione di un utente nel database
+ */
 public class DbSignup {
+    /**
+     * Ritorna vero se la registrazione è andata a buon fine, falso altrimenti
+     * @param nome il nome
+     * @param cognome il cognome
+     * @param email email
+     * @param password la password
+     * @param professione la professione dell'utente
+     * @param db il database degli utenti
+     * @return vero se la registrazione è andata a buon fine, falso altrimenti
+     * @throws SQLException eccezione database
+     */
     public boolean signup (String nome, String cognome, String email, String password, String professione, UtentiDb db) throws SQLException {
         Connection c = db.connect();
         PreparedStatement psr;

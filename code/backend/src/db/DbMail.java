@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Classe per gestire le mail per le notifiche
+ */
 public class DbMail {
     public ArrayList<String> indirizzi(UtentiDb db) throws SQLException {
         Connection con = db.connect();

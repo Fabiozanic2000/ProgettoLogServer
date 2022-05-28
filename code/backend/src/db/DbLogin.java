@@ -5,13 +5,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Classe che esegue la query del login sul db
+ */
 public class DbLogin {
     /**
-     * Classe che esegue la query del login sul db
-     * @param email
-     * @param password
-     * @param db
-     * @return id
+     * Funzione che esegue la query del login sul db
+     * @param email email
+     * @param password password
+     * @param db database
+     * @return id ID della persona loggata
      */
     public int login(String email, String password, UtentiDb db) {
         Connection c = db.connect(); // si connette al db
