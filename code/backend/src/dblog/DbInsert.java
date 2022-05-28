@@ -4,7 +4,27 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * Classe per l'inserimento dei log parsati nel database
+ */
 public class DbInsert {
+    /**
+     * Funzione che inserisce i log parsati nel database
+     * @param request request
+     * @param auth auth
+     * @param ident ident
+     * @param httpmethod httpmethod
+     * @param time time
+     * @param response response
+     * @param bytes bytes
+     * @param clientip clientip
+     * @param rawrequest rawrequest
+     * @param data data
+     * @param timestamp timestamp
+     * @param paese paese
+     * @param db db
+     * @return vero se va a buon fine, falso altrimenti
+     */
     public boolean insert(String request, String auth, String ident, String httpmethod, String time, int response,
                           int bytes, String clientip, String rawrequest, long data, String timestamp, String paese,
                           Dblog db) {

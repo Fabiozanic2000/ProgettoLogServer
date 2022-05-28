@@ -7,6 +7,9 @@ import java.sql.Statement;
 
 import static java.sql.DriverManager.getConnection;
 
+/**
+ * Classe per il database dei log
+ */
 public class Dblog {
     private final String DBNAME;
 

@@ -9,11 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="Miglioramento codice&#10;&#10;Co-authored-by: Il-castor &lt;274987@studenti.unimore.it&gt;&#10;Co-authored-by: Malferrari &lt;274851@studenti.unimore.it&gt;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/db/DbLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/db/DbLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/db/DbMail.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/db/DbMail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/backend/src/db/DbSignup.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/db/DbSignup.java" afterDir="false" />
+    <list default="true" id="31e02011-3614-4169-93dc-5e962538b48f" name="Changes" comment="Aggiunta documentazione">
+      <change beforePath="$PROJECT_DIR$/code/backend/src/dberrori/DbInsertError.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/dberrori/DbInsertError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/dberrori/DblogErrori.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/dberrori/DblogErrori.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/dblog/DbInsert.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/dblog/DbInsert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/backend/src/dblog/Dblog.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/backend/src/dblog/Dblog.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653629262820</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Aggiunta documentazione">
+      <created>1653729475408</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1653729475408</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,7 +245,8 @@
     <MESSAGE value="Sistemato errore dove non si riusciva a inserire gli errori nel db. Forse ottimizizzazione invio mail in BCC con multipli indirizzi" />
     <MESSAGE value="Ottimizzato l'invio delle email inserendo il multiple recepient" />
     <MESSAGE value="Sistemati piccoli bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sistemati piccoli bug" />
+    <MESSAGE value="Aggiunta documentazione" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta documentazione" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
