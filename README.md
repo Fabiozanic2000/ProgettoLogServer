@@ -4,25 +4,6 @@
 ### Web app che permette di visualizzare tramite statistiche e grafici il contenuto di file di log generati da Apache web server.
 # GRUPPO
 
-- Alex Caraffi (superflem), 147283, Project Owner
-- Fabio Zanichelli (Zukkerino) , 142111, Scrum Master
-- Francesco Castorini (Il-castor), 143541
-- Antonio Benevento Vitale Nigro (BennyBanana), 148399
-- Luca Dall'Olio (Belix), 146936
-- Francesco Malferrari, 142795  
-
-# Come utilizzare il repository
-- /doc/presentation ← Presentazioni (ppt. o simile); NON caricate i video, mettete dei link.
-- /code ← Codice del progetto (inizialmente vuoto); opzionalmente può essere anche in radice.
-- /database ← Dump del/dei database (se previsti)
-- /test ← Codice di test di unità (TDD, TL), descrizione test di integrazione e accettazione se non
-integrati nell’IDE
-
-# LINK
-- [Taiga](https://tree.taiga.io/project/271413-team1_pds2022/timeline)
-- [NodeJS](https://nodejs.dev/)
-- [Mattermost](http://64.225.69.78:8065/signup_user_complete/?id=sxcmexmn8jgm3xfw3s7atdaqwy)
-- [Web App](http://64.225.69.78:3000/) (il server potrebbe dare alcuni problemi, per risolverli bisogna provare a cancellare i cookie, passare alla modalità incognito o cambiare browser. In ogni caso bisogna usare il protocollo HTTP non HTTPS)
 # Usare l'applicazione
 
 ## Frontend
